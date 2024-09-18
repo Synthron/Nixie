@@ -7468,7 +7468,7 @@
 			)
 		)
 	)
-	(global_label "Bit21"
+	(global_label "Bit43"
 		(shape input)
 		(at 260.35 255.27 180)
 		(fields_autoplaced yes)
@@ -7480,7 +7480,7 @@
 		)
 		(uuid "3837dd5f-368d-4e9d-9312-238d99f1d63d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 253.5548 255.27 0)
+			(at 252.3453 255.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9800,7 +9800,7 @@
 			)
 		)
 	)
-	(global_label "Bit20"
+	(global_label "Bit42"
 		(shape input)
 		(at 260.35 252.73 180)
 		(fields_autoplaced yes)
@@ -9812,7 +9812,7 @@
 		)
 		(uuid "fc723ca6-efdb-4dc2-acb9-3a3b92f50d11")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 253.5548 252.73 0)
+			(at 252.3453 252.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10293,7 +10293,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0112d062-50b7-4c6e-a464-66c87afda1fc")
-		(property "Reference" "#PWR0141"
+		(property "Reference" "#PWR0391"
 			(at 275.59 209.55 0)
 			(effects
 				(font
@@ -10343,7 +10343,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0141")
+					(reference "#PWR0391")
 					(unit 1)
 				)
 			)
@@ -10358,7 +10358,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0369f13e-dabe-44e3-a955-00eb5b847102")
-		(property "Reference" "Q12"
+		(property "Reference" "Q308"
 			(at 120.142 41.402 0)
 			(effects
 				(font
@@ -10418,7 +10418,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q12")
+					(reference "Q308")
 					(unit 1)
 				)
 			)
@@ -10434,7 +10434,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "036efaeb-f37d-49d1-bdb6-2173c8fc7983")
-		(property "Reference" "#PWR0148"
+		(property "Reference" "#PWR0398"
 			(at 25.4 236.22 0)
 			(effects
 				(font
@@ -10484,7 +10484,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0148")
+					(reference "#PWR0398")
 					(unit 1)
 				)
 			)
@@ -10499,7 +10499,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "03a4f909-43f5-475e-b933-8eb4740911f3")
-		(property "Reference" "#PWR096"
+		(property "Reference" "#PWR0346"
 			(at 337.82 118.11 0)
 			(effects
 				(font
@@ -10549,7 +10549,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR096")
+					(reference "#PWR0346")
 					(unit 1)
 				)
 			)
@@ -10564,7 +10564,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "04a8d837-2ca8-42dd-b6cb-c1a966feccb1")
-		(property "Reference" "#PWR0111"
+		(property "Reference" "#PWR0361"
 			(at 210.82 158.75 0)
 			(effects
 				(font
@@ -10614,7 +10614,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0111")
+					(reference "#PWR0361")
 					(unit 1)
 				)
 			)
@@ -10631,7 +10631,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04ca865c-da9b-4355-9db5-649c4d7f338c")
-		(property "Reference" "Q41"
+		(property "Reference" "Q337"
 			(at 360.68 99.0599 0)
 			(effects
 				(font
@@ -10691,7 +10691,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q41")
+					(reference "Q337")
 					(unit 1)
 				)
 			)
@@ -10707,7 +10707,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "068bf29d-65d4-4855-bacd-fa213db1cad6")
-		(property "Reference" "J19"
+		(property "Reference" "J306"
 			(at 396.24 195.5799 0)
 			(effects
 				(font
@@ -10725,7 +10725,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
 			(at 393.7 195.58 0)
 			(effects
 				(font
@@ -10791,7 +10791,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J19")
+					(reference "J306")
 					(unit 1)
 				)
 			)
@@ -10806,7 +10806,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "074d4988-66d8-4de1-9794-0dbf9b8ddf86")
-		(property "Reference" "Q56"
+		(property "Reference" "Q352"
 			(at 240.792 144.272 0)
 			(effects
 				(font
@@ -10866,7 +10866,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q56")
+					(reference "Q352")
 					(unit 1)
 				)
 			)
@@ -10881,7 +10881,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "07753636-f5da-4b11-ba25-13728bc82d94")
-		(property "Reference" "#PWR077"
+		(property "Reference" "#PWR0327"
 			(at 358.14 92.71 0)
 			(effects
 				(font
@@ -10931,7 +10931,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR077")
+					(reference "#PWR0327")
 					(unit 1)
 				)
 			)
@@ -10947,7 +10947,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "092a4246-7f0c-49e6-9bf8-36556bddffe2")
-		(property "Reference" "R40"
+		(property "Reference" "R325"
 			(at 353.06 97.028 0)
 			(effects
 				(font
@@ -10965,7 +10965,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 346.202 95.25 90)
 			(effects
 				(font
@@ -11001,7 +11001,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R40")
+					(reference "R325")
 					(unit 1)
 				)
 			)
@@ -11016,7 +11016,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "095cedb2-ba99-41c6-a89f-be43df17ef39")
-		(property "Reference" "#PWR0140"
+		(property "Reference" "#PWR0390"
 			(at 262.89 209.55 0)
 			(effects
 				(font
@@ -11066,7 +11066,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0140")
+					(reference "#PWR0390")
 					(unit 1)
 				)
 			)
@@ -11081,7 +11081,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0b57d459-f5d7-46d6-990c-cbebc7ce7214")
-		(property "Reference" "#PWR0136"
+		(property "Reference" "#PWR0386"
 			(at 210.82 209.55 0)
 			(effects
 				(font
@@ -11131,7 +11131,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0136")
+					(reference "#PWR0386")
 					(unit 1)
 				)
 			)
@@ -11146,7 +11146,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0bf64c5b-02ac-48b6-aa10-9ba42ecc9381")
-		(property "Reference" "#PWR083"
+		(property "Reference" "#PWR0333"
 			(at 128.27 106.68 0)
 			(effects
 				(font
@@ -11196,7 +11196,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR083")
+					(reference "#PWR0333")
 					(unit 1)
 				)
 			)
@@ -11211,7 +11211,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0d85b6ad-f95d-46b4-8e84-65d73cb7dee9")
-		(property "Reference" "Q67"
+		(property "Reference" "Q363"
 			(at 93.472 195.072 0)
 			(effects
 				(font
@@ -11271,7 +11271,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q67")
+					(reference "Q363")
 					(unit 1)
 				)
 			)
@@ -11286,7 +11286,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0dfc4400-20c3-4a40-b83d-6d25d451ec8b")
-		(property "Reference" "#PWR0128"
+		(property "Reference" "#PWR0378"
 			(at 63.5 209.55 0)
 			(effects
 				(font
@@ -11336,7 +11336,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0128")
+					(reference "#PWR0378")
 					(unit 1)
 				)
 			)
@@ -11352,7 +11352,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f6fb95b-0209-4f28-b8ef-024319934835")
-		(property "Reference" "#PWR0149"
+		(property "Reference" "#PWR0399"
 			(at 172.72 236.22 0)
 			(effects
 				(font
@@ -11402,7 +11402,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0149")
+					(reference "#PWR0399")
 					(unit 1)
 				)
 			)
@@ -11417,7 +11417,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "102bf5eb-6da1-4865-9345-95f74eacbd76")
-		(property "Reference" "Q25"
+		(property "Reference" "Q321"
 			(at 55.372 92.202 0)
 			(effects
 				(font
@@ -11477,7 +11477,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q25")
+					(reference "Q321")
 					(unit 1)
 				)
 			)
@@ -11493,7 +11493,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1084acd4-27cb-4ebb-a60b-bac0aa8000c5")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR0322"
 			(at 25.4 82.55 0)
 			(effects
 				(font
@@ -11543,7 +11543,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR072")
+					(reference "#PWR0322")
 					(unit 1)
 				)
 			)
@@ -11558,7 +11558,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "12550b59-6a4e-4b14-9582-8ce804f54fb2")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR0303"
 			(at 63.5 55.88 0)
 			(effects
 				(font
@@ -11608,7 +11608,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR053")
+					(reference "#PWR0303")
 					(unit 1)
 				)
 			)
@@ -11624,7 +11624,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "129928ab-eb8b-4093-87f5-c14b694ec4b7")
-		(property "Reference" "R65"
+		(property "Reference" "R350"
 			(at 73.66 152.908 0)
 			(effects
 				(font
@@ -11642,7 +11642,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 66.802 151.13 90)
 			(effects
 				(font
@@ -11678,7 +11678,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R65")
+					(reference "R350")
 					(unit 1)
 				)
 			)
@@ -11693,7 +11693,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "136e0d14-9419-4c37-91dd-b3155fab5085")
-		(property "Reference" "#PWR092"
+		(property "Reference" "#PWR0342"
 			(at 288.29 106.68 0)
 			(effects
 				(font
@@ -11743,7 +11743,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR092")
+					(reference "#PWR0342")
 					(unit 1)
 				)
 			)
@@ -11759,7 +11759,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "139f6e95-1522-4329-8607-e593fa3cac58")
-		(property "Reference" "R95"
+		(property "Reference" "R380"
 			(at 220.98 203.708 0)
 			(effects
 				(font
@@ -11777,7 +11777,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 214.122 201.93 90)
 			(effects
 				(font
@@ -11813,7 +11813,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R95")
+					(reference "R380")
 					(unit 1)
 				)
 			)
@@ -11829,7 +11829,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "13ab03e8-5c69-4aa6-ac06-9813bd857e10")
-		(property "Reference" "R57"
+		(property "Reference" "R342"
 			(at 344.678 98.044 90)
 			(effects
 				(font
@@ -11847,7 +11847,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 342.9 102.108 90)
 			(effects
 				(font
@@ -11883,7 +11883,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R57")
+					(reference "R342")
 					(unit 1)
 				)
 			)
@@ -11899,7 +11899,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "141e8728-6c1f-48d5-94ad-e0a651da33d8")
-		(property "Reference" "#PWR0150"
+		(property "Reference" "#PWR0400"
 			(at 36.83 247.65 0)
 			(effects
 				(font
@@ -11949,7 +11949,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0150")
+					(reference "#PWR0400")
 					(unit 1)
 				)
 			)
@@ -11965,7 +11965,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "14e9c261-a43d-4d68-a21f-42b54a59b9f4")
-		(property "Reference" "#PWR0154"
+		(property "Reference" "#PWR0404"
 			(at 25.4 262.89 0)
 			(effects
 				(font
@@ -12015,7 +12015,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0154")
+					(reference "#PWR0404")
 					(unit 1)
 				)
 			)
@@ -12031,7 +12031,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "151011f9-fe2c-429a-82c2-f84f2cab2939")
-		(property "Reference" "R39"
+		(property "Reference" "R324"
 			(at 362.966 77.47 0)
 			(effects
 				(font
@@ -12049,7 +12049,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 356.362 78.74 90)
 			(effects
 				(font
@@ -12085,7 +12085,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R39")
+					(reference "R324")
 					(unit 1)
 				)
 			)
@@ -12100,7 +12100,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "170138ee-b2d5-4e81-a404-0f0ef9b3f2fd")
-		(property "Reference" "Q58"
+		(property "Reference" "Q354"
 			(at 267.462 144.272 0)
 			(effects
 				(font
@@ -12160,7 +12160,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q58")
+					(reference "Q354")
 					(unit 1)
 				)
 			)
@@ -12175,7 +12175,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "17c5a849-51b4-4b30-ba01-660efcb2a6a7")
-		(property "Reference" "#PWR0113"
+		(property "Reference" "#PWR0363"
 			(at 236.22 158.75 0)
 			(effects
 				(font
@@ -12225,7 +12225,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0113")
+					(reference "#PWR0363")
 					(unit 1)
 				)
 			)
@@ -12240,7 +12240,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1857b3be-a203-4de3-bb54-ed9b69de4386")
-		(property "Reference" "Q52"
+		(property "Reference" "Q348"
 			(at 145.542 144.272 0)
 			(effects
 				(font
@@ -12300,7 +12300,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q52")
+					(reference "Q348")
 					(unit 1)
 				)
 			)
@@ -12315,7 +12315,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1a351508-55ed-4fd9-8e79-9658cc23c8be")
-		(property "Reference" "Q78"
+		(property "Reference" "Q374"
 			(at 280.162 195.072 0)
 			(effects
 				(font
@@ -12375,7 +12375,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q78")
+					(reference "Q374")
 					(unit 1)
 				)
 			)
@@ -12390,7 +12390,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1a9d903c-ac13-4567-a8ae-3298a2b559c1")
-		(property "Reference" "Q76"
+		(property "Reference" "Q372"
 			(at 254.762 195.072 0)
 			(effects
 				(font
@@ -12450,7 +12450,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q76")
+					(reference "Q372")
 					(unit 1)
 				)
 			)
@@ -12466,7 +12466,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1aba59d6-37ba-447a-b9bc-150898f6cfb0")
-		(property "Reference" "R36"
+		(property "Reference" "R321"
 			(at 353.06 65.278 0)
 			(effects
 				(font
@@ -12484,7 +12484,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 346.202 63.5 90)
 			(effects
 				(font
@@ -12520,7 +12520,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R36")
+					(reference "R321")
 					(unit 1)
 				)
 			)
@@ -12535,7 +12535,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1d958772-85f7-4678-b1a1-a28fbe05daf9")
-		(property "Reference" "Q26"
+		(property "Reference" "Q322"
 			(at 68.072 92.202 0)
 			(effects
 				(font
@@ -12595,7 +12595,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q26")
+					(reference "Q322")
 					(unit 1)
 				)
 			)
@@ -12610,7 +12610,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1e9150ae-fc16-4a1e-a54c-3c21290dd522")
-		(property "Reference" "#PWR0142"
+		(property "Reference" "#PWR0392"
 			(at 288.29 209.55 0)
 			(effects
 				(font
@@ -12660,7 +12660,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0142")
+					(reference "#PWR0392")
 					(unit 1)
 				)
 			)
@@ -12676,7 +12676,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1f0e5192-8f69-42d8-b01f-35cd8b9dd595")
-		(property "Reference" "J15"
+		(property "Reference" "J302"
 			(at 396.24 68.5799 0)
 			(effects
 				(font
@@ -12694,7 +12694,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
 			(at 393.7 68.58 0)
 			(effects
 				(font
@@ -12760,7 +12760,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J15")
+					(reference "J302")
 					(unit 1)
 				)
 			)
@@ -12775,7 +12775,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1f63e118-73a3-4e8d-b4e3-b0aa82bb8352")
-		(property "Reference" "#PWR0131"
+		(property "Reference" "#PWR0381"
 			(at 101.6 209.55 0)
 			(effects
 				(font
@@ -12825,7 +12825,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0131")
+					(reference "#PWR0381")
 					(unit 1)
 				)
 			)
@@ -12840,7 +12840,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "20b3cb4f-9e20-42a5-a2d3-a6e6af3a0166")
-		(property "Reference" "Q16"
+		(property "Reference" "Q312"
 			(at 215.392 41.402 0)
 			(effects
 				(font
@@ -12900,7 +12900,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q16")
+					(reference "Q312")
 					(unit 1)
 				)
 			)
@@ -12916,7 +12916,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "20ddad31-482d-4805-b448-e872a7973d61")
-		(property "Reference" "R83"
+		(property "Reference" "R368"
 			(at 362.966 172.72 0)
 			(effects
 				(font
@@ -12934,7 +12934,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 356.362 173.99 90)
 			(effects
 				(font
@@ -12970,7 +12970,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R83")
+					(reference "R368")
 					(unit 1)
 				)
 			)
@@ -12985,7 +12985,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "219f6e11-c7ae-4e0a-a140-a76f0066bb4a")
-		(property "Reference" "Q46"
+		(property "Reference" "Q342"
 			(at 68.072 144.272 0)
 			(effects
 				(font
@@ -13045,7 +13045,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q46")
+					(reference "Q342")
 					(unit 1)
 				)
 			)
@@ -13061,7 +13061,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2252e8f3-738c-42eb-86ce-f21d4b3c7fd6")
-		(property "Reference" "R107"
+		(property "Reference" "R392"
 			(at 337.058 231.394 90)
 			(effects
 				(font
@@ -13079,7 +13079,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 335.28 235.458 90)
 			(effects
 				(font
@@ -13115,7 +13115,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R107")
+					(reference "R392")
 					(unit 1)
 				)
 			)
@@ -13131,7 +13131,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "259c175c-b23b-4a68-8b2d-90aa9e34f002")
-		(property "Reference" "R23"
+		(property "Reference" "R308"
 			(at 99.06 50.038 0)
 			(effects
 				(font
@@ -13149,7 +13149,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 92.202 48.26 90)
 			(effects
 				(font
@@ -13185,7 +13185,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R23")
+					(reference "R308")
 					(unit 1)
 				)
 			)
@@ -13201,7 +13201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27969f07-fdd3-4517-874b-7852f657f8dd")
-		(property "Reference" "C10"
+		(property "Reference" "C302"
 			(at 40.64 265.4299 0)
 			(effects
 				(font
@@ -13219,7 +13219,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 37.7952 270.51 0)
 			(effects
 				(font
@@ -13255,7 +13255,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C10")
+					(reference "C302")
 					(unit 1)
 				)
 			)
@@ -13271,7 +13271,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2832ca2b-157d-4916-af52-0d4e4c5c0ee6")
-		(property "Reference" "R88"
+		(property "Reference" "R373"
 			(at 86.36 203.708 0)
 			(effects
 				(font
@@ -13289,7 +13289,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 79.502 201.93 90)
 			(effects
 				(font
@@ -13325,7 +13325,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R88")
+					(reference "R373")
 					(unit 1)
 				)
 			)
@@ -13340,7 +13340,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2b65496a-43c6-464b-88d3-e6981d3e0656")
-		(property "Reference" "Q50"
+		(property "Reference" "Q346"
 			(at 120.142 144.272 0)
 			(effects
 				(font
@@ -13400,7 +13400,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q50")
+					(reference "Q346")
 					(unit 1)
 				)
 			)
@@ -13415,7 +13415,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2c0e8b8d-f48d-4696-a033-f99da9a76c84")
-		(property "Reference" "Q44"
+		(property "Reference" "Q340"
 			(at 329.692 135.382 0)
 			(effects
 				(font
@@ -13475,7 +13475,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q44")
+					(reference "Q340")
 					(unit 1)
 				)
 			)
@@ -13491,7 +13491,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d49db64-3c48-42f2-8016-06a18260e3ed")
-		(property "Reference" "#PWR075"
+		(property "Reference" "#PWR0325"
 			(at 36.83 93.98 0)
 			(effects
 				(font
@@ -13541,7 +13541,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR075")
+					(reference "#PWR0325")
 					(unit 1)
 				)
 			)
@@ -13557,7 +13557,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d5ddba2-a709-4d87-a80c-066f8931d82d")
-		(property "Reference" "#PWR0145"
+		(property "Reference" "#PWR0395"
 			(at 184.15 209.55 0)
 			(effects
 				(font
@@ -13607,7 +13607,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0145")
+					(reference "#PWR0395")
 					(unit 1)
 				)
 			)
@@ -13623,7 +13623,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d615917-1f62-4b74-8cda-4454fcd01d17")
-		(property "Reference" "#PWR0151"
+		(property "Reference" "#PWR0401"
 			(at 184.15 247.65 0)
 			(effects
 				(font
@@ -13673,7 +13673,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0151")
+					(reference "#PWR0401")
 					(unit 1)
 				)
 			)
@@ -13688,7 +13688,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "306d7552-a773-4169-ad80-e33c56653a11")
-		(property "Reference" "#PWR0129"
+		(property "Reference" "#PWR0379"
 			(at 76.2 209.55 0)
 			(effects
 				(font
@@ -13738,7 +13738,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0129")
+					(reference "#PWR0379")
 					(unit 1)
 				)
 			)
@@ -13753,7 +13753,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "313adea6-a772-4d08-922e-38c8b482eb79")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR0311"
 			(at 210.82 55.88 0)
 			(effects
 				(font
@@ -13803,7 +13803,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR061")
+					(reference "#PWR0311")
 					(unit 1)
 				)
 			)
@@ -13819,7 +13819,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "31e24441-18ba-4b7c-8197-6a472dbc16b9")
-		(property "Reference" "R84"
+		(property "Reference" "R369"
 			(at 353.06 192.278 0)
 			(effects
 				(font
@@ -13837,7 +13837,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 346.202 190.5 90)
 			(effects
 				(font
@@ -13873,7 +13873,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R84")
+					(reference "R369")
 					(unit 1)
 				)
 			)
@@ -13888,7 +13888,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "323e8ed5-177e-4f8d-873c-cb96ead6dbf7")
-		(property "Reference" "#PWR080"
+		(property "Reference" "#PWR0330"
 			(at 88.9 106.68 0)
 			(effects
 				(font
@@ -13938,7 +13938,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR080")
+					(reference "#PWR0330")
 					(unit 1)
 				)
 			)
@@ -13954,7 +13954,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "331a8383-56ee-4d62-a5c4-0b62e8f1594a")
-		(property "Reference" "R110"
+		(property "Reference" "R395"
 			(at 236.22 257.048 0)
 			(effects
 				(font
@@ -13972,7 +13972,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 229.362 255.27 90)
 			(effects
 				(font
@@ -14008,7 +14008,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R110")
+					(reference "R395")
 					(unit 1)
 				)
 			)
@@ -14024,7 +14024,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3368749e-ec4f-4f9a-a2b2-612cd2334484")
-		(property "Reference" "R25"
+		(property "Reference" "R310"
 			(at 125.73 50.038 0)
 			(effects
 				(font
@@ -14042,7 +14042,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 118.872 48.26 90)
 			(effects
 				(font
@@ -14078,7 +14078,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R25")
+					(reference "R310")
 					(unit 1)
 				)
 			)
@@ -14093,7 +14093,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "33c6eaec-c384-43f1-afe0-abf2dbbc4aa1")
-		(property "Reference" "Q21"
+		(property "Reference" "Q317"
 			(at 280.162 41.402 0)
 			(effects
 				(font
@@ -14153,7 +14153,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q21")
+					(reference "Q317")
 					(unit 1)
 				)
 			)
@@ -14169,7 +14169,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "34bc3221-0213-408a-a01a-eca133c89c1d")
-		(property "Reference" "#PWR0100"
+		(property "Reference" "#PWR0350"
 			(at 36.83 144.78 0)
 			(effects
 				(font
@@ -14219,7 +14219,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0100")
+					(reference "#PWR0350")
 					(unit 1)
 				)
 			)
@@ -14234,7 +14234,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "363ed041-3411-47aa-894a-34179b25e87a")
-		(property "Reference" "#PWR0116"
+		(property "Reference" "#PWR0366"
 			(at 275.59 158.75 0)
 			(effects
 				(font
@@ -14284,7 +14284,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0116")
+					(reference "#PWR0366")
 					(unit 1)
 				)
 			)
@@ -14299,7 +14299,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "378a2dba-f52d-4ac9-9dae-4bc62e3647c0")
-		(property "Reference" "#PWR0125"
+		(property "Reference" "#PWR0375"
 			(at 358.14 187.96 0)
 			(effects
 				(font
@@ -14349,7 +14349,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0125")
+					(reference "#PWR0375")
 					(unit 1)
 				)
 			)
@@ -14364,7 +14364,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37da1f4c-7073-441d-9833-ee82ed0c4b32")
-		(property "Reference" "Q18"
+		(property "Reference" "Q314"
 			(at 240.792 41.402 0)
 			(effects
 				(font
@@ -14424,7 +14424,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q18")
+					(reference "Q314")
 					(unit 1)
 				)
 			)
@@ -14439,7 +14439,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37e7c332-6af5-4b55-b8f2-02f2f3de27c5")
-		(property "Reference" "#PWR088"
+		(property "Reference" "#PWR0338"
 			(at 236.22 106.68 0)
 			(effects
 				(font
@@ -14489,7 +14489,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR088")
+					(reference "#PWR0338")
 					(unit 1)
 				)
 			)
@@ -14505,7 +14505,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "383009ac-7c75-43d7-a10f-73e19d76485b")
-		(property "Reference" "C9"
+		(property "Reference" "C301"
 			(at 29.21 265.4299 0)
 			(effects
 				(font
@@ -14523,7 +14523,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 26.3652 270.51 0)
 			(effects
 				(font
@@ -14559,7 +14559,7 @@
 		(instances
 			(project ""
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C9")
+					(reference "C301")
 					(unit 1)
 				)
 			)
@@ -14574,7 +14574,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "384f0762-a218-48a4-b444-3590423710bb")
-		(property "Reference" "#PWR066"
+		(property "Reference" "#PWR0316"
 			(at 275.59 55.88 0)
 			(effects
 				(font
@@ -14624,7 +14624,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR066")
+					(reference "#PWR0316")
 					(unit 1)
 				)
 			)
@@ -14641,7 +14641,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "38c7baa3-d417-4ca0-9733-064f74c57e70")
-		(property "Reference" "Q5"
+		(property "Reference" "Q301"
 			(at 360.68 35.5599 0)
 			(effects
 				(font
@@ -14701,7 +14701,7 @@
 		(instances
 			(project ""
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q5")
+					(reference "Q301")
 					(unit 1)
 				)
 			)
@@ -14716,7 +14716,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "39c46a71-f451-4009-b197-68d444ae81e7")
-		(property "Reference" "#PWR067"
+		(property "Reference" "#PWR0317"
 			(at 288.29 55.88 0)
 			(effects
 				(font
@@ -14766,7 +14766,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR067")
+					(reference "#PWR0317")
 					(unit 1)
 				)
 			)
@@ -14782,7 +14782,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3c900630-d506-4c2d-a098-829198de6487")
-		(property "Reference" "R94"
+		(property "Reference" "R379"
 			(at 208.28 203.708 0)
 			(effects
 				(font
@@ -14800,7 +14800,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 201.422 201.93 90)
 			(effects
 				(font
@@ -14836,7 +14836,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R94")
+					(reference "R379")
 					(unit 1)
 				)
 			)
@@ -14851,7 +14851,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3cdfd692-fd05-43cb-9582-cb35effb7062")
-		(property "Reference" "#PWR093"
+		(property "Reference" "#PWR0343"
 			(at 300.99 106.68 0)
 			(effects
 				(font
@@ -14901,7 +14901,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR093")
+					(reference "#PWR0343")
 					(unit 1)
 				)
 			)
@@ -14917,7 +14917,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d68477c-1350-4655-a813-fce8f8f97903")
-		(property "Reference" "C13"
+		(property "Reference" "C305"
 			(at 74.93 265.4299 0)
 			(effects
 				(font
@@ -14935,7 +14935,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 72.0852 270.51 0)
 			(effects
 				(font
@@ -14971,7 +14971,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C13")
+					(reference "C305")
 					(unit 1)
 				)
 			)
@@ -14987,7 +14987,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3e3e7eb6-d1fd-4ee6-89ea-7ecd1e3df389")
-		(property "Reference" "R47"
+		(property "Reference" "R332"
 			(at 138.43 100.838 0)
 			(effects
 				(font
@@ -15005,7 +15005,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 131.572 99.06 90)
 			(effects
 				(font
@@ -15041,7 +15041,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R47")
+					(reference "R332")
 					(unit 1)
 				)
 			)
@@ -15056,7 +15056,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3e4bb164-3b03-4158-a00a-f5ba23cda8e5")
-		(property "Reference" "#PWR0110"
+		(property "Reference" "#PWR0360"
 			(at 153.67 158.75 0)
 			(effects
 				(font
@@ -15106,7 +15106,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0110")
+					(reference "#PWR0360")
 					(unit 1)
 				)
 			)
@@ -15121,7 +15121,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "409049f4-a8b6-4be3-9335-d4cb0457b701")
-		(property "Reference" "#PWR081"
+		(property "Reference" "#PWR0331"
 			(at 101.6 106.68 0)
 			(effects
 				(font
@@ -15171,7 +15171,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR081")
+					(reference "#PWR0331")
 					(unit 1)
 				)
 			)
@@ -15187,7 +15187,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "40c2a3ed-2eda-43ef-88bf-5e87ce9d2bb2")
-		(property "Reference" "R35"
+		(property "Reference" "R320"
 			(at 298.45 50.038 0)
 			(effects
 				(font
@@ -15205,7 +15205,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 291.592 48.26 90)
 			(effects
 				(font
@@ -15241,7 +15241,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R35")
+					(reference "R320")
 					(unit 1)
 				)
 			)
@@ -15256,7 +15256,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "41dc6182-c963-4bbe-bb94-1a228793ba9d")
-		(property "Reference" "#PWR085"
+		(property "Reference" "#PWR0335"
 			(at 153.67 106.68 0)
 			(effects
 				(font
@@ -15306,7 +15306,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR085")
+					(reference "#PWR0335")
 					(unit 1)
 				)
 			)
@@ -15321,7 +15321,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "42745460-7f86-47f4-b54f-7a0919918ec7")
-		(property "Reference" "#PWR062"
+		(property "Reference" "#PWR0312"
 			(at 223.52 55.88 0)
 			(effects
 				(font
@@ -15371,7 +15371,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR062")
+					(reference "#PWR0312")
 					(unit 1)
 				)
 			)
@@ -15386,7 +15386,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4635a8fc-afcc-4caa-b687-932e075cb988")
-		(property "Reference" "Q71"
+		(property "Reference" "Q367"
 			(at 145.542 195.072 0)
 			(effects
 				(font
@@ -15446,7 +15446,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q71")
+					(reference "Q367")
 					(unit 1)
 				)
 			)
@@ -15461,7 +15461,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "46c226ac-185d-4608-b01b-6d65035205d2")
-		(property "Reference" "#PWR090"
+		(property "Reference" "#PWR0340"
 			(at 262.89 106.68 0)
 			(effects
 				(font
@@ -15511,7 +15511,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR090")
+					(reference "#PWR0340")
 					(unit 1)
 				)
 			)
@@ -15527,7 +15527,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "474745de-31bb-4742-8663-fd3c346959ac")
-		(property "Reference" "C12"
+		(property "Reference" "C304"
 			(at 63.5 265.4299 0)
 			(effects
 				(font
@@ -15545,7 +15545,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 60.6552 270.51 0)
 			(effects
 				(font
@@ -15581,7 +15581,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C12")
+					(reference "C304")
 					(unit 1)
 				)
 			)
@@ -15596,7 +15596,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "484e0944-18fe-4944-9d5d-33c64df19c44")
-		(property "Reference" "Q47"
+		(property "Reference" "Q343"
 			(at 80.772 144.272 0)
 			(effects
 				(font
@@ -15656,7 +15656,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q47")
+					(reference "Q343")
 					(unit 1)
 				)
 			)
@@ -15672,7 +15672,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4acd4cdc-6b44-4d5c-aeeb-787be70ccf58")
-		(property "Reference" "J17"
+		(property "Reference" "J304"
 			(at 396.24 132.0799 0)
 			(effects
 				(font
@@ -15690,7 +15690,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
 			(at 393.7 132.08 0)
 			(effects
 				(font
@@ -15756,7 +15756,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J17")
+					(reference "J304")
 					(unit 1)
 				)
 			)
@@ -15772,7 +15772,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4c3c6a59-6dc7-4003-a3a4-ee22136def1f")
-		(property "Reference" "#PWR0101"
+		(property "Reference" "#PWR0351"
 			(at 184.15 144.78 0)
 			(effects
 				(font
@@ -15822,7 +15822,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0101")
+					(reference "#PWR0351")
 					(unit 1)
 				)
 			)
@@ -15838,7 +15838,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4d7821da-ac26-4c22-877c-c597374fa704")
-		(property "Reference" "R46"
+		(property "Reference" "R331"
 			(at 125.73 100.838 0)
 			(effects
 				(font
@@ -15856,7 +15856,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 118.872 99.06 90)
 			(effects
 				(font
@@ -15892,7 +15892,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R46")
+					(reference "R331")
 					(unit 1)
 				)
 			)
@@ -15908,7 +15908,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "510af464-2b42-4f62-9c9f-b6508b5aabbd")
-		(property "Reference" "R18"
+		(property "Reference" "R303"
 			(at 335.28 48.768 0)
 			(effects
 				(font
@@ -15926,7 +15926,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 328.422 46.99 90)
 			(effects
 				(font
@@ -15962,7 +15962,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R18")
+					(reference "R303")
 					(unit 1)
 				)
 			)
@@ -15978,7 +15978,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "51b5da98-7a71-4bb7-9712-4ba5e6feaf3a")
-		(property "Reference" "R98"
+		(property "Reference" "R383"
 			(at 260.35 203.708 0)
 			(effects
 				(font
@@ -15996,7 +15996,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 253.492 201.93 90)
 			(effects
 				(font
@@ -16032,7 +16032,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R98")
+					(reference "R383")
 					(unit 1)
 				)
 			)
@@ -16048,7 +16048,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "52066f26-7a4f-43da-ab46-5225822eaa82")
-		(property "Reference" "J16"
+		(property "Reference" "J303"
 			(at 396.24 100.3299 0)
 			(effects
 				(font
@@ -16066,7 +16066,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
 			(at 393.7 100.33 0)
 			(effects
 				(font
@@ -16132,7 +16132,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J16")
+					(reference "J303")
 					(unit 1)
 				)
 			)
@@ -16148,7 +16148,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "531e983d-c5ce-482d-8a6f-b30d43bb8534")
-		(property "Reference" "R77"
+		(property "Reference" "R362"
 			(at 273.05 152.908 0)
 			(effects
 				(font
@@ -16166,7 +16166,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 266.192 151.13 90)
 			(effects
 				(font
@@ -16202,7 +16202,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R77")
+					(reference "R362")
 					(unit 1)
 				)
 			)
@@ -16217,7 +16217,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "561ae5e7-81f7-4c1b-9d37-99e85c68d963")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR0306"
 			(at 101.6 55.88 0)
 			(effects
 				(font
@@ -16267,7 +16267,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR056")
+					(reference "#PWR0306")
 					(unit 1)
 				)
 			)
@@ -16282,7 +16282,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "567dfa53-e1eb-418c-9ea3-829440480a14")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR0307"
 			(at 115.57 55.88 0)
 			(effects
 				(font
@@ -16332,7 +16332,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR057")
+					(reference "#PWR0307")
 					(unit 1)
 				)
 			)
@@ -16348,7 +16348,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "56bb9d87-c11a-4be1-8744-c3d2c978b2e5")
-		(property "Reference" "R50"
+		(property "Reference" "R335"
 			(at 220.98 100.838 0)
 			(effects
 				(font
@@ -16366,7 +16366,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 214.122 99.06 90)
 			(effects
 				(font
@@ -16402,7 +16402,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R50")
+					(reference "R335")
 					(unit 1)
 				)
 			)
@@ -16418,7 +16418,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "56bd2231-ec25-4e59-8855-a00eb1ec9cb2")
-		(property "Reference" "R101"
+		(property "Reference" "R386"
 			(at 298.45 203.708 0)
 			(effects
 				(font
@@ -16436,7 +16436,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 291.592 201.93 90)
 			(effects
 				(font
@@ -16472,7 +16472,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R101")
+					(reference "R386")
 					(unit 1)
 				)
 			)
@@ -16488,7 +16488,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5894aa0b-a2c7-4f61-afc5-c24167e91d0f")
-		(property "Reference" "R48"
+		(property "Reference" "R333"
 			(at 151.13 100.838 0)
 			(effects
 				(font
@@ -16506,7 +16506,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 144.272 99.06 90)
 			(effects
 				(font
@@ -16542,7 +16542,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R48")
+					(reference "R333")
 					(unit 1)
 				)
 			)
@@ -16557,7 +16557,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5b89e3e1-41e7-4ea8-a8d2-10ec7dd5f7b8")
-		(property "Reference" "#PWR0138"
+		(property "Reference" "#PWR0388"
 			(at 236.22 209.55 0)
 			(effects
 				(font
@@ -16607,7 +16607,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0138")
+					(reference "#PWR0388")
 					(unit 1)
 				)
 			)
@@ -16623,7 +16623,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5c6558d3-1b61-4a3d-be1e-f0c0a225159c")
-		(property "Reference" "R82"
+		(property "Reference" "R367"
 			(at 335.28 175.768 0)
 			(effects
 				(font
@@ -16641,7 +16641,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 328.422 173.99 90)
 			(effects
 				(font
@@ -16677,7 +16677,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R82")
+					(reference "R367")
 					(unit 1)
 				)
 			)
@@ -16694,7 +16694,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f1c9ab8-1216-45cd-8c9d-f6a4042ee178")
-		(property "Reference" "Q63"
+		(property "Reference" "Q359"
 			(at 360.68 194.3099 0)
 			(effects
 				(font
@@ -16754,7 +16754,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q63")
+					(reference "Q359")
 					(unit 1)
 				)
 			)
@@ -16770,7 +16770,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60cab610-bf49-4548-82bc-a8818d3e4fa6")
-		(property "Reference" "R112"
+		(property "Reference" "R397"
 			(at 227.838 258.064 90)
 			(effects
 				(font
@@ -16788,7 +16788,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 226.06 262.128 90)
 			(effects
 				(font
@@ -16824,7 +16824,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R112")
+					(reference "R397")
 					(unit 1)
 				)
 			)
@@ -16840,7 +16840,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "60fa5f27-fd15-4d23-a745-3562dc5b8eb8")
-		(property "Reference" "C16"
+		(property "Reference" "C308"
 			(at 109.22 265.4299 0)
 			(effects
 				(font
@@ -16858,7 +16858,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 106.3752 270.51 0)
 			(effects
 				(font
@@ -16894,7 +16894,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C16")
+					(reference "C308")
 					(unit 1)
 				)
 			)
@@ -16909,7 +16909,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "624170a5-bf59-49d8-92e0-c4d4ea35bcfb")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR0308"
 			(at 128.27 55.88 0)
 			(effects
 				(font
@@ -16959,7 +16959,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR058")
+					(reference "#PWR0308")
 					(unit 1)
 				)
 			)
@@ -16974,7 +16974,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "64ffab96-82ae-4652-8b55-90f2e488320e")
-		(property "Reference" "Q17"
+		(property "Reference" "Q313"
 			(at 228.092 41.402 0)
 			(effects
 				(font
@@ -17034,7 +17034,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q17")
+					(reference "Q313")
 					(unit 1)
 				)
 			)
@@ -17049,7 +17049,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "65358a54-ef71-4697-9790-d962c1a65b23")
-		(property "Reference" "#PWR0146"
+		(property "Reference" "#PWR0396"
 			(at 337.82 213.36 0)
 			(effects
 				(font
@@ -17099,7 +17099,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0146")
+					(reference "#PWR0396")
 					(unit 1)
 				)
 			)
@@ -17115,7 +17115,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "65497744-56d4-4c2c-bf52-774e6d544301")
-		(property "Reference" "R79"
+		(property "Reference" "R364"
 			(at 298.45 152.908 0)
 			(effects
 				(font
@@ -17133,7 +17133,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 291.592 151.13 90)
 			(effects
 				(font
@@ -17169,7 +17169,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R79")
+					(reference "R364")
 					(unit 1)
 				)
 			)
@@ -17184,7 +17184,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "654bbe4a-ace3-45e9-851b-7432512befa2")
-		(property "Reference" "#PWR0152"
+		(property "Reference" "#PWR0402"
 			(at 330.2 251.46 0)
 			(effects
 				(font
@@ -17234,7 +17234,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0152")
+					(reference "#PWR0402")
 					(unit 1)
 				)
 			)
@@ -17249,7 +17249,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "688e2fe1-7cfe-4568-9197-311f77e13aa6")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR0309"
 			(at 140.97 55.88 0)
 			(effects
 				(font
@@ -17299,7 +17299,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR059")
+					(reference "#PWR0309")
 					(unit 1)
 				)
 			)
@@ -17314,7 +17314,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "69d148d3-f07c-4fa7-9909-938cddb7f0a3")
-		(property "Reference" "Q13"
+		(property "Reference" "Q309"
 			(at 132.842 41.402 0)
 			(effects
 				(font
@@ -17374,7 +17374,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q13")
+					(reference "Q309")
 					(unit 1)
 				)
 			)
@@ -17389,7 +17389,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6a15b6a7-2049-46bb-80cc-32ca229a85e8")
-		(property "Reference" "#PWR0143"
+		(property "Reference" "#PWR0393"
 			(at 300.99 209.55 0)
 			(effects
 				(font
@@ -17439,7 +17439,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0143")
+					(reference "#PWR0393")
 					(unit 1)
 				)
 			)
@@ -17455,7 +17455,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6b8828b1-264b-4b7c-bca6-40a87bc6385f")
-		(property "Reference" "R43"
+		(property "Reference" "R328"
 			(at 86.36 100.838 0)
 			(effects
 				(font
@@ -17473,7 +17473,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 79.502 99.06 90)
 			(effects
 				(font
@@ -17509,7 +17509,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R43")
+					(reference "R328")
 					(unit 1)
 				)
 			)
@@ -17524,7 +17524,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6cd75af0-5f6c-4ee9-996d-9ad145be5e79")
-		(property "Reference" "Q36"
+		(property "Reference" "Q332"
 			(at 240.792 92.202 0)
 			(effects
 				(font
@@ -17584,7 +17584,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q36")
+					(reference "Q332")
 					(unit 1)
 				)
 			)
@@ -17599,7 +17599,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6d2877b6-418c-460c-8a3a-07c1ef8e897a")
-		(property "Reference" "Q32"
+		(property "Reference" "Q328"
 			(at 145.542 92.202 0)
 			(effects
 				(font
@@ -17659,7 +17659,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q32")
+					(reference "Q328")
 					(unit 1)
 				)
 			)
@@ -17674,7 +17674,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6f9b0f07-ccf7-431e-8124-eb2e19bf9e3c")
-		(property "Reference" "Q80"
+		(property "Reference" "Q376"
 			(at 329.692 198.882 0)
 			(effects
 				(font
@@ -17734,7 +17734,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q80")
+					(reference "Q376")
 					(unit 1)
 				)
 			)
@@ -17750,7 +17750,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6fb514be-821e-41fb-9393-ae9a59f73e40")
-		(property "Reference" "#PWR095"
+		(property "Reference" "#PWR0345"
 			(at 184.15 106.68 0)
 			(effects
 				(font
@@ -17800,7 +17800,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR095")
+					(reference "#PWR0345")
 					(unit 1)
 				)
 			)
@@ -17815,7 +17815,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6fc50456-fae6-4efd-b9a8-d3542f8e6223")
-		(property "Reference" "#PWR0155"
+		(property "Reference" "#PWR0405"
 			(at 220.98 278.13 0)
 			(effects
 				(font
@@ -17865,7 +17865,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0155")
+					(reference "#PWR0405")
 					(unit 1)
 				)
 			)
@@ -17881,7 +17881,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "706f043d-f5ad-4209-916b-f1c75f79f523")
-		(property "Reference" "R41"
+		(property "Reference" "R326"
 			(at 60.96 100.838 0)
 			(effects
 				(font
@@ -17899,7 +17899,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 54.102 99.06 90)
 			(effects
 				(font
@@ -17935,7 +17935,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R41")
+					(reference "R326")
 					(unit 1)
 				)
 			)
@@ -17950,7 +17950,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "714cc2ca-0be3-4504-b8a2-8861a0761c14")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR0324"
 			(at 337.82 86.36 0)
 			(effects
 				(font
@@ -18000,7 +18000,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR074")
+					(reference "#PWR0324")
 					(unit 1)
 				)
 			)
@@ -18015,7 +18015,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "72579b3c-f01a-4e48-8ce5-c87712ad37be")
-		(property "Reference" "#PWR087"
+		(property "Reference" "#PWR0337"
 			(at 223.52 106.68 0)
 			(effects
 				(font
@@ -18065,7 +18065,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR087")
+					(reference "#PWR0337")
 					(unit 1)
 				)
 			)
@@ -18082,7 +18082,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "72b80645-c556-4ea5-98b8-eeb89b032c30")
-		(property "Reference" "Q61"
+		(property "Reference" "Q357"
 			(at 360.68 162.5599 0)
 			(effects
 				(font
@@ -18142,7 +18142,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q61")
+					(reference "Q357")
 					(unit 1)
 				)
 			)
@@ -18157,7 +18157,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "72de35c7-7200-4f50-8467-f72f94f1648d")
-		(property "Reference" "Q55"
+		(property "Reference" "Q351"
 			(at 228.092 144.272 0)
 			(effects
 				(font
@@ -18217,7 +18217,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q55")
+					(reference "Q351")
 					(unit 1)
 				)
 			)
@@ -18232,7 +18232,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "72e5d915-bbd0-4e29-b13c-6841021a0054")
-		(property "Reference" "Q79"
+		(property "Reference" "Q375"
 			(at 292.862 195.072 0)
 			(effects
 				(font
@@ -18292,7 +18292,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q79")
+					(reference "Q375")
 					(unit 1)
 				)
 			)
@@ -18307,7 +18307,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "739ddd40-da91-4a14-b0cd-267d27d5249e")
-		(property "Reference" "#PWR091"
+		(property "Reference" "#PWR0341"
 			(at 275.59 106.68 0)
 			(effects
 				(font
@@ -18357,7 +18357,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR091")
+					(reference "#PWR0341")
 					(unit 1)
 				)
 			)
@@ -18373,7 +18373,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "73ff1fcd-a6d6-4cb1-ae3c-21c409df96cd")
-		(property "Reference" "R21"
+		(property "Reference" "R306"
 			(at 73.66 50.038 0)
 			(effects
 				(font
@@ -18391,7 +18391,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 66.802 48.26 90)
 			(effects
 				(font
@@ -18427,7 +18427,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R21")
+					(reference "R306")
 					(unit 1)
 				)
 			)
@@ -18443,7 +18443,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "749962ab-8f06-4a07-90f5-e7fa5ed3beec")
-		(property "Reference" "#PWR0144"
+		(property "Reference" "#PWR0394"
 			(at 36.83 209.55 0)
 			(effects
 				(font
@@ -18493,7 +18493,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0144")
+					(reference "#PWR0394")
 					(unit 1)
 				)
 			)
@@ -18508,7 +18508,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "74d7cc28-4959-40cf-b9a9-2126d06a1c3b")
-		(property "Reference" "#PWR097"
+		(property "Reference" "#PWR0347"
 			(at 358.14 124.46 0)
 			(effects
 				(font
@@ -18558,7 +18558,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR097")
+					(reference "#PWR0347")
 					(unit 1)
 				)
 			)
@@ -18574,7 +18574,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "74f72486-6475-458f-ae0e-a14be3260ac4")
-		(property "Reference" "R38"
+		(property "Reference" "R323"
 			(at 335.28 80.518 0)
 			(effects
 				(font
@@ -18592,7 +18592,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 328.422 78.74 90)
 			(effects
 				(font
@@ -18628,7 +18628,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R38")
+					(reference "R323")
 					(unit 1)
 				)
 			)
@@ -18643,7 +18643,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "75786495-77fd-4f8e-95e3-735643f6732c")
-		(property "Reference" "Q70"
+		(property "Reference" "Q366"
 			(at 132.842 195.072 0)
 			(effects
 				(font
@@ -18703,7 +18703,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q70")
+					(reference "Q366")
 					(unit 1)
 				)
 			)
@@ -18718,7 +18718,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "757b99e1-dddd-4a7a-9d72-2a1e52d1f6df")
-		(property "Reference" "Q6"
+		(property "Reference" "Q302"
 			(at 329.692 40.132 0)
 			(effects
 				(font
@@ -18778,7 +18778,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q6")
+					(reference "Q302")
 					(unit 1)
 				)
 			)
@@ -18795,7 +18795,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "76408424-5296-428a-a4c5-52ff976fef99")
-		(property "Reference" "Q43"
+		(property "Reference" "Q339"
 			(at 360.68 130.8099 0)
 			(effects
 				(font
@@ -18855,7 +18855,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q43")
+					(reference "Q339")
 					(unit 1)
 				)
 			)
@@ -18871,7 +18871,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "76e62ad0-e64a-411b-a53b-a4181a3d4d30")
-		(property "Reference" "U15"
+		(property "Reference" "U301"
 			(at 39.0241 50.8 0)
 			(effects
 				(font
@@ -18889,7 +18889,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 36.83 68.58 0)
 			(effects
 				(font
@@ -18967,7 +18967,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U15")
+					(reference "U301")
 					(unit 1)
 				)
 			)
@@ -18983,7 +18983,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "76fee984-d997-4754-b16b-216de610d36f")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR0323"
 			(at 172.72 82.55 0)
 			(effects
 				(font
@@ -19033,7 +19033,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR073")
+					(reference "#PWR0323")
 					(unit 1)
 				)
 			)
@@ -19049,7 +19049,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "77517a0c-4072-4c59-bfd5-beabff7eb672")
-		(property "Reference" "R76"
+		(property "Reference" "R361"
 			(at 260.35 152.908 0)
 			(effects
 				(font
@@ -19067,7 +19067,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 253.492 151.13 90)
 			(effects
 				(font
@@ -19103,7 +19103,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R76")
+					(reference "R361")
 					(unit 1)
 				)
 			)
@@ -19119,7 +19119,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "78d4afe1-3837-40c8-b280-01c4d2e830d5")
-		(property "Reference" "R113"
+		(property "Reference" "R398"
 			(at 210.82 264.668 90)
 			(effects
 				(font
@@ -19137,7 +19137,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 208.28 268.478 90)
 			(effects
 				(font
@@ -19173,7 +19173,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R113")
+					(reference "R398")
 					(unit 1)
 				)
 			)
@@ -19189,7 +19189,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "791a5587-f68c-4f3c-8e40-b0e1426a164a")
-		(property "Reference" "R31"
+		(property "Reference" "R316"
 			(at 246.38 50.038 0)
 			(effects
 				(font
@@ -19207,7 +19207,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 239.522 48.26 90)
 			(effects
 				(font
@@ -19243,7 +19243,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R31")
+					(reference "R316")
 					(unit 1)
 				)
 			)
@@ -19258,7 +19258,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "792f5c93-e0f3-4f3a-a2c4-cc0e3d3de2ef")
-		(property "Reference" "#PWR0114"
+		(property "Reference" "#PWR0364"
 			(at 248.92 158.75 0)
 			(effects
 				(font
@@ -19308,7 +19308,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0114")
+					(reference "#PWR0364")
 					(unit 1)
 				)
 			)
@@ -19324,7 +19324,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "79adb824-a3c1-4545-bf18-bf73633b239a")
-		(property "Reference" "C14"
+		(property "Reference" "C306"
 			(at 86.36 265.4299 0)
 			(effects
 				(font
@@ -19342,7 +19342,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 83.5152 270.51 0)
 			(effects
 				(font
@@ -19378,7 +19378,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C14")
+					(reference "C306")
 					(unit 1)
 				)
 			)
@@ -19393,7 +19393,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7a7abfbb-44c8-4c1b-8278-c5fa7a2f2518")
-		(property "Reference" "Q8"
+		(property "Reference" "Q304"
 			(at 68.072 41.402 0)
 			(effects
 				(font
@@ -19453,7 +19453,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q8")
+					(reference "Q304")
 					(unit 1)
 				)
 			)
@@ -19469,7 +19469,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7b405274-75e3-4531-a57f-adfe3ee28c06")
-		(property "Reference" "R28"
+		(property "Reference" "R313"
 			(at 208.28 50.038 0)
 			(effects
 				(font
@@ -19487,7 +19487,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 201.422 48.26 90)
 			(effects
 				(font
@@ -19523,7 +19523,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R28")
+					(reference "R313")
 					(unit 1)
 				)
 			)
@@ -19538,7 +19538,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7c3a2599-3c41-47af-ad67-882db5349f3e")
-		(property "Reference" "Q74"
+		(property "Reference" "Q370"
 			(at 228.092 195.072 0)
 			(effects
 				(font
@@ -19598,7 +19598,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q74")
+					(reference "Q370")
 					(unit 1)
 				)
 			)
@@ -19614,7 +19614,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7cbb80e8-6752-446b-80da-e450eccfd79e")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR0320"
 			(at 184.15 55.88 0)
 			(effects
 				(font
@@ -19664,7 +19664,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR070")
+					(reference "#PWR0320")
 					(unit 1)
 				)
 			)
@@ -19679,7 +19679,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7d06870a-ddb0-4045-ac2a-c9f21044fce1")
-		(property "Reference" "#PWR0133"
+		(property "Reference" "#PWR0383"
 			(at 128.27 209.55 0)
 			(effects
 				(font
@@ -19729,7 +19729,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0133")
+					(reference "#PWR0383")
 					(unit 1)
 				)
 			)
@@ -19744,7 +19744,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7e89639e-fad9-4192-8f15-97d49a1c21d7")
-		(property "Reference" "Q30"
+		(property "Reference" "Q326"
 			(at 120.142 92.202 0)
 			(effects
 				(font
@@ -19804,7 +19804,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q30")
+					(reference "Q326")
 					(unit 1)
 				)
 			)
@@ -19820,7 +19820,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "805f0a64-55ab-41c2-9c16-94f9bb2352e1")
-		(property "Reference" "U20"
+		(property "Reference" "U306"
 			(at 186.3441 153.67 0)
 			(effects
 				(font
@@ -19838,7 +19838,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 184.15 171.45 0)
 			(effects
 				(font
@@ -19916,7 +19916,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U20")
+					(reference "U306")
 					(unit 1)
 				)
 			)
@@ -19932,7 +19932,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8141b855-82ac-437d-8e34-1b2d298d94cd")
-		(property "Reference" "U18"
+		(property "Reference" "U304"
 			(at 186.3441 101.6 0)
 			(effects
 				(font
@@ -19950,7 +19950,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 184.15 119.38 0)
 			(effects
 				(font
@@ -20028,7 +20028,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U18")
+					(reference "U304")
 					(unit 1)
 				)
 			)
@@ -20043,7 +20043,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "82523fbc-1ea2-42e3-a828-a3bc46540c17")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR0321"
 			(at 358.14 60.96 0)
 			(effects
 				(font
@@ -20093,7 +20093,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR071")
+					(reference "#PWR0321")
 					(unit 1)
 				)
 			)
@@ -20109,7 +20109,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "82a0af17-25a5-4ffc-a29b-157ae2b1db91")
-		(property "Reference" "R93"
+		(property "Reference" "R378"
 			(at 151.13 203.708 0)
 			(effects
 				(font
@@ -20127,7 +20127,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 144.272 201.93 90)
 			(effects
 				(font
@@ -20163,7 +20163,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R93")
+					(reference "R378")
 					(unit 1)
 				)
 			)
@@ -20179,7 +20179,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82ba1ddf-dda1-4232-89f3-e2057721ea79")
-		(property "Reference" "#PWR0124"
+		(property "Reference" "#PWR0374"
 			(at 172.72 185.42 0)
 			(effects
 				(font
@@ -20229,7 +20229,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0124")
+					(reference "#PWR0374")
 					(unit 1)
 				)
 			)
@@ -20244,7 +20244,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "84effa19-8e00-4005-8273-380b4ec43cd1")
-		(property "Reference" "Q60"
+		(property "Reference" "Q356"
 			(at 292.862 144.272 0)
 			(effects
 				(font
@@ -20304,7 +20304,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q60")
+					(reference "Q356")
 					(unit 1)
 				)
 			)
@@ -20319,7 +20319,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "85242607-1215-4162-b075-6fc0fcdfc0ab")
-		(property "Reference" "#PWR084"
+		(property "Reference" "#PWR0334"
 			(at 140.97 106.68 0)
 			(effects
 				(font
@@ -20369,7 +20369,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR084")
+					(reference "#PWR0334")
 					(unit 1)
 				)
 			)
@@ -20385,7 +20385,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "86f84796-818a-4edb-8731-35ae6f541ecd")
-		(property "Reference" "R63"
+		(property "Reference" "R348"
 			(at 362.966 140.97 0)
 			(effects
 				(font
@@ -20403,7 +20403,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 356.362 142.24 90)
 			(effects
 				(font
@@ -20439,7 +20439,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R63")
+					(reference "R348")
 					(unit 1)
 				)
 			)
@@ -20455,7 +20455,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "87094db6-bb9e-434b-a445-6312b7a294fc")
-		(property "Reference" "R103"
+		(property "Reference" "R388"
 			(at 362.966 204.47 0)
 			(effects
 				(font
@@ -20473,7 +20473,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 356.362 205.74 90)
 			(effects
 				(font
@@ -20509,7 +20509,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R103")
+					(reference "R388")
 					(unit 1)
 				)
 			)
@@ -20525,7 +20525,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "89eceb06-17e7-4700-918d-b43a5efb4fa5")
-		(property "Reference" "R90"
+		(property "Reference" "R375"
 			(at 113.03 203.708 0)
 			(effects
 				(font
@@ -20543,7 +20543,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 106.172 201.93 90)
 			(effects
 				(font
@@ -20579,7 +20579,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R90")
+					(reference "R375")
 					(unit 1)
 				)
 			)
@@ -20595,7 +20595,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8a07c214-f083-4bf2-8a0a-8ebaa1b44e2c")
-		(property "Reference" "R100"
+		(property "Reference" "R385"
 			(at 285.75 203.708 0)
 			(effects
 				(font
@@ -20613,7 +20613,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 278.892 201.93 90)
 			(effects
 				(font
@@ -20649,7 +20649,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R100")
+					(reference "R385")
 					(unit 1)
 				)
 			)
@@ -20664,7 +20664,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8b16015e-d49c-4897-8dad-1dcca29cdf2d")
-		(property "Reference" "#PWR0118"
+		(property "Reference" "#PWR0368"
 			(at 300.99 158.75 0)
 			(effects
 				(font
@@ -20714,7 +20714,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0118")
+					(reference "#PWR0368")
 					(unit 1)
 				)
 			)
@@ -20730,7 +20730,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8bbe7a09-8a6e-438c-b3fe-980ae8fef7ab")
-		(property "Reference" "R22"
+		(property "Reference" "R307"
 			(at 86.36 50.038 0)
 			(effects
 				(font
@@ -20748,7 +20748,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 79.502 48.26 90)
 			(effects
 				(font
@@ -20784,7 +20784,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R22")
+					(reference "R307")
 					(unit 1)
 				)
 			)
@@ -20799,7 +20799,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8e419f7f-279f-4ab0-937e-f899cd06bc2e")
-		(property "Reference" "Q49"
+		(property "Reference" "Q345"
 			(at 107.442 144.272 0)
 			(effects
 				(font
@@ -20859,7 +20859,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q49")
+					(reference "Q345")
 					(unit 1)
 				)
 			)
@@ -20875,7 +20875,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f67f664-eb33-4625-842e-f5f536c0c163")
-		(property "Reference" "J21"
+		(property "Reference" "J308"
 			(at 287.02 255.2699 0)
 			(effects
 				(font
@@ -20893,7 +20893,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 284.48 255.27 0)
 			(effects
 				(font
@@ -20935,7 +20935,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J21")
+					(reference "J308")
 					(unit 1)
 				)
 			)
@@ -20950,7 +20950,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f81f0ee-5035-47e9-96ac-96853f5066b5")
-		(property "Reference" "Q84"
+		(property "Reference" "Q380"
 			(at 212.852 263.652 0)
 			(effects
 				(font
@@ -21010,7 +21010,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q84")
+					(reference "Q380")
 					(unit 1)
 				)
 			)
@@ -21025,7 +21025,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "90c99f09-cf15-4586-81d6-a0ae3caae659")
-		(property "Reference" "#PWR0119"
+		(property "Reference" "#PWR0369"
 			(at 358.14 156.21 0)
 			(effects
 				(font
@@ -21075,7 +21075,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0119")
+					(reference "#PWR0369")
 					(unit 1)
 				)
 			)
@@ -21091,7 +21091,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "91069b73-c686-4b86-80cf-fbcf66db71f8")
-		(property "Reference" "U17"
+		(property "Reference" "U303"
 			(at 39.0241 101.6 0)
 			(effects
 				(font
@@ -21109,7 +21109,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 36.83 119.38 0)
 			(effects
 				(font
@@ -21187,7 +21187,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U17")
+					(reference "U303")
 					(unit 1)
 				)
 			)
@@ -21202,7 +21202,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "91b203e6-2fdc-4271-b453-7724137f703e")
-		(property "Reference" "#PWR086"
+		(property "Reference" "#PWR0336"
 			(at 210.82 106.68 0)
 			(effects
 				(font
@@ -21252,7 +21252,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR086")
+					(reference "#PWR0336")
 					(unit 1)
 				)
 			)
@@ -21267,7 +21267,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "94b8d410-4f2e-4796-9889-2e91f3a33f67")
-		(property "Reference" "Q65"
+		(property "Reference" "Q361"
 			(at 68.072 195.072 0)
 			(effects
 				(font
@@ -21327,7 +21327,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q65")
+					(reference "Q361")
 					(unit 1)
 				)
 			)
@@ -21343,7 +21343,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "95a11483-7ba5-4e05-bd42-644ce8900762")
-		(property "Reference" "R34"
+		(property "Reference" "R319"
 			(at 285.75 50.038 0)
 			(effects
 				(font
@@ -21361,7 +21361,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 278.892 48.26 90)
 			(effects
 				(font
@@ -21397,7 +21397,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R34")
+					(reference "R319")
 					(unit 1)
 				)
 			)
@@ -21413,7 +21413,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "95ee4308-9bcd-4f81-9f09-89765e589bce")
-		(property "Reference" "C15"
+		(property "Reference" "C307"
 			(at 97.79 265.4299 0)
 			(effects
 				(font
@@ -21431,7 +21431,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 94.9452 270.51 0)
 			(effects
 				(font
@@ -21467,7 +21467,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C15")
+					(reference "C307")
 					(unit 1)
 				)
 			)
@@ -21482,7 +21482,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "973d43fa-0762-4e1b-95a6-52cd42d1dd82")
-		(property "Reference" "Q68"
+		(property "Reference" "Q364"
 			(at 107.442 195.072 0)
 			(effects
 				(font
@@ -21542,7 +21542,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q68")
+					(reference "Q364")
 					(unit 1)
 				)
 			)
@@ -21557,7 +21557,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "99977823-8c56-4d59-8dba-2cc3d418f7c8")
-		(property "Reference" "Q14"
+		(property "Reference" "Q310"
 			(at 145.542 41.402 0)
 			(effects
 				(font
@@ -21617,7 +21617,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q14")
+					(reference "Q310")
 					(unit 1)
 				)
 			)
@@ -21632,7 +21632,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "99f49185-1a9a-43e2-abab-86bfc44ed59e")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR0301"
 			(at 358.14 29.21 0)
 			(effects
 				(font
@@ -21682,7 +21682,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR051")
+					(reference "#PWR0301")
 					(unit 1)
 				)
 			)
@@ -21698,7 +21698,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9a188ccf-1628-4a93-9ace-45ec8aa577d9")
-		(property "Reference" "R73"
+		(property "Reference" "R358"
 			(at 220.98 152.908 0)
 			(effects
 				(font
@@ -21716,7 +21716,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 214.122 151.13 90)
 			(effects
 				(font
@@ -21752,7 +21752,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R73")
+					(reference "R358")
 					(unit 1)
 				)
 			)
@@ -21768,7 +21768,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9c6cd7dd-8e57-43f6-ac33-8edd38d805d4")
-		(property "Reference" "R37"
+		(property "Reference" "R322"
 			(at 344.678 66.294 90)
 			(effects
 				(font
@@ -21786,7 +21786,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 342.9 70.358 90)
 			(effects
 				(font
@@ -21822,7 +21822,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R37")
+					(reference "R322")
 					(unit 1)
 				)
 			)
@@ -21838,7 +21838,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9c83416c-3bdd-492a-b662-e6596e89e2a7")
-		(property "Reference" "R20"
+		(property "Reference" "R305"
 			(at 60.96 50.038 0)
 			(effects
 				(font
@@ -21856,7 +21856,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 54.102 48.26 90)
 			(effects
 				(font
@@ -21892,7 +21892,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R20")
+					(reference "R305")
 					(unit 1)
 				)
 			)
@@ -21907,7 +21907,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9d651791-c847-4759-b3ff-0fa5bfef11e7")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR0305"
 			(at 88.9 55.88 0)
 			(effects
 				(font
@@ -21957,7 +21957,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR055")
+					(reference "#PWR0305")
 					(unit 1)
 				)
 			)
@@ -21972,7 +21972,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e1f99f1-0788-4ff0-bf32-a3828cebb3b6")
-		(property "Reference" "#PWR0139"
+		(property "Reference" "#PWR0389"
 			(at 248.92 209.55 0)
 			(effects
 				(font
@@ -22022,7 +22022,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0139")
+					(reference "#PWR0389")
 					(unit 1)
 				)
 			)
@@ -22038,7 +22038,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e278576-7d5d-4e82-851a-f21042f4c1ab")
-		(property "Reference" "R102"
+		(property "Reference" "R387"
 			(at 335.28 207.518 0)
 			(effects
 				(font
@@ -22056,7 +22056,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 328.422 205.74 90)
 			(effects
 				(font
@@ -22092,7 +22092,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R102")
+					(reference "R387")
 					(unit 1)
 				)
 			)
@@ -22107,7 +22107,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9f6ec2f9-e56f-434e-a228-b76101e75d73")
-		(property "Reference" "#PWR079"
+		(property "Reference" "#PWR0329"
 			(at 76.2 106.68 0)
 			(effects
 				(font
@@ -22157,7 +22157,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR079")
+					(reference "#PWR0329")
 					(unit 1)
 				)
 			)
@@ -22172,7 +22172,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9fb73e92-38e8-4d6e-a8e4-8c54f692024b")
-		(property "Reference" "#PWR0134"
+		(property "Reference" "#PWR0384"
 			(at 140.97 209.55 0)
 			(effects
 				(font
@@ -22222,7 +22222,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0134")
+					(reference "#PWR0384")
 					(unit 1)
 				)
 			)
@@ -22237,7 +22237,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a00e921b-2611-48ff-a5bd-6f8a17d5efed")
-		(property "Reference" "#PWR0106"
+		(property "Reference" "#PWR0356"
 			(at 101.6 158.75 0)
 			(effects
 				(font
@@ -22287,7 +22287,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0106")
+					(reference "#PWR0356")
 					(unit 1)
 				)
 			)
@@ -22303,7 +22303,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a0655636-4897-41b5-9f2d-0b0b18082477")
-		(property "Reference" "R26"
+		(property "Reference" "R311"
 			(at 138.43 50.038 0)
 			(effects
 				(font
@@ -22321,7 +22321,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 131.572 48.26 90)
 			(effects
 				(font
@@ -22357,7 +22357,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R26")
+					(reference "R311")
 					(unit 1)
 				)
 			)
@@ -22373,7 +22373,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a07cf21c-a883-43d5-a6d6-25c5d8064102")
-		(property "Reference" "R27"
+		(property "Reference" "R312"
 			(at 151.13 50.038 0)
 			(effects
 				(font
@@ -22391,7 +22391,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 144.272 48.26 90)
 			(effects
 				(font
@@ -22427,7 +22427,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R27")
+					(reference "R312")
 					(unit 1)
 				)
 			)
@@ -22443,7 +22443,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a0825007-8c3a-4878-85cf-d83dd26769c0")
-		(property "Reference" "R64"
+		(property "Reference" "R349"
 			(at 60.96 152.908 0)
 			(effects
 				(font
@@ -22461,7 +22461,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 54.102 151.13 90)
 			(effects
 				(font
@@ -22497,7 +22497,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R64")
+					(reference "R349")
 					(unit 1)
 				)
 			)
@@ -22513,7 +22513,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a0a3e2bf-0f98-4825-808b-dfb2e4128e31")
-		(property "Reference" "C11"
+		(property "Reference" "C303"
 			(at 52.07 265.4299 0)
 			(effects
 				(font
@@ -22531,7 +22531,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 49.2252 270.51 0)
 			(effects
 				(font
@@ -22567,7 +22567,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "C11")
+					(reference "C303")
 					(unit 1)
 				)
 			)
@@ -22582,7 +22582,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a0a8a150-d36e-48e9-89ab-9f50ea23eb41")
-		(property "Reference" "Q45"
+		(property "Reference" "Q341"
 			(at 55.372 144.272 0)
 			(effects
 				(font
@@ -22642,7 +22642,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q45")
+					(reference "Q341")
 					(unit 1)
 				)
 			)
@@ -22657,7 +22657,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a0aeb3e4-7522-4d92-b72b-0b80d7ba5ad8")
-		(property "Reference" "Q40"
+		(property "Reference" "Q336"
 			(at 292.862 92.202 0)
 			(effects
 				(font
@@ -22717,7 +22717,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q40")
+					(reference "Q336")
 					(unit 1)
 				)
 			)
@@ -22732,7 +22732,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a1156010-dfd2-45b6-b20d-8b4358ccaebf")
-		(property "Reference" "Q38"
+		(property "Reference" "Q334"
 			(at 267.462 92.202 0)
 			(effects
 				(font
@@ -22792,7 +22792,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q38")
+					(reference "Q334")
 					(unit 1)
 				)
 			)
@@ -22808,7 +22808,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a182da5d-4e00-4d54-ab30-13f598429c63")
-		(property "Reference" "R52"
+		(property "Reference" "R337"
 			(at 246.38 100.838 0)
 			(effects
 				(font
@@ -22826,7 +22826,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 239.522 99.06 90)
 			(effects
 				(font
@@ -22862,7 +22862,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R52")
+					(reference "R337")
 					(unit 1)
 				)
 			)
@@ -22877,7 +22877,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a21bd45f-9dc5-4ade-9c5c-13535ab0a105")
-		(property "Reference" "#PWR0115"
+		(property "Reference" "#PWR0365"
 			(at 262.89 158.75 0)
 			(effects
 				(font
@@ -22927,7 +22927,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0115")
+					(reference "#PWR0365")
 					(unit 1)
 				)
 			)
@@ -22943,7 +22943,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a24a6f15-2427-4fa9-aeac-f4c2383a8c1d")
-		(property "Reference" "R53"
+		(property "Reference" "R338"
 			(at 260.35 100.838 0)
 			(effects
 				(font
@@ -22961,7 +22961,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 253.492 99.06 90)
 			(effects
 				(font
@@ -22997,7 +22997,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R53")
+					(reference "R338")
 					(unit 1)
 				)
 			)
@@ -23012,7 +23012,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a5824fdc-d681-460f-9188-f6b2e6a8ccbd")
-		(property "Reference" "Q73"
+		(property "Reference" "Q369"
 			(at 215.392 195.072 0)
 			(effects
 				(font
@@ -23072,7 +23072,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q73")
+					(reference "Q369")
 					(unit 1)
 				)
 			)
@@ -23087,7 +23087,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a6142734-8245-44cb-90c6-5ab6d92b75cc")
-		(property "Reference" "#PWR0122"
+		(property "Reference" "#PWR0372"
 			(at 337.82 181.61 0)
 			(effects
 				(font
@@ -23137,7 +23137,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0122")
+					(reference "#PWR0372")
 					(unit 1)
 				)
 			)
@@ -23152,7 +23152,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a7e9535b-f843-4485-8a58-aafac26f700e")
-		(property "Reference" "#PWR078"
+		(property "Reference" "#PWR0328"
 			(at 63.5 106.68 0)
 			(effects
 				(font
@@ -23202,7 +23202,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR078")
+					(reference "#PWR0328")
 					(unit 1)
 				)
 			)
@@ -23217,7 +23217,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a80cbd7e-e0b0-4158-8745-37407873af7c")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR0315"
 			(at 262.89 55.88 0)
 			(effects
 				(font
@@ -23267,7 +23267,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR065")
+					(reference "#PWR0315")
 					(unit 1)
 				)
 			)
@@ -23283,7 +23283,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a8be7ce7-edb4-4d9d-a73a-4caa0e33f823")
-		(property "Reference" "R56"
+		(property "Reference" "R341"
 			(at 298.45 100.838 0)
 			(effects
 				(font
@@ -23301,7 +23301,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 291.592 99.06 90)
 			(effects
 				(font
@@ -23337,7 +23337,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R56")
+					(reference "R341")
 					(unit 1)
 				)
 			)
@@ -23352,7 +23352,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a8c93c92-1480-4898-af05-c3ee6a35aa6e")
-		(property "Reference" "#PWR0137"
+		(property "Reference" "#PWR0387"
 			(at 223.52 209.55 0)
 			(effects
 				(font
@@ -23402,7 +23402,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0137")
+					(reference "#PWR0387")
 					(unit 1)
 				)
 			)
@@ -23418,7 +23418,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a8dd8373-85a2-4d2f-9608-bf9bad8a56f1")
-		(property "Reference" "R54"
+		(property "Reference" "R339"
 			(at 273.05 100.838 0)
 			(effects
 				(font
@@ -23436,7 +23436,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 266.192 99.06 90)
 			(effects
 				(font
@@ -23472,7 +23472,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R54")
+					(reference "R339")
 					(unit 1)
 				)
 			)
@@ -23487,7 +23487,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a98b6c67-3ea8-4941-ad6a-9c33d15432ed")
-		(property "Reference" "Q9"
+		(property "Reference" "Q305"
 			(at 80.772 41.402 0)
 			(effects
 				(font
@@ -23547,7 +23547,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q9")
+					(reference "Q305")
 					(unit 1)
 				)
 			)
@@ -23563,7 +23563,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a9a4d681-9bd6-418d-97ab-82b0b297eeb6")
-		(property "Reference" "R85"
+		(property "Reference" "R370"
 			(at 344.678 193.294 90)
 			(effects
 				(font
@@ -23581,7 +23581,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 342.9 197.358 90)
 			(effects
 				(font
@@ -23617,7 +23617,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R85")
+					(reference "R370")
 					(unit 1)
 				)
 			)
@@ -23632,7 +23632,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ab089cae-1a07-46dd-813e-dc2b9cb2bb84")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR0318"
 			(at 300.99 55.88 0)
 			(effects
 				(font
@@ -23682,7 +23682,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR068")
+					(reference "#PWR0318")
 					(unit 1)
 				)
 			)
@@ -23697,7 +23697,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ab83ff6c-f795-4ca2-899d-2bd6ebf357ec")
-		(property "Reference" "Q28"
+		(property "Reference" "Q324"
 			(at 93.472 92.202 0)
 			(effects
 				(font
@@ -23757,7 +23757,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q28")
+					(reference "Q324")
 					(unit 1)
 				)
 			)
@@ -23772,7 +23772,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ad78609a-a89c-4f54-a76b-85afe0a85194")
-		(property "Reference" "Q31"
+		(property "Reference" "Q327"
 			(at 132.842 92.202 0)
 			(effects
 				(font
@@ -23832,7 +23832,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q31")
+					(reference "Q327")
 					(unit 1)
 				)
 			)
@@ -23847,7 +23847,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ad886c31-f21a-4148-8fc5-7ff936ee567d")
-		(property "Reference" "#PWR0132"
+		(property "Reference" "#PWR0382"
 			(at 115.57 209.55 0)
 			(effects
 				(font
@@ -23897,7 +23897,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0132")
+					(reference "#PWR0382")
 					(unit 1)
 				)
 			)
@@ -23913,7 +23913,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ada89121-baf0-49ea-9ed9-ce8428d0045c")
-		(property "Reference" "R66"
+		(property "Reference" "R351"
 			(at 86.36 152.908 0)
 			(effects
 				(font
@@ -23931,7 +23931,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 79.502 151.13 90)
 			(effects
 				(font
@@ -23967,7 +23967,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R66")
+					(reference "R351")
 					(unit 1)
 				)
 			)
@@ -23983,7 +23983,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "adda0326-880d-4582-af69-43531e7e78e3")
-		(property "Reference" "R68"
+		(property "Reference" "R353"
 			(at 113.03 152.908 0)
 			(effects
 				(font
@@ -24001,7 +24001,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 106.172 151.13 90)
 			(effects
 				(font
@@ -24037,7 +24037,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R68")
+					(reference "R353")
 					(unit 1)
 				)
 			)
@@ -24052,7 +24052,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "afef2716-af06-41c0-9b63-ebe246fe6242")
-		(property "Reference" "#PWR064"
+		(property "Reference" "#PWR0314"
 			(at 248.92 55.88 0)
 			(effects
 				(font
@@ -24102,7 +24102,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR064")
+					(reference "#PWR0314")
 					(unit 1)
 				)
 			)
@@ -24117,7 +24117,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b0b23c7f-25e5-47fb-b903-e69573df500b")
-		(property "Reference" "Q19"
+		(property "Reference" "Q315"
 			(at 254.762 41.402 0)
 			(effects
 				(font
@@ -24177,7 +24177,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q19")
+					(reference "Q315")
 					(unit 1)
 				)
 			)
@@ -24193,7 +24193,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b1010de7-73dd-4483-ad68-8b527ff6105e")
-		(property "Reference" "R61"
+		(property "Reference" "R346"
 			(at 344.678 129.794 90)
 			(effects
 				(font
@@ -24211,7 +24211,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 342.9 133.858 90)
 			(effects
 				(font
@@ -24247,7 +24247,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R61")
+					(reference "R346")
 					(unit 1)
 				)
 			)
@@ -24263,7 +24263,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b16b37b8-692b-4c94-bd56-c044e5bff9d5")
-		(property "Reference" "R49"
+		(property "Reference" "R334"
 			(at 208.28 100.838 0)
 			(effects
 				(font
@@ -24281,7 +24281,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 201.422 99.06 90)
 			(effects
 				(font
@@ -24317,7 +24317,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R49")
+					(reference "R334")
 					(unit 1)
 				)
 			)
@@ -24332,7 +24332,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b17ac657-64cd-4801-89e2-3352a8f7b38b")
-		(property "Reference" "#PWR089"
+		(property "Reference" "#PWR0339"
 			(at 248.92 106.68 0)
 			(effects
 				(font
@@ -24382,7 +24382,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR089")
+					(reference "#PWR0339")
 					(unit 1)
 				)
 			)
@@ -24398,7 +24398,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2509bc2-837f-4ef7-99cb-b9a112f5c584")
-		(property "Reference" "R71"
+		(property "Reference" "R356"
 			(at 151.13 152.908 0)
 			(effects
 				(font
@@ -24416,7 +24416,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 144.272 151.13 90)
 			(effects
 				(font
@@ -24452,7 +24452,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R71")
+					(reference "R356")
 					(unit 1)
 				)
 			)
@@ -24467,7 +24467,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b3575caa-8247-43dd-9ae3-8e1af6dcb74e")
-		(property "Reference" "Q64"
+		(property "Reference" "Q360"
 			(at 55.372 195.072 0)
 			(effects
 				(font
@@ -24527,7 +24527,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q64")
+					(reference "Q360")
 					(unit 1)
 				)
 			)
@@ -24542,7 +24542,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b3d30ce8-9770-4b56-8d42-64c2e0e48304")
-		(property "Reference" "Q69"
+		(property "Reference" "Q365"
 			(at 120.142 195.072 0)
 			(effects
 				(font
@@ -24602,7 +24602,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q69")
+					(reference "Q365")
 					(unit 1)
 				)
 			)
@@ -24618,7 +24618,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b3f755cc-dd72-4605-9f45-b47e885aae37")
-		(property "Reference" "U22"
+		(property "Reference" "U308"
 			(at 186.3441 204.47 0)
 			(effects
 				(font
@@ -24636,7 +24636,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 184.15 222.25 0)
 			(effects
 				(font
@@ -24714,7 +24714,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U22")
+					(reference "U308")
 					(unit 1)
 				)
 			)
@@ -24730,7 +24730,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4cd936a-5096-4ae0-bea9-c98a0baf3b82")
-		(property "Reference" "R16"
+		(property "Reference" "R301"
 			(at 353.06 33.528 0)
 			(effects
 				(font
@@ -24748,7 +24748,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 346.202 31.75 90)
 			(effects
 				(font
@@ -24784,7 +24784,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R16")
+					(reference "R301")
 					(unit 1)
 				)
 			)
@@ -24800,7 +24800,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4f00fb3-86ed-4cf6-881e-2b308bbb2cf8")
-		(property "Reference" "R89"
+		(property "Reference" "R374"
 			(at 99.06 203.708 0)
 			(effects
 				(font
@@ -24818,7 +24818,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 92.202 201.93 90)
 			(effects
 				(font
@@ -24854,7 +24854,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R89")
+					(reference "R374")
 					(unit 1)
 				)
 			)
@@ -24871,7 +24871,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b52f7439-a615-480b-8861-1e2fbfe0a2b9")
-		(property "Reference" "Q81"
+		(property "Reference" "Q377"
 			(at 353.06 232.4099 0)
 			(effects
 				(font
@@ -24931,7 +24931,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q81")
+					(reference "Q377")
 					(unit 1)
 				)
 			)
@@ -24946,7 +24946,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b625433a-e148-40af-8dab-fad935c7d3d5")
-		(property "Reference" "Q77"
+		(property "Reference" "Q373"
 			(at 267.462 195.072 0)
 			(effects
 				(font
@@ -25006,7 +25006,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q77")
+					(reference "Q373")
 					(unit 1)
 				)
 			)
@@ -25023,7 +25023,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b69ae060-647d-4954-836d-fcf9cefa17b8")
-		(property "Reference" "Q83"
+		(property "Reference" "Q379"
 			(at 243.84 259.0799 0)
 			(effects
 				(font
@@ -25083,7 +25083,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q83")
+					(reference "Q379")
 					(unit 1)
 				)
 			)
@@ -25098,7 +25098,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b7b182e0-d4ea-4934-801e-0835941d9c32")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR0304"
 			(at 76.2 55.88 0)
 			(effects
 				(font
@@ -25148,7 +25148,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR054")
+					(reference "#PWR0304")
 					(unit 1)
 				)
 			)
@@ -25164,7 +25164,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b8bb2b9d-1084-4d1b-b0b0-bb887b06cdba")
-		(property "Reference" "R99"
+		(property "Reference" "R384"
 			(at 273.05 203.708 0)
 			(effects
 				(font
@@ -25182,7 +25182,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 266.192 201.93 90)
 			(effects
 				(font
@@ -25218,7 +25218,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R99")
+					(reference "R384")
 					(unit 1)
 				)
 			)
@@ -25234,7 +25234,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b98bfa98-61c4-45fb-8175-b9a6fe2301fa")
-		(property "Reference" "R51"
+		(property "Reference" "R336"
 			(at 233.68 100.838 0)
 			(effects
 				(font
@@ -25252,7 +25252,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 226.822 99.06 90)
 			(effects
 				(font
@@ -25288,7 +25288,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R51")
+					(reference "R336")
 					(unit 1)
 				)
 			)
@@ -25304,7 +25304,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ba2ef6d5-d37b-4133-87cf-772abd75ba75")
-		(property "Reference" "R19"
+		(property "Reference" "R304"
 			(at 362.966 45.72 0)
 			(effects
 				(font
@@ -25322,7 +25322,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 356.362 46.99 90)
 			(effects
 				(font
@@ -25358,7 +25358,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R19")
+					(reference "R304")
 					(unit 1)
 				)
 			)
@@ -25374,7 +25374,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bb1f37d8-cddc-4548-9c73-7ba587c97c9c")
-		(property "Reference" "R111"
+		(property "Reference" "R396"
 			(at 273.812 254.254 90)
 			(effects
 				(font
@@ -25392,7 +25392,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 266.7 257.048 90)
 			(effects
 				(font
@@ -25428,7 +25428,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R111")
+					(reference "R396")
 					(unit 1)
 				)
 			)
@@ -25444,7 +25444,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bc63c4f6-5ca9-47e7-8a35-550abc0c6dc0")
-		(property "Reference" "R58"
+		(property "Reference" "R343"
 			(at 335.28 112.268 0)
 			(effects
 				(font
@@ -25462,7 +25462,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 328.422 110.49 90)
 			(effects
 				(font
@@ -25498,7 +25498,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R58")
+					(reference "R343")
 					(unit 1)
 				)
 			)
@@ -25513,7 +25513,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bc8b4c44-b42e-4d7a-bf78-79670e6a3648")
-		(property "Reference" "Q10"
+		(property "Reference" "Q306"
 			(at 93.472 41.402 0)
 			(effects
 				(font
@@ -25573,7 +25573,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q10")
+					(reference "Q306")
 					(unit 1)
 				)
 			)
@@ -25588,7 +25588,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bd120fb4-f23f-4aa0-a5c7-e5d0d637e6c9")
-		(property "Reference" "Q72"
+		(property "Reference" "Q368"
 			(at 202.692 195.072 0)
 			(effects
 				(font
@@ -25648,7 +25648,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q72")
+					(reference "Q368")
 					(unit 1)
 				)
 			)
@@ -25663,7 +25663,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bde2670c-6f55-4936-b98f-7af94f47045a")
-		(property "Reference" "Q62"
+		(property "Reference" "Q358"
 			(at 329.692 167.132 0)
 			(effects
 				(font
@@ -25723,7 +25723,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q62")
+					(reference "Q358")
 					(unit 1)
 				)
 			)
@@ -25739,7 +25739,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "be5003ab-a429-46d3-8cd9-98b1439c8590")
-		(property "Reference" "R105"
+		(property "Reference" "R390"
 			(at 345.44 230.378 0)
 			(effects
 				(font
@@ -25757,7 +25757,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 338.582 228.6 90)
 			(effects
 				(font
@@ -25793,7 +25793,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R105")
+					(reference "R390")
 					(unit 1)
 				)
 			)
@@ -25809,7 +25809,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "be59a947-024d-4f90-a639-69ca2f7730a2")
-		(property "Reference" "#PWR094"
+		(property "Reference" "#PWR0344"
 			(at 36.83 106.68 0)
 			(effects
 				(font
@@ -25859,7 +25859,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR094")
+					(reference "#PWR0344")
 					(unit 1)
 				)
 			)
@@ -25874,7 +25874,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bedc3e22-eae9-4291-8318-b8c20caf3cc1")
-		(property "Reference" "#PWR0135"
+		(property "Reference" "#PWR0385"
 			(at 153.67 209.55 0)
 			(effects
 				(font
@@ -25924,7 +25924,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0135")
+					(reference "#PWR0385")
 					(unit 1)
 				)
 			)
@@ -25940,7 +25940,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c1b744a7-7440-404a-9d8e-4d28fc7d3ae8")
-		(property "Reference" "R59"
+		(property "Reference" "R344"
 			(at 362.966 109.22 0)
 			(effects
 				(font
@@ -25958,7 +25958,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 356.362 110.49 90)
 			(effects
 				(font
@@ -25994,7 +25994,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R59")
+					(reference "R344")
 					(unit 1)
 				)
 			)
@@ -26009,7 +26009,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c214d1d0-fecf-4c25-bdf3-f8b856f49b5c")
-		(property "Reference" "Q51"
+		(property "Reference" "Q347"
 			(at 132.842 144.272 0)
 			(effects
 				(font
@@ -26069,7 +26069,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q51")
+					(reference "Q347")
 					(unit 1)
 				)
 			)
@@ -26084,7 +26084,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c26751e9-2c9b-4061-b585-e23d17c8b94a")
-		(property "Reference" "Q27"
+		(property "Reference" "Q323"
 			(at 80.772 92.202 0)
 			(effects
 				(font
@@ -26144,7 +26144,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q27")
+					(reference "Q323")
 					(unit 1)
 				)
 			)
@@ -26160,7 +26160,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c2762eb9-87d6-4729-97ef-c3051cdbf5fd")
-		(property "Reference" "R29"
+		(property "Reference" "R314"
 			(at 220.98 50.038 0)
 			(effects
 				(font
@@ -26178,7 +26178,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 214.122 48.26 90)
 			(effects
 				(font
@@ -26214,7 +26214,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R29")
+					(reference "R314")
 					(unit 1)
 				)
 			)
@@ -26229,7 +26229,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c357b1ce-1d1c-4051-be51-b319079183f4")
-		(property "Reference" "Q53"
+		(property "Reference" "Q349"
 			(at 202.692 144.272 0)
 			(effects
 				(font
@@ -26289,7 +26289,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q53")
+					(reference "Q349")
 					(unit 1)
 				)
 			)
@@ -26305,7 +26305,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c4a74fc1-3aaf-40b5-bc7a-8741dcee0576")
-		(property "Reference" "R17"
+		(property "Reference" "R302"
 			(at 344.678 34.544 90)
 			(effects
 				(font
@@ -26323,7 +26323,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 342.9 38.608 90)
 			(effects
 				(font
@@ -26359,7 +26359,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R17")
+					(reference "R302")
 					(unit 1)
 				)
 			)
@@ -26374,7 +26374,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c5abf47f-0e3c-4a8d-8638-85ef24618207")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR0310"
 			(at 153.67 55.88 0)
 			(effects
 				(font
@@ -26424,7 +26424,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR060")
+					(reference "#PWR0310")
 					(unit 1)
 				)
 			)
@@ -26439,7 +26439,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c6b2af2c-659e-4ee1-8e60-bdb0d06f7195")
-		(property "Reference" "Q54"
+		(property "Reference" "Q350"
 			(at 215.392 144.272 0)
 			(effects
 				(font
@@ -26499,7 +26499,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q54")
+					(reference "Q350")
 					(unit 1)
 				)
 			)
@@ -26515,7 +26515,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c6d6d67f-dc3d-464e-83a8-7f19ba5fb729")
-		(property "Reference" "J14"
+		(property "Reference" "J301"
 			(at 396.24 36.8299 0)
 			(effects
 				(font
@@ -26533,7 +26533,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
 			(at 393.7 36.83 0)
 			(effects
 				(font
@@ -26599,7 +26599,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J14")
+					(reference "J301")
 					(unit 1)
 				)
 			)
@@ -26615,7 +26615,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c7350daa-074c-4096-b4cc-bfd75d6eece6")
-		(property "Reference" "#PWR098"
+		(property "Reference" "#PWR0348"
 			(at 25.4 133.35 0)
 			(effects
 				(font
@@ -26665,7 +26665,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR098")
+					(reference "#PWR0348")
 					(unit 1)
 				)
 			)
@@ -26681,7 +26681,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c7f536e5-213c-4dcc-ad4e-e4a40712f999")
-		(property "Reference" "R87"
+		(property "Reference" "R372"
 			(at 73.66 203.708 0)
 			(effects
 				(font
@@ -26699,7 +26699,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 66.802 201.93 90)
 			(effects
 				(font
@@ -26735,7 +26735,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R87")
+					(reference "R372")
 					(unit 1)
 				)
 			)
@@ -26750,7 +26750,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ca07ece5-9404-4875-8759-f904c9ed52fc")
-		(property "Reference" "#PWR0112"
+		(property "Reference" "#PWR0362"
 			(at 223.52 158.75 0)
 			(effects
 				(font
@@ -26800,7 +26800,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0112")
+					(reference "#PWR0362")
 					(unit 1)
 				)
 			)
@@ -26816,7 +26816,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ca412083-8ba7-4a87-adaa-1a21dce0e29f")
-		(property "Reference" "R97"
+		(property "Reference" "R382"
 			(at 246.38 203.708 0)
 			(effects
 				(font
@@ -26834,7 +26834,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 239.522 201.93 90)
 			(effects
 				(font
@@ -26870,7 +26870,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R97")
+					(reference "R382")
 					(unit 1)
 				)
 			)
@@ -26886,7 +26886,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cbe4944b-a9f3-4527-a2a4-a7cab600f94f")
-		(property "Reference" "U16"
+		(property "Reference" "U302"
 			(at 186.3441 50.8 0)
 			(effects
 				(font
@@ -26904,7 +26904,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 184.15 68.58 0)
 			(effects
 				(font
@@ -26982,7 +26982,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U16")
+					(reference "U302")
 					(unit 1)
 				)
 			)
@@ -26998,7 +26998,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd7d6bc9-99f8-4189-a87f-7fc8dd3df1d3")
-		(property "Reference" "R70"
+		(property "Reference" "R355"
 			(at 138.43 152.908 0)
 			(effects
 				(font
@@ -27016,7 +27016,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 131.572 151.13 90)
 			(effects
 				(font
@@ -27052,7 +27052,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R70")
+					(reference "R355")
 					(unit 1)
 				)
 			)
@@ -27068,7 +27068,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cdb886c7-dafb-48f7-9e40-984f23610d81")
-		(property "Reference" "R44"
+		(property "Reference" "R329"
 			(at 99.06 100.838 0)
 			(effects
 				(font
@@ -27086,7 +27086,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 92.202 99.06 90)
 			(effects
 				(font
@@ -27122,7 +27122,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R44")
+					(reference "R329")
 					(unit 1)
 				)
 			)
@@ -27137,7 +27137,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cf4ca18b-7030-450e-b8e1-4e8cdb8da817")
-		(property "Reference" "Q22"
+		(property "Reference" "Q318"
 			(at 292.862 41.402 0)
 			(effects
 				(font
@@ -27197,7 +27197,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q22")
+					(reference "Q318")
 					(unit 1)
 				)
 			)
@@ -27212,7 +27212,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cff1393e-847b-4f10-89f3-3b56d156ace5")
-		(property "Reference" "Q20"
+		(property "Reference" "Q316"
 			(at 267.462 41.402 0)
 			(effects
 				(font
@@ -27272,7 +27272,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q20")
+					(reference "Q316")
 					(unit 1)
 				)
 			)
@@ -27288,7 +27288,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d415ea63-e5c5-4502-95d6-4af0975c36a6")
-		(property "Reference" "#PWR0156"
+		(property "Reference" "#PWR0406"
 			(at 25.4 280.67 0)
 			(effects
 				(font
@@ -27338,7 +27338,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0156")
+					(reference "#PWR0406")
 					(unit 1)
 				)
 			)
@@ -27353,7 +27353,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d60f59df-8d2a-43ef-8398-65d1e5a25ba1")
-		(property "Reference" "#PWR0103"
+		(property "Reference" "#PWR0353"
 			(at 63.5 158.75 0)
 			(effects
 				(font
@@ -27403,7 +27403,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0103")
+					(reference "#PWR0353")
 					(unit 1)
 				)
 			)
@@ -27418,7 +27418,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d6568959-3dff-4327-a68d-31e8aa777c8d")
-		(property "Reference" "Q82"
+		(property "Reference" "Q378"
 			(at 322.072 236.982 0)
 			(effects
 				(font
@@ -27478,7 +27478,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q82")
+					(reference "Q378")
 					(unit 1)
 				)
 			)
@@ -27494,7 +27494,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d6d883ad-6a4d-4727-8944-950809a54d2b")
-		(property "Reference" "R78"
+		(property "Reference" "R363"
 			(at 285.75 152.908 0)
 			(effects
 				(font
@@ -27512,7 +27512,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 278.892 151.13 90)
 			(effects
 				(font
@@ -27548,7 +27548,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R78")
+					(reference "R363")
 					(unit 1)
 				)
 			)
@@ -27564,7 +27564,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d78afec1-63e9-4c7a-acf4-6c84fd8f2b58")
-		(property "Reference" "#PWR0120"
+		(property "Reference" "#PWR0370"
 			(at 36.83 158.75 0)
 			(effects
 				(font
@@ -27614,7 +27614,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0120")
+					(reference "#PWR0370")
 					(unit 1)
 				)
 			)
@@ -27631,7 +27631,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d822cd9a-a859-425c-b899-0a04fc64b42d")
-		(property "Reference" "Q23"
+		(property "Reference" "Q319"
 			(at 360.68 67.3099 0)
 			(effects
 				(font
@@ -27691,7 +27691,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q23")
+					(reference "Q319")
 					(unit 1)
 				)
 			)
@@ -27707,7 +27707,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d837eb00-b45b-450a-97b7-5dd6a972b682")
-		(property "Reference" "R24"
+		(property "Reference" "R309"
 			(at 113.03 50.038 0)
 			(effects
 				(font
@@ -27725,7 +27725,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 106.172 48.26 90)
 			(effects
 				(font
@@ -27761,7 +27761,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R24")
+					(reference "R309")
 					(unit 1)
 				)
 			)
@@ -27776,7 +27776,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "da2847a1-357d-4a6c-8f02-c00186660552")
-		(property "Reference" "#PWR0104"
+		(property "Reference" "#PWR0354"
 			(at 76.2 158.75 0)
 			(effects
 				(font
@@ -27826,7 +27826,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0104")
+					(reference "#PWR0354")
 					(unit 1)
 				)
 			)
@@ -27841,7 +27841,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "da71096d-3fad-4a5a-b48a-2714c93e7c0a")
-		(property "Reference" "#PWR0130"
+		(property "Reference" "#PWR0380"
 			(at 88.9 209.55 0)
 			(effects
 				(font
@@ -27891,7 +27891,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0130")
+					(reference "#PWR0380")
 					(unit 1)
 				)
 			)
@@ -27907,7 +27907,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dbb56139-27b8-4e37-911b-c697316ab416")
-		(property "Reference" "R60"
+		(property "Reference" "R345"
 			(at 353.06 128.778 0)
 			(effects
 				(font
@@ -27925,7 +27925,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 346.202 127 90)
 			(effects
 				(font
@@ -27961,7 +27961,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R60")
+					(reference "R345")
 					(unit 1)
 				)
 			)
@@ -27976,7 +27976,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dc14baa7-d0b0-4fab-bb84-6d1b1a423731")
-		(property "Reference" "Q7"
+		(property "Reference" "Q303"
 			(at 55.372 41.402 0)
 			(effects
 				(font
@@ -28036,7 +28036,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q7")
+					(reference "Q303")
 					(unit 1)
 				)
 			)
@@ -28052,7 +28052,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc3fe010-7b22-47da-9945-42de1dacf20d")
-		(property "Reference" "#PWR0126"
+		(property "Reference" "#PWR0376"
 			(at 36.83 196.85 0)
 			(effects
 				(font
@@ -28102,7 +28102,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0126")
+					(reference "#PWR0376")
 					(unit 1)
 				)
 			)
@@ -28118,7 +28118,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dd3f974b-ff65-4c23-9b2e-f31ddbb57b6e")
-		(property "Reference" "R91"
+		(property "Reference" "R376"
 			(at 125.73 203.708 0)
 			(effects
 				(font
@@ -28136,7 +28136,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 118.872 201.93 90)
 			(effects
 				(font
@@ -28172,7 +28172,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R91")
+					(reference "R376")
 					(unit 1)
 				)
 			)
@@ -28188,7 +28188,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ddf3c3cd-601d-4958-a0f6-9fffb46bb9c1")
-		(property "Reference" "R104"
+		(property "Reference" "R389"
 			(at 383.032 225.044 90)
 			(effects
 				(font
@@ -28206,7 +28206,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 375.92 227.838 90)
 			(effects
 				(font
@@ -28242,7 +28242,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R104")
+					(reference "R389")
 					(unit 1)
 				)
 			)
@@ -28257,7 +28257,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e0c30396-a9b6-4803-a228-9796f975d4d2")
-		(property "Reference" "#PWR0108"
+		(property "Reference" "#PWR0358"
 			(at 128.27 158.75 0)
 			(effects
 				(font
@@ -28307,7 +28307,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0108")
+					(reference "#PWR0358")
 					(unit 1)
 				)
 			)
@@ -28323,7 +28323,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e2df0753-5d92-4a23-b21f-b4abee1adc44")
-		(property "Reference" "R55"
+		(property "Reference" "R340"
 			(at 285.75 100.838 0)
 			(effects
 				(font
@@ -28341,7 +28341,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 278.892 99.06 90)
 			(effects
 				(font
@@ -28377,7 +28377,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R55")
+					(reference "R340")
 					(unit 1)
 				)
 			)
@@ -28393,7 +28393,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e39e74bf-b280-487b-aa31-3f64491c0621")
-		(property "Reference" "R72"
+		(property "Reference" "R357"
 			(at 208.28 152.908 0)
 			(effects
 				(font
@@ -28411,7 +28411,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 201.422 151.13 90)
 			(effects
 				(font
@@ -28447,7 +28447,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R72")
+					(reference "R357")
 					(unit 1)
 				)
 			)
@@ -28463,7 +28463,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e3f65e10-65f1-44a5-839b-3c8881c1acc1")
-		(property "Reference" "R42"
+		(property "Reference" "R327"
 			(at 73.66 100.838 0)
 			(effects
 				(font
@@ -28481,7 +28481,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 66.802 99.06 90)
 			(effects
 				(font
@@ -28517,7 +28517,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R42")
+					(reference "R327")
 					(unit 1)
 				)
 			)
@@ -28533,7 +28533,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e43665fd-0f80-4813-98f5-a8a0a56755c3")
-		(property "Reference" "#PWR0123"
+		(property "Reference" "#PWR0373"
 			(at 25.4 185.42 0)
 			(effects
 				(font
@@ -28583,7 +28583,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0123")
+					(reference "#PWR0373")
 					(unit 1)
 				)
 			)
@@ -28599,7 +28599,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e49fb66a-7eb5-405d-bc10-2d6dd344c706")
-		(property "Reference" "R33"
+		(property "Reference" "R318"
 			(at 273.05 50.038 0)
 			(effects
 				(font
@@ -28617,7 +28617,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 266.192 48.26 90)
 			(effects
 				(font
@@ -28653,7 +28653,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R33")
+					(reference "R318")
 					(unit 1)
 				)
 			)
@@ -28669,7 +28669,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e4f29bee-d337-487f-b555-fed48c929385")
-		(property "Reference" "R30"
+		(property "Reference" "R315"
 			(at 233.68 50.038 0)
 			(effects
 				(font
@@ -28687,7 +28687,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 226.822 48.26 90)
 			(effects
 				(font
@@ -28723,7 +28723,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R30")
+					(reference "R315")
 					(unit 1)
 				)
 			)
@@ -28739,7 +28739,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e5f259c5-b607-4762-b46c-3899e480188e")
-		(property "Reference" "R80"
+		(property "Reference" "R365"
 			(at 353.06 160.528 0)
 			(effects
 				(font
@@ -28757,7 +28757,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 346.202 158.75 90)
 			(effects
 				(font
@@ -28793,7 +28793,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R80")
+					(reference "R365")
 					(unit 1)
 				)
 			)
@@ -28809,7 +28809,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e660feeb-be3e-4217-8862-48b75a148e95")
-		(property "Reference" "R45"
+		(property "Reference" "R330"
 			(at 113.03 100.838 0)
 			(effects
 				(font
@@ -28827,7 +28827,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 106.172 99.06 90)
 			(effects
 				(font
@@ -28863,7 +28863,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R45")
+					(reference "R330")
 					(unit 1)
 				)
 			)
@@ -28878,7 +28878,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e6abf51b-fb1d-43a2-859c-baab1bc52c5b")
-		(property "Reference" "Q75"
+		(property "Reference" "Q371"
 			(at 240.792 195.072 0)
 			(effects
 				(font
@@ -28938,7 +28938,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q75")
+					(reference "Q371")
 					(unit 1)
 				)
 			)
@@ -28954,7 +28954,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e6b9b8bb-9707-4f6d-bd2e-b290d75242fd")
-		(property "Reference" "J20"
+		(property "Reference" "J307"
 			(at 396.24 228.5999 0)
 			(effects
 				(font
@@ -28972,7 +28972,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 393.7 228.6 0)
 			(effects
 				(font
@@ -29014,7 +29014,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J20")
+					(reference "J307")
 					(unit 1)
 				)
 			)
@@ -29030,7 +29030,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e6ddfbce-115b-4364-80bd-59baf507d711")
-		(property "Reference" "R81"
+		(property "Reference" "R366"
 			(at 344.678 161.544 90)
 			(effects
 				(font
@@ -29048,7 +29048,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 342.9 165.608 90)
 			(effects
 				(font
@@ -29084,7 +29084,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R81")
+					(reference "R366")
 					(unit 1)
 				)
 			)
@@ -29100,7 +29100,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e6e10841-f359-4472-84c9-c9cc12caabb9")
-		(property "Reference" "R92"
+		(property "Reference" "R377"
 			(at 138.43 203.708 0)
 			(effects
 				(font
@@ -29118,7 +29118,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 131.572 201.93 90)
 			(effects
 				(font
@@ -29154,7 +29154,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R92")
+					(reference "R377")
 					(unit 1)
 				)
 			)
@@ -29170,7 +29170,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7f58e65-b586-44bd-9db1-781c3994e420")
-		(property "Reference" "#PWR099"
+		(property "Reference" "#PWR0349"
 			(at 172.72 133.35 0)
 			(effects
 				(font
@@ -29220,7 +29220,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR099")
+					(reference "#PWR0349")
 					(unit 1)
 				)
 			)
@@ -29235,7 +29235,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e80a290b-b90e-426c-bab3-5e8a1bae5ca2")
-		(property "Reference" "Q34"
+		(property "Reference" "Q330"
 			(at 215.392 92.202 0)
 			(effects
 				(font
@@ -29295,7 +29295,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q34")
+					(reference "Q330")
 					(unit 1)
 				)
 			)
@@ -29310,7 +29310,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e85dc16b-2450-4d6d-b252-af270e8f8d5a")
-		(property "Reference" "#PWR0147"
+		(property "Reference" "#PWR0397"
 			(at 350.52 226.06 0)
 			(effects
 				(font
@@ -29360,7 +29360,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0147")
+					(reference "#PWR0397")
 					(unit 1)
 				)
 			)
@@ -29376,7 +29376,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e905aac1-a4cb-4c83-a853-26de339b8169")
-		(property "Reference" "U19"
+		(property "Reference" "U305"
 			(at 39.0241 153.67 0)
 			(effects
 				(font
@@ -29394,7 +29394,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 36.83 171.45 0)
 			(effects
 				(font
@@ -29472,7 +29472,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U19")
+					(reference "U305")
 					(unit 1)
 				)
 			)
@@ -29488,7 +29488,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ea1c5331-cd30-4a91-b6e1-7cc8217cbc5c")
-		(property "Reference" "R106"
+		(property "Reference" "R391"
 			(at 383.032 227.584 90)
 			(effects
 				(font
@@ -29506,7 +29506,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 375.92 230.378 90)
 			(effects
 				(font
@@ -29542,7 +29542,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R106")
+					(reference "R391")
 					(unit 1)
 				)
 			)
@@ -29557,7 +29557,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ea73b15f-a5b5-4429-a239-557472b395fe")
-		(property "Reference" "Q29"
+		(property "Reference" "Q325"
 			(at 107.442 92.202 0)
 			(effects
 				(font
@@ -29617,7 +29617,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q29")
+					(reference "Q325")
 					(unit 1)
 				)
 			)
@@ -29633,7 +29633,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eb000056-ad7c-4c75-a878-9bd24bf25ef6")
-		(property "Reference" "R86"
+		(property "Reference" "R371"
 			(at 60.96 203.708 0)
 			(effects
 				(font
@@ -29651,7 +29651,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 54.102 201.93 90)
 			(effects
 				(font
@@ -29687,7 +29687,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R86")
+					(reference "R371")
 					(unit 1)
 				)
 			)
@@ -29703,7 +29703,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ec2a6691-b01a-4402-b334-533f53dc7d97")
-		(property "Reference" "R96"
+		(property "Reference" "R381"
 			(at 233.68 203.708 0)
 			(effects
 				(font
@@ -29721,7 +29721,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 226.822 201.93 90)
 			(effects
 				(font
@@ -29757,7 +29757,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R96")
+					(reference "R381")
 					(unit 1)
 				)
 			)
@@ -29773,7 +29773,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ec5da1ae-7834-4d52-94e4-f854a6407573")
-		(property "Reference" "#PWR0127"
+		(property "Reference" "#PWR0377"
 			(at 184.15 196.85 0)
 			(effects
 				(font
@@ -29823,7 +29823,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0127")
+					(reference "#PWR0377")
 					(unit 1)
 				)
 			)
@@ -29839,7 +29839,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ec6da2b3-bf3a-4416-81a7-81723f3e0796")
-		(property "Reference" "R109"
+		(property "Reference" "R394"
 			(at 273.812 251.714 90)
 			(effects
 				(font
@@ -29857,7 +29857,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 266.7 254.508 90)
 			(effects
 				(font
@@ -29893,7 +29893,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R109")
+					(reference "R394")
 					(unit 1)
 				)
 			)
@@ -29908,7 +29908,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ecb6ec03-dcc1-4b85-bbc2-3451348b3b85")
-		(property "Reference" "#PWR0102"
+		(property "Reference" "#PWR0352"
 			(at 337.82 149.86 0)
 			(effects
 				(font
@@ -29958,7 +29958,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0102")
+					(reference "#PWR0352")
 					(unit 1)
 				)
 			)
@@ -29973,7 +29973,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ed287f9b-7921-44cf-bd57-892d746b6f0e")
-		(property "Reference" "Q42"
+		(property "Reference" "Q338"
 			(at 329.692 103.632 0)
 			(effects
 				(font
@@ -30033,7 +30033,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q42")
+					(reference "Q338")
 					(unit 1)
 				)
 			)
@@ -30049,7 +30049,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "edd994e6-4dc6-4f2f-b125-794bb6099a1a")
-		(property "Reference" "U21"
+		(property "Reference" "U307"
 			(at 39.0241 204.47 0)
 			(effects
 				(font
@@ -30067,7 +30067,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 36.83 222.25 0)
 			(effects
 				(font
@@ -30145,7 +30145,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "U21")
+					(reference "U307")
 					(unit 1)
 				)
 			)
@@ -30160,7 +30160,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "edf17289-dd93-494d-974e-004ec781f425")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR0302"
 			(at 337.82 54.61 0)
 			(effects
 				(font
@@ -30210,7 +30210,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR052")
+					(reference "#PWR0302")
 					(unit 1)
 				)
 			)
@@ -30226,7 +30226,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee760849-f5d0-4192-9e4c-b718c2fc308e")
-		(property "Reference" "#PWR0121"
+		(property "Reference" "#PWR0371"
 			(at 184.15 158.75 0)
 			(effects
 				(font
@@ -30276,7 +30276,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0121")
+					(reference "#PWR0371")
 					(unit 1)
 				)
 			)
@@ -30291,7 +30291,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eecad5e2-7a1c-4229-a559-4cd7eafba877")
-		(property "Reference" "#PWR082"
+		(property "Reference" "#PWR0332"
 			(at 115.57 106.68 0)
 			(effects
 				(font
@@ -30341,7 +30341,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR082")
+					(reference "#PWR0332")
 					(unit 1)
 				)
 			)
@@ -30356,7 +30356,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eece2626-f2a7-44a2-adc8-00649d911a8a")
-		(property "Reference" "Q35"
+		(property "Reference" "Q331"
 			(at 228.092 92.202 0)
 			(effects
 				(font
@@ -30416,7 +30416,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q35")
+					(reference "Q331")
 					(unit 1)
 				)
 			)
@@ -30431,7 +30431,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "efd78e52-172d-48b6-8b88-32925c37efdf")
-		(property "Reference" "Q15"
+		(property "Reference" "Q311"
 			(at 202.692 41.402 0)
 			(effects
 				(font
@@ -30491,7 +30491,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q15")
+					(reference "Q311")
 					(unit 1)
 				)
 			)
@@ -30507,7 +30507,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f112f66b-7409-4104-8ca3-028e341443e0")
-		(property "Reference" "R67"
+		(property "Reference" "R352"
 			(at 99.06 152.908 0)
 			(effects
 				(font
@@ -30525,7 +30525,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 92.202 151.13 90)
 			(effects
 				(font
@@ -30561,7 +30561,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R67")
+					(reference "R352")
 					(unit 1)
 				)
 			)
@@ -30577,7 +30577,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f1551839-0ee1-4601-a41c-78c730c23112")
-		(property "Reference" "R75"
+		(property "Reference" "R360"
 			(at 246.38 152.908 0)
 			(effects
 				(font
@@ -30595,7 +30595,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 239.522 151.13 90)
 			(effects
 				(font
@@ -30631,7 +30631,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R75")
+					(reference "R360")
 					(unit 1)
 				)
 			)
@@ -30647,7 +30647,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f1fbfadd-faf1-4dea-b185-046b5aa516e4")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR0319"
 			(at 36.83 55.88 0)
 			(effects
 				(font
@@ -30697,7 +30697,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR069")
+					(reference "#PWR0319")
 					(unit 1)
 				)
 			)
@@ -30712,7 +30712,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f2695451-b27e-4c8d-a95b-66df3aaf2ec3")
-		(property "Reference" "#PWR0109"
+		(property "Reference" "#PWR0359"
 			(at 140.97 158.75 0)
 			(effects
 				(font
@@ -30762,7 +30762,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0109")
+					(reference "#PWR0359")
 					(unit 1)
 				)
 			)
@@ -30778,7 +30778,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f2c9f418-4bdc-4ddc-b4d3-ad42a88e780e")
-		(property "Reference" "R69"
+		(property "Reference" "R354"
 			(at 125.73 152.908 0)
 			(effects
 				(font
@@ -30796,7 +30796,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 118.872 151.13 90)
 			(effects
 				(font
@@ -30832,7 +30832,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R69")
+					(reference "R354")
 					(unit 1)
 				)
 			)
@@ -30847,7 +30847,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f3ee78c4-6ac1-4fd3-83b3-7c9fd3377ed3")
-		(property "Reference" "Q39"
+		(property "Reference" "Q335"
 			(at 280.162 92.202 0)
 			(effects
 				(font
@@ -30907,7 +30907,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q39")
+					(reference "Q335")
 					(unit 1)
 				)
 			)
@@ -30922,7 +30922,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f48f65d6-8d1b-428a-91af-3e0304c865b5")
-		(property "Reference" "#PWR0153"
+		(property "Reference" "#PWR0403"
 			(at 241.3 252.73 0)
 			(effects
 				(font
@@ -30972,7 +30972,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0153")
+					(reference "#PWR0403")
 					(unit 1)
 				)
 			)
@@ -30987,7 +30987,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f4a17c80-3ea0-481b-be04-b9187a9aa269")
-		(property "Reference" "Q37"
+		(property "Reference" "Q333"
 			(at 254.762 92.202 0)
 			(effects
 				(font
@@ -31047,7 +31047,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q37")
+					(reference "Q333")
 					(unit 1)
 				)
 			)
@@ -31062,7 +31062,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f506794a-ae79-44a4-9327-980d858823d7")
-		(property "Reference" "Q48"
+		(property "Reference" "Q344"
 			(at 93.472 144.272 0)
 			(effects
 				(font
@@ -31122,7 +31122,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q48")
+					(reference "Q344")
 					(unit 1)
 				)
 			)
@@ -31138,7 +31138,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f5237bbf-c737-4e3d-b1a5-41043cf59204")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR0326"
 			(at 184.15 93.98 0)
 			(effects
 				(font
@@ -31188,7 +31188,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR076")
+					(reference "#PWR0326")
 					(unit 1)
 				)
 			)
@@ -31203,7 +31203,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f6ebe480-40a1-4b7f-a3ed-dc468f8bb2ab")
-		(property "Reference" "Q57"
+		(property "Reference" "Q353"
 			(at 254.762 144.272 0)
 			(effects
 				(font
@@ -31263,7 +31263,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q57")
+					(reference "Q353")
 					(unit 1)
 				)
 			)
@@ -31278,7 +31278,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f82304cd-516e-4557-8c9a-6503f509e9a0")
-		(property "Reference" "#PWR0117"
+		(property "Reference" "#PWR0367"
 			(at 288.29 158.75 0)
 			(effects
 				(font
@@ -31328,7 +31328,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0117")
+					(reference "#PWR0367")
 					(unit 1)
 				)
 			)
@@ -31344,7 +31344,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f8b5960d-e633-4c53-bf0a-92041dba022f")
-		(property "Reference" "R62"
+		(property "Reference" "R347"
 			(at 335.28 144.018 0)
 			(effects
 				(font
@@ -31362,7 +31362,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 328.422 142.24 90)
 			(effects
 				(font
@@ -31398,7 +31398,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R62")
+					(reference "R347")
 					(unit 1)
 				)
 			)
@@ -31413,7 +31413,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f9504fcf-8158-4f02-833d-9c7ac74da18c")
-		(property "Reference" "Q33"
+		(property "Reference" "Q329"
 			(at 202.692 92.202 0)
 			(effects
 				(font
@@ -31473,7 +31473,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q33")
+					(reference "Q329")
 					(unit 1)
 				)
 			)
@@ -31488,7 +31488,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "faba998a-39a5-4218-be93-bdb11fe4983f")
-		(property "Reference" "Q11"
+		(property "Reference" "Q307"
 			(at 107.442 41.402 0)
 			(effects
 				(font
@@ -31548,7 +31548,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q11")
+					(reference "Q307")
 					(unit 1)
 				)
 			)
@@ -31563,7 +31563,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fad7c818-c556-45f8-9edf-32357bcb9cfb")
-		(property "Reference" "#PWR0105"
+		(property "Reference" "#PWR0355"
 			(at 88.9 158.75 0)
 			(effects
 				(font
@@ -31613,7 +31613,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0105")
+					(reference "#PWR0355")
 					(unit 1)
 				)
 			)
@@ -31629,7 +31629,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fae76e47-000d-46e8-8408-6a671762e948")
-		(property "Reference" "R32"
+		(property "Reference" "R317"
 			(at 260.35 50.038 0)
 			(effects
 				(font
@@ -31647,7 +31647,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 253.492 48.26 90)
 			(effects
 				(font
@@ -31683,7 +31683,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R32")
+					(reference "R317")
 					(unit 1)
 				)
 			)
@@ -31698,7 +31698,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fb4649d2-ff87-4d1d-b8d5-ef8316ac51bb")
-		(property "Reference" "Q59"
+		(property "Reference" "Q355"
 			(at 280.162 144.272 0)
 			(effects
 				(font
@@ -31758,7 +31758,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q59")
+					(reference "Q355")
 					(unit 1)
 				)
 			)
@@ -31773,7 +31773,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fd18ad20-9762-48c6-a5e3-e92e3f3ba7f6")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR0313"
 			(at 236.22 55.88 0)
 			(effects
 				(font
@@ -31823,7 +31823,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR063")
+					(reference "#PWR0313")
 					(unit 1)
 				)
 			)
@@ -31838,7 +31838,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fd61d008-1ad2-4c53-8633-03814f7db883")
-		(property "Reference" "#PWR0107"
+		(property "Reference" "#PWR0357"
 			(at 115.57 158.75 0)
 			(effects
 				(font
@@ -31888,7 +31888,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "#PWR0107")
+					(reference "#PWR0357")
 					(unit 1)
 				)
 			)
@@ -31903,7 +31903,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fd82d39d-8a68-4f21-a0bd-b5d9cac5c31f")
-		(property "Reference" "Q66"
+		(property "Reference" "Q362"
 			(at 80.772 195.072 0)
 			(effects
 				(font
@@ -31963,7 +31963,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q66")
+					(reference "Q362")
 					(unit 1)
 				)
 			)
@@ -31979,7 +31979,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fe42d7a2-0422-4efd-9e51-23e04dea05c5")
-		(property "Reference" "J18"
+		(property "Reference" "J305"
 			(at 396.24 163.8299 0)
 			(effects
 				(font
@@ -31997,7 +31997,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
 			(at 393.7 163.83 0)
 			(effects
 				(font
@@ -32063,7 +32063,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "J18")
+					(reference "J305")
 					(unit 1)
 				)
 			)
@@ -32079,7 +32079,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fe463300-9921-490e-b3c1-5d62637070b0")
-		(property "Reference" "R74"
+		(property "Reference" "R359"
 			(at 233.68 152.908 0)
 			(effects
 				(font
@@ -32097,7 +32097,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 226.822 151.13 90)
 			(effects
 				(font
@@ -32133,7 +32133,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R74")
+					(reference "R359")
 					(unit 1)
 				)
 			)
@@ -32149,7 +32149,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff4c6b62-aeb1-4b61-b4d5-3d0eb90677f1")
-		(property "Reference" "R108"
+		(property "Reference" "R393"
 			(at 320.04 237.998 90)
 			(effects
 				(font
@@ -32167,7 +32167,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 317.5 241.808 90)
 			(effects
 				(font
@@ -32203,7 +32203,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "R108")
+					(reference "R393")
 					(unit 1)
 				)
 			)
@@ -32218,7 +32218,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff778a64-1692-4366-a692-b507c379af29")
-		(property "Reference" "Q24"
+		(property "Reference" "Q320"
 			(at 329.692 71.882 0)
 			(effects
 				(font
@@ -32278,7 +32278,7 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/7bc21684-4299-4f03-bbcf-2f9883a73a6e"
-					(reference "Q24")
+					(reference "Q320")
 					(unit 1)
 				)
 			)

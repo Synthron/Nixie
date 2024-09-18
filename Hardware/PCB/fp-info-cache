@@ -1,4 +1,4 @@
-23831849947393548
+23833576805110322
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -56396,8 +56396,8 @@ B13B
 
 
 0
-0
-0
+13
+13
 Eigene
 BLOCK 14VA
 
@@ -56405,6 +56405,13 @@ BLOCK 14VA
 0
 8
 8
+Eigene
+CP_Radial_D21.5mm_P5.00mm
+CP, Radial series, Radial, pin pitch=10.00mm, , diameter=22mm, Electrolytic Capacitor, , http://www.vishay.com/docs/28342/058059pll-si.pdf
+CP Radial series Radial pin pitch 10.00mm  diameter 22mm Electrolytic Capacitor
+0
+2
+2
 Eigene
 CP_Radial_D40.0mm_P22,5
 CP, Radial series, Radial, pin pitch=10.00mm, , diameter=40mm, Electrolytic Capacitor, , http://www.vishay.com/docs/28342/058059pll-si.pdf
