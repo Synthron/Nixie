@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Z5600M Nixie Clock with ESP32")
-		(date "2024-09-16")
-		(rev "1.0")
+		(date "2024-10-04")
+		(rev "1.1")
 		(company "Synthron")
 	)
 	(lib_symbols
@@ -3179,16 +3179,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 142.24) (xy 76.2 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06c1f7b2-253c-4b46-8ba2-58d4f7bc6ca3")
-	)
-	(wire
-		(pts
 			(xy 210.82 128.27) (xy 210.82 132.08)
 		)
 		(stroke
@@ -3299,6 +3289,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 142.24) (xy 73.66 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20843ce9-ab9e-475f-a1a1-76bf262dc76c")
+	)
+	(wire
+		(pts
 			(xy 191.77 109.22) (xy 191.77 111.76)
 		)
 		(stroke
@@ -3379,7 +3379,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 113.03) (xy 266.7 113.03)
+			(xy 266.7 113.03) (xy 271.78 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3409,16 +3409,6 @@
 	)
 	(wire
 		(pts
-			(xy 254 128.27) (xy 233.68 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "307f3a5f-1c46-4443-b16a-591a3f5b4afa")
-	)
-	(wire
-		(pts
 			(xy 205.74 48.26) (xy 207.01 48.26)
 		)
 		(stroke
@@ -3426,6 +3416,16 @@
 			(type default)
 		)
 		(uuid "326546f3-8e78-4338-96b1-800236506451")
+	)
+	(wire
+		(pts
+			(xy 276.225 126.365) (xy 276.225 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3345cafb-098e-4592-b060-90ac9de610b0")
 	)
 	(wire
 		(pts
@@ -3556,6 +3556,16 @@
 			(type default)
 		)
 		(uuid "42419364-5ddb-4273-816c-380b24fdd8fe")
+	)
+	(wire
+		(pts
+			(xy 233.68 128.27) (xy 254 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a2bd62e-1adb-4f26-8d18-5fe6a28ba548")
 	)
 	(wire
 		(pts
@@ -3749,6 +3759,16 @@
 	)
 	(wire
 		(pts
+			(xy 276.225 113.03) (xy 271.78 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7688da7d-77cb-44d2-93bd-306d8ff29103")
+	)
+	(wire
+		(pts
 			(xy 232.41 45.72) (xy 232.41 48.26)
 		)
 		(stroke
@@ -3816,6 +3836,16 @@
 			(type default)
 		)
 		(uuid "7ecb8d04-167d-4ca0-92a6-d7b9537bcf14")
+	)
+	(wire
+		(pts
+			(xy 276.225 146.05) (xy 276.225 133.985)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ed995ee-83ee-4f1d-a943-a1ae3f69f44f")
 	)
 	(wire
 		(pts
@@ -4059,16 +4089,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 151.13) (xy 73.66 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ae67a2de-ac24-4531-bb8b-81783b553911")
-	)
-	(wire
-		(pts
 			(xy 172.72 144.78) (xy 172.72 146.05)
 		)
 		(stroke
@@ -4259,7 +4279,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 142.24) (xy 86.36 142.24)
+			(xy 81.28 142.24) (xy 86.36 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4698,7 +4718,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 80.01 142.24 180)
+		(at 77.47 142.24 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4707,7 +4727,7 @@
 		(fields_autoplaced yes)
 		(uuid "05aee2e4-2ac5-4bc3-8722-b8ed81999f0a")
 		(property "Reference" "D404"
-			(at 80.01 135.89 0)
+			(at 77.47 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4715,7 +4735,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 80.01 138.43 0)
+			(at 77.47 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4723,7 +4743,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 80.01 142.24 0)
+			(at 77.47 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4732,7 +4752,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 80.01 142.24 0)
+			(at 77.47 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4741,7 +4761,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 80.01 142.24 0)
+			(at 77.47 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4750,7 +4770,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 80.01 142.24 0)
+			(at 77.47 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4759,7 +4779,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 80.01 142.24 0)
+			(at 77.47 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5111,6 +5131,76 @@
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/ffec0fe8-35a1-4ab6-b4ec-cde8cf0800bc"
 					(reference "#PWR0410")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 276.225 130.175 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "20e0bd31-4d18-4407-9ef0-ec6cf945a109")
+		(property "Reference" "R3"
+			(at 282.575 130.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "220k"
+			(at 276.225 132.461 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
+			(at 274.447 130.175 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 276.225 130.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 276.225 130.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b0a08918-1afb-4870-b412-24aa76d0b6cd")
+		)
+		(pin "2"
+			(uuid "2d033620-f07f-4896-ae90-c9fe1258d60e")
+		)
+		(instances
+			(project "nixie"
+				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/ffec0fe8-35a1-4ab6-b4ec-cde8cf0800bc"
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -6311,6 +6401,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 276.225 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "595e15e1-cfbc-4da3-9f82-6c738fe92f63")
+		(property "Reference" "#PWR03"
+			(at 276.225 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 276.225 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 276.225 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 276.225 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 276.225 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3223ec00-a2ce-4c75-b668-465ff446587b")
+		)
+		(instances
+			(project "nixie"
+				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/ffec0fe8-35a1-4ab6-b4ec-cde8cf0800bc"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 73.66 156.21 0)
 		(unit 1)
@@ -6318,7 +6474,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5b77a64a-41f5-4a86-ace0-200b10aab567")
 		(property "Reference" "R407"
 			(at 76.2 154.9399 0)
@@ -7508,10 +7663,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "9dccc1cc-a723-4fe8-9050-4a3cbb236efa")
 		(property "Reference" "C2"
-			(at 275.59 117.2209 0)
+			(at 268.605 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7520,7 +7674,7 @@
 			)
 		)
 		(property "Value" "22µ 250V"
-			(at 275.59 119.7609 0)
+			(at 261.62 123.825 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9257,10 +9411,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "fec80c88-7574-4e2d-9941-ba49bd9e339e")
 		(property "Reference" "C1"
-			(at 257.81 117.2209 0)
+			(at 254.635 114.935 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9269,7 +9422,7 @@
 			)
 		)
 		(property "Value" "22µ 250V"
-			(at 257.81 119.7609 0)
+			(at 254.635 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Z5600M Nixie Clock with ESP32")
-		(date "2024-09-16")
-		(rev "1.0")
+		(date "2024-10-04")
+		(rev "1.1")
 		(company "Synthron")
 	)
 	(lib_symbols

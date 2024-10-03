@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "Z5600M Nixie Clock with ESP32")
-		(date "2024-09-16")
-		(rev "1.0")
+		(date "2024-10-04")
+		(rev "1.1")
 		(company "Synthron")
 	)
 	(lib_symbols
@@ -10000,30 +10000,6 @@
 		)
 		(uuid "0a2d8869-583d-4cd8-abb9-e0d3060df194")
 	)
-	(hierarchical_label "A4"
-		(shape input)
-		(at 325.12 147.32 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0a74e294-f4fa-4e09-916e-33d10e4bdc61")
-	)
-	(hierarchical_label "A3"
-		(shape input)
-		(at 325.12 115.57 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1a6ef7a3-aee4-4603-be10-ef01a49c7a6b")
-	)
 	(hierarchical_label "RCLK"
 		(shape input)
 		(at 24.13 121.92 180)
@@ -10035,18 +10011,6 @@
 			(justify right)
 		)
 		(uuid "269423c3-29a4-4ca3-97ff-cdf0b8ef4c9c")
-	)
-	(hierarchical_label "A7"
-		(shape input)
-		(at 325.12 210.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2d0f9b1f-2bf7-4537-866e-7882fe234aea")
 	)
 	(hierarchical_label "DAT"
 		(shape input)
@@ -10084,9 +10048,9 @@
 		)
 		(uuid "3fc215bf-2927-43b7-a848-402c6aa1d367")
 	)
-	(hierarchical_label "A5"
+	(hierarchical_label "PWM"
 		(shape input)
-		(at 203.2 266.7 180)
+		(at 325.12 210.82 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10094,7 +10058,19 @@
 			)
 			(justify right)
 		)
-		(uuid "5bdc684f-f81e-44f3-9dae-9243c7a419c7")
+		(uuid "413395b8-7b95-4ece-8534-02b897e601a4")
+	)
+	(hierarchical_label "PWM"
+		(shape input)
+		(at 325.12 179.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "50529231-d6e4-49c5-9b29-abff4abedd56")
 	)
 	(hierarchical_label "~{SCLR}"
 		(shape input)
@@ -10132,9 +10108,9 @@
 		)
 		(uuid "70454d18-3c7b-4cc2-8414-720b7b4b1923")
 	)
-	(hierarchical_label "A1"
+	(hierarchical_label "PWM"
 		(shape input)
-		(at 325.12 83.82 180)
+		(at 325.12 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10142,7 +10118,7 @@
 			)
 			(justify right)
 		)
-		(uuid "757374c4-b6a2-446e-9ba6-52ed7bd27a8f")
+		(uuid "7431c9ae-5cf8-41c4-a043-35ee00aa0eb3")
 	)
 	(hierarchical_label "RCLK"
 		(shape input)
@@ -10155,6 +10131,18 @@
 			(justify right)
 		)
 		(uuid "7edf2211-daa4-44f3-9cab-973dd08c0e7e")
+	)
+	(hierarchical_label "PWM"
+		(shape input)
+		(at 203.2 266.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "819d2fed-bbe5-41d8-843a-2576a71b3945")
 	)
 	(hierarchical_label "SCLK"
 		(shape input)
@@ -10192,19 +10180,7 @@
 		)
 		(uuid "89a1a17c-38b4-4f57-9899-4cd10202ef1d")
 	)
-	(hierarchical_label "A2"
-		(shape input)
-		(at 312.42 240.03 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "929b8f67-d90a-43d8-a432-b7a15257d5db")
-	)
-	(hierarchical_label "A0"
+	(hierarchical_label "PWM"
 		(shape input)
 		(at 325.12 52.07 180)
 		(fields_autoplaced yes)
@@ -10227,6 +10203,18 @@
 			(justify right)
 		)
 		(uuid "9d401de4-d1bd-4bf9-b9b7-c3bed5fa8620")
+	)
+	(hierarchical_label "PWM"
+		(shape input)
+		(at 312.42 240.03 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a0c629fb-6fa4-4b85-a050-e5b300288cc2")
 	)
 	(hierarchical_label "RCLK"
 		(shape input)
@@ -10288,6 +10276,18 @@
 		)
 		(uuid "bbf5c537-b27d-42f0-8511-aa4c691e860a")
 	)
+	(hierarchical_label "PWM"
+		(shape input)
+		(at 325.12 83.82 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c09b382c-26d7-4424-b0df-35924b377636")
+	)
 	(hierarchical_label "RCLK"
 		(shape input)
 		(at 171.45 71.12 180)
@@ -10324,6 +10324,18 @@
 		)
 		(uuid "e235131f-d351-4c23-a7cc-4413985556df")
 	)
+	(hierarchical_label "PWM"
+		(shape input)
+		(at 325.12 147.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e2f82375-7b03-48ab-aade-8a14aa27a0f7")
+	)
 	(hierarchical_label "SCLK"
 		(shape input)
 		(at 171.45 166.37 180)
@@ -10335,18 +10347,6 @@
 			(justify right)
 		)
 		(uuid "ee009e21-b519-406a-ba94-234449c9314a")
-	)
-	(hierarchical_label "A6"
-		(shape input)
-		(at 325.12 179.07 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f99764d4-d260-48e9-a330-0ba6bcde854e")
 	)
 	(hierarchical_label "SCLK"
 		(shape input)
@@ -11036,7 +11036,7 @@
 		(dnp no)
 		(uuid "092a4246-7f0c-49e6-9bf8-36556bddffe2")
 		(property "Reference" "R325"
-			(at 353.06 97.028 0)
+			(at 354.33 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11713,7 +11713,7 @@
 		(dnp no)
 		(uuid "129928ab-eb8b-4093-87f5-c14b694ec4b7")
 		(property "Reference" "R350"
-			(at 73.66 152.908 0)
+			(at 74.93 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11848,7 +11848,7 @@
 		(dnp no)
 		(uuid "139f6e95-1522-4329-8607-e593fa3cac58")
 		(property "Reference" "R380"
-			(at 220.98 203.708 0)
+			(at 222.25 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12120,7 +12120,7 @@
 		(dnp no)
 		(uuid "151011f9-fe2c-429a-82c2-f84f2cab2939")
 		(property "Reference" "R324"
-			(at 362.966 77.47 0)
+			(at 364.49 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12555,7 +12555,7 @@
 		(dnp no)
 		(uuid "1aba59d6-37ba-447a-b9bc-150898f6cfb0")
 		(property "Reference" "R321"
-			(at 353.06 65.278 0)
+			(at 354.33 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13005,7 +13005,7 @@
 		(dnp no)
 		(uuid "20ddad31-482d-4805-b448-e872a7973d61")
 		(property "Reference" "R368"
-			(at 362.966 172.72 0)
+			(at 364.49 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13220,7 +13220,7 @@
 		(dnp no)
 		(uuid "259c175c-b23b-4a68-8b2d-90aa9e34f002")
 		(property "Reference" "R308"
-			(at 99.06 50.038 0)
+			(at 100.33 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13360,7 +13360,7 @@
 		(dnp no)
 		(uuid "2832ca2b-157d-4916-af52-0d4e4c5c0ee6")
 		(property "Reference" "R373"
-			(at 86.36 203.708 0)
+			(at 87.63 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13908,7 +13908,7 @@
 		(dnp no)
 		(uuid "31e24441-18ba-4b7c-8197-6a472dbc16b9")
 		(property "Reference" "R369"
-			(at 353.06 192.278 0)
+			(at 354.33 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14043,7 +14043,7 @@
 		(dnp no)
 		(uuid "331a8383-56ee-4d62-a5c4-0b62e8f1594a")
 		(property "Reference" "R395"
-			(at 236.22 257.048 0)
+			(at 237.49 255.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14113,7 +14113,7 @@
 		(dnp no)
 		(uuid "3368749e-ec4f-4f9a-a2b2-612cd2334484")
 		(property "Reference" "R310"
-			(at 125.73 50.038 0)
+			(at 127 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14871,7 +14871,7 @@
 		(dnp no)
 		(uuid "3c900630-d506-4c2d-a098-829198de6487")
 		(property "Reference" "R379"
-			(at 208.28 203.708 0)
+			(at 209.55 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15076,7 +15076,7 @@
 		(dnp no)
 		(uuid "3e3e7eb6-d1fd-4ee6-89ea-7ecd1e3df389")
 		(property "Reference" "R332"
-			(at 138.43 100.838 0)
+			(at 139.7 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15276,7 +15276,7 @@
 		(dnp no)
 		(uuid "40c2a3ed-2eda-43ef-88bf-5e87ce9d2bb2")
 		(property "Reference" "R320"
-			(at 298.45 50.038 0)
+			(at 299.72 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15927,7 +15927,7 @@
 		(dnp no)
 		(uuid "4d7821da-ac26-4c22-877c-c597374fa704")
 		(property "Reference" "R331"
-			(at 125.73 100.838 0)
+			(at 127 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15997,7 +15997,7 @@
 		(dnp no)
 		(uuid "510af464-2b42-4f62-9c9f-b6508b5aabbd")
 		(property "Reference" "R303"
-			(at 335.28 48.768 0)
+			(at 336.55 48.895 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16067,7 +16067,7 @@
 		(dnp no)
 		(uuid "51b5da98-7a71-4bb7-9712-4ba5e6feaf3a")
 		(property "Reference" "R383"
-			(at 260.35 203.708 0)
+			(at 261.62 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16237,7 +16237,7 @@
 		(dnp no)
 		(uuid "531e983d-c5ce-482d-8a6f-b30d43bb8534")
 		(property "Reference" "R362"
-			(at 273.05 152.908 0)
+			(at 274.32 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16437,7 +16437,7 @@
 		(dnp no)
 		(uuid "56bb9d87-c11a-4be1-8744-c3d2c978b2e5")
 		(property "Reference" "R335"
-			(at 220.98 100.838 0)
+			(at 222.25 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16507,7 +16507,7 @@
 		(dnp no)
 		(uuid "56bd2231-ec25-4e59-8855-a00eb1ec9cb2")
 		(property "Reference" "R386"
-			(at 298.45 203.708 0)
+			(at 299.72 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16577,7 +16577,7 @@
 		(dnp no)
 		(uuid "5894aa0b-a2c7-4f61-afc5-c24167e91d0f")
 		(property "Reference" "R333"
-			(at 151.13 100.838 0)
+			(at 152.4 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16712,7 +16712,7 @@
 		(dnp no)
 		(uuid "5c6558d3-1b61-4a3d-be1e-f0c0a225159c")
 		(property "Reference" "R367"
-			(at 335.28 175.768 0)
+			(at 336.55 175.895 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17204,7 +17204,7 @@
 		(dnp no)
 		(uuid "65497744-56d4-4c2c-bf52-774e6d544301")
 		(property "Reference" "R364"
-			(at 298.45 152.908 0)
+			(at 299.72 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17544,7 +17544,7 @@
 		(dnp no)
 		(uuid "6b8828b1-264b-4b7c-bca6-40a87bc6385f")
 		(property "Reference" "R328"
-			(at 86.36 100.838 0)
+			(at 87.63 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17970,7 +17970,7 @@
 		(dnp no)
 		(uuid "706f043d-f5ad-4209-916b-f1c75f79f523")
 		(property "Reference" "R326"
-			(at 60.96 100.838 0)
+			(at 62.23 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18462,7 +18462,7 @@
 		(dnp no)
 		(uuid "73ff1fcd-a6d6-4cb1-ae3c-21c409df96cd")
 		(property "Reference" "R306"
-			(at 73.66 50.038 0)
+			(at 74.93 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18663,7 +18663,7 @@
 		(dnp no)
 		(uuid "74f72486-6475-458f-ae0e-a14be3260ac4")
 		(property "Reference" "R323"
-			(at 335.28 80.518 0)
+			(at 336.55 80.645 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19138,7 +19138,7 @@
 		(dnp no)
 		(uuid "77517a0c-4072-4c59-bfd5-beabff7eb672")
 		(property "Reference" "R361"
-			(at 260.35 152.908 0)
+			(at 261.62 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19278,7 +19278,7 @@
 		(dnp no)
 		(uuid "791a5587-f68c-4f3c-8e40-b0e1426a164a")
 		(property "Reference" "R316"
-			(at 246.38 50.038 0)
+			(at 247.65 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19558,7 +19558,7 @@
 		(dnp no)
 		(uuid "7b405274-75e3-4531-a57f-adfe3ee28c06")
 		(property "Reference" "R313"
-			(at 208.28 50.038 0)
+			(at 209.55 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20198,7 +20198,7 @@
 		(dnp no)
 		(uuid "82a0af17-25a5-4ffc-a29b-157ae2b1db91")
 		(property "Reference" "R378"
-			(at 151.13 203.708 0)
+			(at 152.4 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20474,7 +20474,7 @@
 		(dnp no)
 		(uuid "86f84796-818a-4edb-8731-35ae6f541ecd")
 		(property "Reference" "R348"
-			(at 362.966 140.97 0)
+			(at 364.49 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20544,7 +20544,7 @@
 		(dnp no)
 		(uuid "87094db6-bb9e-434b-a445-6312b7a294fc")
 		(property "Reference" "R388"
-			(at 362.966 204.47 0)
+			(at 364.49 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20614,7 +20614,7 @@
 		(dnp no)
 		(uuid "89eceb06-17e7-4700-918d-b43a5efb4fa5")
 		(property "Reference" "R375"
-			(at 113.03 203.708 0)
+			(at 114.3 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20684,7 +20684,7 @@
 		(dnp no)
 		(uuid "8a07c214-f083-4bf2-8a0a-8ebaa1b44e2c")
 		(property "Reference" "R385"
-			(at 285.75 203.708 0)
+			(at 287.02 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20819,7 +20819,7 @@
 		(dnp no)
 		(uuid "8bbe7a09-8a6e-438c-b3fe-980ae8fef7ab")
 		(property "Reference" "R307"
-			(at 86.36 50.038 0)
+			(at 87.63 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21432,7 +21432,7 @@
 		(dnp no)
 		(uuid "95a11483-7ba5-4e05-bd42-644ce8900762")
 		(property "Reference" "R319"
-			(at 285.75 50.038 0)
+			(at 287.02 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21787,7 +21787,7 @@
 		(dnp no)
 		(uuid "9a188ccf-1628-4a93-9ace-45ec8aa577d9")
 		(property "Reference" "R358"
-			(at 220.98 152.908 0)
+			(at 222.25 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21927,7 +21927,7 @@
 		(dnp no)
 		(uuid "9c83416c-3bdd-492a-b662-e6596e89e2a7")
 		(property "Reference" "R305"
-			(at 60.96 50.038 0)
+			(at 62.23 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22127,7 +22127,7 @@
 		(dnp no)
 		(uuid "9e278576-7d5d-4e82-851a-f21042f4c1ab")
 		(property "Reference" "R387"
-			(at 335.28 207.518 0)
+			(at 336.55 207.645 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22392,7 +22392,7 @@
 		(dnp no)
 		(uuid "a0655636-4897-41b5-9f2d-0b0b18082477")
 		(property "Reference" "R311"
-			(at 138.43 50.038 0)
+			(at 139.7 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22462,7 +22462,7 @@
 		(dnp no)
 		(uuid "a07cf21c-a883-43d5-a6d6-25c5d8064102")
 		(property "Reference" "R312"
-			(at 151.13 50.038 0)
+			(at 152.4 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22532,7 +22532,7 @@
 		(dnp no)
 		(uuid "a0825007-8c3a-4878-85cf-d83dd26769c0")
 		(property "Reference" "R349"
-			(at 60.96 152.908 0)
+			(at 62.23 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22897,7 +22897,7 @@
 		(dnp no)
 		(uuid "a182da5d-4e00-4d54-ab30-13f598429c63")
 		(property "Reference" "R337"
-			(at 246.38 100.838 0)
+			(at 247.65 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23032,7 +23032,7 @@
 		(dnp no)
 		(uuid "a24a6f15-2427-4fa9-aeac-f4c2383a8c1d")
 		(property "Reference" "R338"
-			(at 260.35 100.838 0)
+			(at 261.62 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23372,7 +23372,7 @@
 		(dnp no)
 		(uuid "a8be7ce7-edb4-4d9d-a73a-4caa0e33f823")
 		(property "Reference" "R341"
-			(at 298.45 100.838 0)
+			(at 299.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23507,7 +23507,7 @@
 		(dnp no)
 		(uuid "a8dd8373-85a2-4d2f-9608-bf9bad8a56f1")
 		(property "Reference" "R339"
-			(at 273.05 100.838 0)
+			(at 274.32 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24002,7 +24002,7 @@
 		(dnp no)
 		(uuid "ada89121-baf0-49ea-9ed9-ce8428d0045c")
 		(property "Reference" "R351"
-			(at 86.36 152.908 0)
+			(at 87.63 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24072,7 +24072,7 @@
 		(dnp no)
 		(uuid "adda0326-880d-4582-af69-43531e7e78e3")
 		(property "Reference" "R353"
-			(at 113.03 152.908 0)
+			(at 114.3 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24352,7 +24352,7 @@
 		(dnp no)
 		(uuid "b16b37b8-692b-4c94-bd56-c044e5bff9d5")
 		(property "Reference" "R334"
-			(at 208.28 100.838 0)
+			(at 209.55 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24487,7 +24487,7 @@
 		(dnp no)
 		(uuid "b2509bc2-837f-4ef7-99cb-b9a112f5c584")
 		(property "Reference" "R356"
-			(at 151.13 152.908 0)
+			(at 152.4 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24819,7 +24819,7 @@
 		(dnp no)
 		(uuid "b4cd936a-5096-4ae0-bea9-c98a0baf3b82")
 		(property "Reference" "R301"
-			(at 353.06 33.528 0)
+			(at 354.33 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24889,7 +24889,7 @@
 		(dnp no)
 		(uuid "b4f00fb3-86ed-4cf6-881e-2b308bbb2cf8")
 		(property "Reference" "R374"
-			(at 99.06 203.708 0)
+			(at 100.33 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25253,7 +25253,7 @@
 		(dnp no)
 		(uuid "b8bb2b9d-1084-4d1b-b0b0-bb887b06cdba")
 		(property "Reference" "R384"
-			(at 273.05 203.708 0)
+			(at 274.32 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25323,7 +25323,7 @@
 		(dnp no)
 		(uuid "b98bfa98-61c4-45fb-8175-b9a6fe2301fa")
 		(property "Reference" "R336"
-			(at 233.68 100.838 0)
+			(at 234.95 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25393,7 +25393,7 @@
 		(dnp no)
 		(uuid "ba2ef6d5-d37b-4133-87cf-772abd75ba75")
 		(property "Reference" "R304"
-			(at 362.966 45.72 0)
+			(at 364.49 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25463,7 +25463,7 @@
 		(dnp no)
 		(uuid "bb1f37d8-cddc-4548-9c73-7ba587c97c9c")
 		(property "Reference" "R396"
-			(at 273.812 254.254 90)
+			(at 274.955 254 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25533,7 +25533,7 @@
 		(dnp no)
 		(uuid "bc63c4f6-5ca9-47e7-8a35-550abc0c6dc0")
 		(property "Reference" "R343"
-			(at 335.28 112.268 0)
+			(at 336.55 112.395 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25828,7 +25828,7 @@
 		(dnp no)
 		(uuid "be5003ab-a429-46d3-8cd9-98b1439c8590")
 		(property "Reference" "R390"
-			(at 345.44 230.378 0)
+			(at 346.71 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26029,7 +26029,7 @@
 		(dnp no)
 		(uuid "c1b744a7-7440-404a-9d8e-4d28fc7d3ae8")
 		(property "Reference" "R344"
-			(at 362.966 109.22 0)
+			(at 364.49 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26249,7 +26249,7 @@
 		(dnp no)
 		(uuid "c2762eb9-87d6-4729-97ef-c3051cdbf5fd")
 		(property "Reference" "R314"
-			(at 220.98 50.038 0)
+			(at 222.25 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26770,7 +26770,7 @@
 		(dnp no)
 		(uuid "c7f536e5-213c-4dcc-ad4e-e4a40712f999")
 		(property "Reference" "R372"
-			(at 73.66 203.708 0)
+			(at 74.93 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26905,7 +26905,7 @@
 		(dnp no)
 		(uuid "ca412083-8ba7-4a87-adaa-1a21dce0e29f")
 		(property "Reference" "R382"
-			(at 246.38 203.708 0)
+			(at 247.65 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27087,7 +27087,7 @@
 		(dnp no)
 		(uuid "cd7d6bc9-99f8-4189-a87f-7fc8dd3df1d3")
 		(property "Reference" "R355"
-			(at 138.43 152.908 0)
+			(at 139.7 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27157,7 +27157,7 @@
 		(dnp no)
 		(uuid "cdb886c7-dafb-48f7-9e40-984f23610d81")
 		(property "Reference" "R329"
-			(at 99.06 100.838 0)
+			(at 100.33 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27583,7 +27583,7 @@
 		(dnp no)
 		(uuid "d6d883ad-6a4d-4727-8944-950809a54d2b")
 		(property "Reference" "R363"
-			(at 285.75 152.908 0)
+			(at 287.02 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27796,7 +27796,7 @@
 		(dnp no)
 		(uuid "d837eb00-b45b-450a-97b7-5dd6a972b682")
 		(property "Reference" "R309"
-			(at 113.03 50.038 0)
+			(at 114.3 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27996,7 +27996,7 @@
 		(dnp no)
 		(uuid "dbb56139-27b8-4e37-911b-c697316ab416")
 		(property "Reference" "R345"
-			(at 353.06 128.778 0)
+			(at 354.33 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28207,7 +28207,7 @@
 		(dnp no)
 		(uuid "dd3f974b-ff65-4c23-9b2e-f31ddbb57b6e")
 		(property "Reference" "R376"
-			(at 125.73 203.708 0)
+			(at 127 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28277,7 +28277,7 @@
 		(dnp no)
 		(uuid "ddf3c3cd-601d-4958-a0f6-9fffb46bb9c1")
 		(property "Reference" "R389"
-			(at 383.032 225.044 90)
+			(at 384.175 224.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28412,7 +28412,7 @@
 		(dnp no)
 		(uuid "e2df0753-5d92-4a23-b21f-b4abee1adc44")
 		(property "Reference" "R340"
-			(at 285.75 100.838 0)
+			(at 287.02 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28482,7 +28482,7 @@
 		(dnp no)
 		(uuid "e39e74bf-b280-487b-aa31-3f64491c0621")
 		(property "Reference" "R357"
-			(at 208.28 152.908 0)
+			(at 209.55 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28552,7 +28552,7 @@
 		(dnp no)
 		(uuid "e3f65e10-65f1-44a5-839b-3c8881c1acc1")
 		(property "Reference" "R327"
-			(at 73.66 100.838 0)
+			(at 74.93 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28688,7 +28688,7 @@
 		(dnp no)
 		(uuid "e49fb66a-7eb5-405d-bc10-2d6dd344c706")
 		(property "Reference" "R318"
-			(at 273.05 50.038 0)
+			(at 274.32 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28758,7 +28758,7 @@
 		(dnp no)
 		(uuid "e4f29bee-d337-487f-b555-fed48c929385")
 		(property "Reference" "R315"
-			(at 233.68 50.038 0)
+			(at 234.95 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28828,7 +28828,7 @@
 		(dnp no)
 		(uuid "e5f259c5-b607-4762-b46c-3899e480188e")
 		(property "Reference" "R365"
-			(at 353.06 160.528 0)
+			(at 354.33 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28898,7 +28898,7 @@
 		(dnp no)
 		(uuid "e660feeb-be3e-4217-8862-48b75a148e95")
 		(property "Reference" "R330"
-			(at 113.03 100.838 0)
+			(at 114.3 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29189,7 +29189,7 @@
 		(dnp no)
 		(uuid "e6e10841-f359-4472-84c9-c9cc12caabb9")
 		(property "Reference" "R377"
-			(at 138.43 203.708 0)
+			(at 139.7 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29577,7 +29577,7 @@
 		(dnp no)
 		(uuid "ea1c5331-cd30-4a91-b6e1-7cc8217cbc5c")
 		(property "Reference" "R391"
-			(at 383.032 227.584 90)
+			(at 384.175 227.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29722,7 +29722,7 @@
 		(dnp no)
 		(uuid "eb000056-ad7c-4c75-a878-9bd24bf25ef6")
 		(property "Reference" "R371"
-			(at 60.96 203.708 0)
+			(at 62.23 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29792,7 +29792,7 @@
 		(dnp no)
 		(uuid "ec2a6691-b01a-4402-b334-533f53dc7d97")
 		(property "Reference" "R381"
-			(at 233.68 203.708 0)
+			(at 234.95 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29928,7 +29928,7 @@
 		(dnp no)
 		(uuid "ec6da2b3-bf3a-4416-81a7-81723f3e0796")
 		(property "Reference" "R394"
-			(at 273.812 251.714 90)
+			(at 274.955 251.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30596,7 +30596,7 @@
 		(dnp no)
 		(uuid "f112f66b-7409-4104-8ca3-028e341443e0")
 		(property "Reference" "R352"
-			(at 99.06 152.908 0)
+			(at 100.33 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30666,7 +30666,7 @@
 		(dnp no)
 		(uuid "f1551839-0ee1-4601-a41c-78c730c23112")
 		(property "Reference" "R360"
-			(at 246.38 152.908 0)
+			(at 247.65 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30867,7 +30867,7 @@
 		(dnp no)
 		(uuid "f2c9f418-4bdc-4ddc-b4d3-ad42a88e780e")
 		(property "Reference" "R354"
-			(at 125.73 152.908 0)
+			(at 127 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31433,7 +31433,7 @@
 		(dnp no)
 		(uuid "f8b5960d-e633-4c53-bf0a-92041dba022f")
 		(property "Reference" "R347"
-			(at 335.28 144.018 0)
+			(at 336.55 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31718,7 +31718,7 @@
 		(dnp no)
 		(uuid "fae76e47-000d-46e8-8408-6a671762e948")
 		(property "Reference" "R317"
-			(at 260.35 50.038 0)
+			(at 261.62 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32168,7 +32168,7 @@
 		(dnp no)
 		(uuid "fe463300-9921-490e-b3c1-5d62637070b0")
 		(property "Reference" "R359"
-			(at 233.68 152.908 0)
+			(at 234.95 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
