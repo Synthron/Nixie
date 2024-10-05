@@ -2324,6 +2324,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "NE201")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2427,6 +2433,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "U202")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2521,6 +2533,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "J202")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "J202")
 					(unit 1)
 				)
@@ -2629,6 +2647,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "U203")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2723,6 +2747,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "J201")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "J201")
 					(unit 1)
 				)
@@ -2826,6 +2856,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "U206")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "U206")
 					(unit 1)
 				)
@@ -2934,6 +2970,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "U205")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2999,6 +3041,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "NE203")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "NE203")
 					(unit 1)
 				)
@@ -3107,6 +3155,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "U201")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3201,6 +3255,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "J207")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "J207")
 					(unit 1)
 				)
@@ -3308,6 +3368,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "U204")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3406,6 +3472,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "J205")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3480,6 +3552,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "J206")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3546,6 +3624,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "NE204")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "NE204")
 					(unit 1)
 				)
@@ -3648,6 +3732,12 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "J208")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3714,6 +3804,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "NE202")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "NE202")
 					(unit 1)
 				)
@@ -3788,6 +3884,12 @@
 		(instances
 			(project "nixie"
 				(path "/36badbe3-7abc-48d5-8c49-5ac646d9041f/f946271e-c92b-4f0a-992f-04307ee89f85"
+					(reference "J203")
+					(unit 1)
+				)
+			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
 					(reference "J203")
 					(unit 1)
 				)
@@ -3890,6 +3992,17 @@
 					(unit 1)
 				)
 			)
+			(project "nixies"
+				(path "/77f722f9-3519-43dd-a824-917297a001a1"
+					(reference "J204")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
 		)
 	)
 )

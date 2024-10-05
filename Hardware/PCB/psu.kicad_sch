@@ -7183,7 +7183,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_THT:L_Toroid_Horizontal_D16.8mm_P14.70mm_Vishay_TJ3"
+		(property "Footprint" "Eigene:FT50-43"
 			(at 73.66 129.54 0)
 			(effects
 				(font

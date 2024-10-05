@@ -1,8 +1,8 @@
 {
   "board": {
-    "active_layer": 1,
+    "active_layer": 49,
     "active_layer_preset": "",
-    "auto_track_width": false,
+    "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -42,6 +42,7 @@
       13,
       15,
       16,
+      17,
       18,
       19,
       20,
@@ -63,8 +64,8 @@
       39,
       40
     ],
-    "visible_layers": "ffdffff_ffffffff",
-    "zone_display_mode": 1
+    "visible_layers": "ffdfeff_ffffffff",
+    "zone_display_mode": 0
   },
   "git": {
     "repo_password": "",
@@ -73,7 +74,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "nixie.kicad_prl",
+    "filename": "nixies.kicad_prl",
     "version": 3
   },
   "project": {
