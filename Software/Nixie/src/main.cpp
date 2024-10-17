@@ -37,7 +37,7 @@ bool btn_irq = 0;
 uint8_t dis_mode, menu_mode = 0; 
 
 //misc
-uint8_t k = 0;
+uint8_t k = 0, pwm = 64;
 
 hw_timer_t *Timer_Channel1 = NULL;
 
@@ -65,7 +65,7 @@ void setup()
   if(dimm)
   {
     analogWriteFrequency(100);
-    analogWrite(PIN_PWM, 64);
+    analogWrite(PIN_PWM, pwm);
   }
 
   if(ntp)
@@ -171,13 +171,7 @@ void Web_Tasks(void *pvParameters)
   }
 }
 
-/**
- * at menu_mode = 0:
- * default: 'mode' cycles between display modes:
- * 0 = time, 1 = date, 2 = T1*, 3 = T3*
- * d_on/off    d_date  d_temp   d_temp  <- dot modes
- * note: * = only if enabled
- */
+
 void handle_menu()
 {
   uint8_t input_no = 0;
@@ -215,6 +209,8 @@ void handle_menu()
 
   if(menu_mode == 0)
   {
+    //cycle between time, date, T1*, T2*
+    //* if enabled
     if (input_no == 1)
     {
       dis_mode++;
@@ -225,6 +221,18 @@ void handle_menu()
 
       input_no = 0;
       
+    }
+    //increase brightness via PWM
+    else if (input_no == 2 && pwm < 248)
+    {
+      pwm += 8;
+      analogWrite(PIN_PWM, pwm);
+    }
+    //decrease brightness via PWM
+    else if (input_no == 3 && pwm > 0)
+    {
+      pwm -= 8;
+      analogWrite(PIN_PWM, pwm);
     }
     
   }
