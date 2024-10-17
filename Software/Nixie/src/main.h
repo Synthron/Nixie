@@ -14,6 +14,7 @@
 #include "time.h"
 #include <soc/rtc.h>
 #include <driver/rtc_io.h>
+#include <ESP32Time.h>
 
 // OTA
 #include <ESPmDNS.h>
@@ -30,19 +31,23 @@ extern const long  gmtOffset_sec;
 extern const int   daylightOffset_sec;
 
 void write_Registers(uint64_t data);
+void handle_menu();
+void update_time();
 void pinConfig();
 void ntp_setup();
 void rtc_setup();
 void wifi_setup();
 void read_Straps();
-static void ulp_isr(void *arg);
+void input_isr();
 void IRAM_ATTR timer1();
 
 uint64_t run = 1;
 
 extern Clock nixie;
 extern mytimeinfo nix_time;
+extern ESP32Time int_rtc;
 
+/*
 extern bool ntp;
 extern bool dcf;
 extern bool ldr;
@@ -51,3 +56,4 @@ extern bool t2;
 extern bool dimm;
 extern bool rtc;
 extern bool usb;
+*/

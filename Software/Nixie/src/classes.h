@@ -13,6 +13,7 @@
 #include <ArduinoJson.h>
 #include "SPI.h"
 #include "defines.h"
+#include "ds1302.h"
 
 class Wifi
 {
@@ -29,14 +30,18 @@ class Wifi
 class Clock
 {
   public:
-    uint64_t SDAT;
-    uint8_t hours, minutes, seconds;
     uint8_t mode;
+    enum d_mode {d_on, d_off, d_date, d_temp};
+    
+    void show_time(mytimeinfo);
+    void show_date(mytimeinfo);
+    mytimeinfo tick(mytimeinfo);
+    void cycle();
+  
+  private:
+    uint64_t SDAT;
     uint8_t pwm;
-
     void serialize(uint8_t, uint8_t, uint8_t);
     uint16_t segmenting(uint8_t);
-    void tick();
-    void cycle();
     void send();
 };

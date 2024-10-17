@@ -19,8 +19,8 @@ Compile and upload to ESP32
 ## To-Do
 
 - [ ] display date on tubes every xx minutes
-- [ ] refactor nixie class to use full data struct
+- [x] refactor nixie class to use full data struct
 - [ ] get ADC working
 - [ ] get Temperature Readouts
-- [ ] get different display modes with dots
+- [x] get different display modes with dots
 - [ ] get button interface done

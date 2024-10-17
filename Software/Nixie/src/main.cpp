@@ -12,13 +12,14 @@ struct tm timeinfo;
 DS1302 DS_RTC;
 mytimeinfo nix_time;
 
-
+ESP32Time int_rtc;
 // variables
 
 const char *ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 3600;
 const int daylightOffset_sec = 3600;
 
+//bootstrap flags
 bool ntp;
 bool dcf;
 bool ldr;
@@ -28,8 +29,14 @@ bool dimm;
 bool rtc;
 bool usb;
 
-bool trigger = 0;
+//isr flags
+uint8_t ms500_cycle = 0;
+bool btn_irq = 0;
 
+//menu variables
+uint8_t dis_mode, menu_mode = 0; 
+
+//misc
 uint8_t k = 0;
 
 hw_timer_t *Timer_Channel1 = NULL;
@@ -61,6 +68,12 @@ void setup()
     analogWrite(PIN_PWM, 64);
   }
 
+  if(ntp)
+  {
+    wifi_setup();
+    ntp_setup();
+  }
+
   //RTC Enable and Initial Read
   //If RTC empty, clock starts at 00:00:00
   //RTC can be set via NTP, DCF or manually
@@ -68,38 +81,66 @@ void setup()
   {
     DS_RTC.init(PIN_RTCIO, PIN_RTCCLK, PIN_RTCCE1);
     DS_RTC.enableCharging();
+    if(!ntp) nix_time = DS_RTC.getTime();
   }
 
   rtc_setup();
 
-  if(ntp)
-  {
-    wifi_setup();
-    ntp_setup();
-  }
+
 
   //setup Timers
   //Channel 1: 500ms timer
   Timer_Channel1 = timerBegin(0, 80, true);
-  timerAlarmWrite(Timer_Channel1, 3000, true);
+  timerAlarmWrite(Timer_Channel1, 500200, true);
   timerAttachInterrupt(Timer_Channel1, &timer1, true);
   timerAlarmEnable(Timer_Channel1);
+
+  //setup Button Input Interrupts
+  pinMode(PIN_INT, INPUT_PULLUP);
+  attachInterrupt(PIN_INT, &input_isr, GPIO_INTR_NEGEDGE);
 
   if(usb) Serial.println("Booting complete");
 }
 
 void loop()
 {
+  update_time();
 
-
-  if(trigger)
+  if(btn_irq)
   {
-    nixie.mode = 0;
-    nixie.tick();
-    nixie.serialize(nixie.hours, nixie.minutes, nixie.seconds);
-    delay(1000);
-    trigger = 0;
+    handle_menu();
   }
+
+  if(dis_mode == 0)
+  {
+    /*
+    if(ms500_cycle == 1 && nixie.mode == nixie.d_on)
+    {
+      nixie.mode = nixie.d_off;
+      //nixie.show_time(nix_time);
+    }
+
+    if(ms500_cycle >= 2)
+    {
+      nixie.mode = nixie.d_on;
+      //nix_time = nixie.tick(nix_time);
+      //nixie.show_time(nix_time);
+      ms500_cycle = 0;
+    }
+    */
+    if(int_rtc.getMillis()>500)
+      nixie.mode = nixie.d_off;
+    else
+      nixie.mode = nixie.d_on;
+
+    nixie.show_time(nix_time);
+  }
+  else if(dis_mode == 1)
+  {
+    nixie.mode = nixie.d_date;
+    nixie.show_date(nix_time);
+  }
+
 
 }
 
@@ -130,6 +171,79 @@ void Web_Tasks(void *pvParameters)
   }
 }
 
+/**
+ * at menu_mode = 0:
+ * default: 'mode' cycles between display modes:
+ * 0 = time, 1 = date, 2 = T1*, 3 = T3*
+ * d_on/off    d_date  d_temp   d_temp  <- dot modes
+ * note: * = only if enabled
+ */
+void handle_menu()
+{
+  uint8_t input_no = 0;
+  //debounce
+  delay(10);
+  //read input register, clear !INT signal
+  Wire.requestFrom(ADDR_INPUT, 1);
+  uint8_t reg_input = ~Wire.read();
+  Wire.endTransmission();
+
+  //check if and which button is pressed
+  if(reg_input)
+  {
+    //check if source was first button (MODE)
+    if(reg_input & 0x01)
+    {
+      input_no = 1;
+    }
+    //check if source was second button (UP)
+    else if (reg_input & 0x02)
+    {
+      input_no = 2;
+    }
+    //check if source was third button (DOWN)
+    else if (reg_input & 0x04)
+    {
+      input_no = 3;
+    }
+    //check if source was fourth button (ENTER)
+    else if (reg_input & 0x08)
+    {
+      input_no = 4;
+    }
+  }
+
+  if(menu_mode == 0)
+  {
+    if (input_no == 1)
+    {
+      dis_mode++;
+      if(!t1 && dis_mode == 2)
+        dis_mode++;
+      if(!t2 && dis_mode == 3)
+        dis_mode = 0;
+
+      input_no = 0;
+      
+    }
+    
+  }
+
+
+  //reset flag
+  btn_irq = 0;
+}
+
+void update_time()
+{
+  nix_time.hours    = int_rtc.getHour(true);
+  nix_time.minutes  = int_rtc.getMinute();
+  nix_time.seconds  = int_rtc.getSecond();
+  nix_time.date     = int_rtc.getDay();
+  nix_time.month    = int_rtc.getMonth()+1;
+  nix_time.year     = int_rtc.getYear() % 100;
+  nix_time.wday     = int_rtc.getDayofWeek();
+}
 
 // Setup Functions
 
@@ -165,6 +279,10 @@ void pinConfig()
   digitalWrite(PIN_SCLR, LOW);
   digitalWrite(PIN_DAT, LOW);
   digitalWrite(PIN_SCLK, LOW);
+  digitalWrite(PIN_RCLK, LOW);  
+  delayMicroseconds(1);
+  digitalWrite(PIN_RCLK, HIGH);
+  delayMicroseconds(1);
   digitalWrite(PIN_RCLK, LOW);
   digitalWrite(PIN_SCLR, HIGH);
 
@@ -190,30 +308,24 @@ void ntp_setup()
   if (!getLocalTime(&timeinfo))
   {
     if(usb) Serial.println("Failed to obtain time, setting 01-01-2000 00:00:00");
-    timeinfo.tm_hour = 0;
-    timeinfo.tm_min = 0;
-    timeinfo.tm_sec = 0;
-    timeinfo.tm_mday = 1;
-    timeinfo.tm_mon = 1;
-    timeinfo.tm_year = 2000;
+    ntp = 0;
   }
-  if(usb) Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
-  timeinfo.tm_year += 1900;
+  else
+  {
+    if(usb) Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+    timeinfo.tm_year += 1900;
 
-  //update time info of nixie class
-  nix_time.hours = timeinfo.tm_hour;
-  nix_time.minutes = timeinfo.tm_min;
-  nix_time.seconds = timeinfo.tm_sec;
-  nix_time.date = timeinfo.tm_mday;
-  nix_time.month = timeinfo.tm_mon;
-  nix_time.year = timeinfo.tm_year % 100;
-  nix_time.wday = timeinfo.tm_wday;
+    //update time info of nixie class
+    nix_time.hours = timeinfo.tm_hour-1;
+    nix_time.minutes = timeinfo.tm_min;
+    nix_time.seconds = timeinfo.tm_sec;
+    nix_time.date = timeinfo.tm_mday;
+    nix_time.month = timeinfo.tm_mon;
+    nix_time.year = timeinfo.tm_year % 100;
+    nix_time.wday = timeinfo.tm_wday;
 
-  DS_RTC.setTime(nix_time);
-
-  nixie.hours = nix_time.hours;
-  nixie.minutes = nix_time.minutes;
-  nixie.seconds = nix_time.seconds;
+    if(rtc) DS_RTC.setTime(nix_time);
+  }
 }
 
 void rtc_setup()
@@ -236,6 +348,8 @@ void rtc_setup()
   }
 
   rtc_clk_slow_freq_set(RTC_SLOW_FREQ_32K_XTAL);
+
+  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
 }
 
 void wifi_setup()
@@ -264,8 +378,16 @@ void wifi_setup()
   delay(500);
 
 }
+
+
 // ISR FUnctions
+
 void IRAM_ATTR timer1()
 {
-  trigger = 1;
+  //ms500_cycle++;
+}
+
+void IRAM_ATTR input_isr()
+{
+  btn_irq = 1;
 }

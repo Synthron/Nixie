@@ -41,6 +41,23 @@ void Wifi::save_config()
   file.close();
 }
 
+/*************************************************************************************/
+/*                  Nixie Clock Class Functions                                      */
+/*************************************************************************************/
+
+// Wrapper Function Display Time
+void Clock::show_time(mytimeinfo time)
+{
+  serialize(time.hours, time.minutes, time.seconds);
+}
+
+// Wrapper Function Display Date
+void Clock::show_date(mytimeinfo time)
+{
+  mode = d_date;
+  serialize(time.date, time.month, time.year);
+}
+
 /* 
  * Serialization function 
  * takes time variables and creates the serial data stream 
@@ -71,39 +88,32 @@ void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec)
 
   switch (mode)
   {
-    case 1:
+
+    case d_on:
       d0 = 1;
+      d1 = 1;
+      d2 = 1;
+      d3 = 1;
+      break;
+    case d_off:
+      d0 = 0;
       d1 = 0;
       d2 = 0;
       d3 = 0;
       break;
-    case 2:
-      d0 = 0;
-      d1 = 1;
-      d2 = 0;
-      d3 = 0;
-      break;
-    case 3:
-      d0 = 0;
+    case d_date:
+      d0 = 1;
       d1 = 0;
       d2 = 1;
       d3 = 0;
       break;
-    case 4:
+    case d_temp:
       d0 = 0;
       d1 = 0;
-      d2 = 0;
-      d3 = 1;
-      seg_h1 = 0;
+      d2 = 1;
+      d3 = 0;
       break;
   
-    case 0:
-    default:
-      d0 = 1;
-      d1 = 1;
-      d2 = 1;
-      d3 = 1;
-      break;
   }
   // bitstream: MSB -> LSB
   // secs 1s    secs 10s   32 mins 1s    mins 10s   10 hours 1s   hours 10s
@@ -122,29 +132,27 @@ void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec)
   send();
 }
 
-void Clock::tick()
-{
-  uint8_t s_lim;
-  if(mode == 3)
-    s_lim = 99;
-  else
-    s_lim = 59;
 
-  seconds++;
-  if(seconds > s_lim)
+mytimeinfo Clock::tick(mytimeinfo time)
+{
+
+  time.seconds++;
+  if(time.seconds > 59)
   {
-    seconds = 0;
-    minutes++;
+    time.seconds = 0;
+    time.minutes++;
   
-    if (minutes > 59)
+    if (time.minutes > 59)
     {
-      minutes = 0;
-      hours++;
+      time.minutes = 0;
+      time.hours++;
     
-      if (hours > 23)
-        hours = 0;
+      if (time.hours > 23)
+        time.hours = 0;
     }
   }
+
+  return time;
 }
 
 
