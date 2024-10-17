@@ -141,7 +141,9 @@ void loop()
     nixie.show_date(nix_time);
   }
 
-
+  //cycle segments every four hours at the hours
+  if(nix_time.hours % 4 == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
+    nixie.cycle();
 }
 
 void write_Registers(uint64_t data)
@@ -234,6 +236,11 @@ void handle_menu()
       pwm -= 8;
       analogWrite(PIN_PWM, pwm);
     }
+    //
+    else if (input_no == 4)
+    {
+      
+    }
     
   }
 
@@ -249,6 +256,7 @@ void update_time()
   nix_time.seconds  = int_rtc.getSecond();
   nix_time.date     = int_rtc.getDay();
   nix_time.month    = int_rtc.getMonth()+1;
+  nix_time.month++;
   nix_time.year     = int_rtc.getYear() % 100;
   nix_time.wday     = int_rtc.getDayofWeek();
 }

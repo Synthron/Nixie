@@ -58,6 +58,21 @@ void Clock::show_date(mytimeinfo time)
   serialize(time.date, time.month, time.year);
 }
 
+void Clock::cycle()
+{
+  uint8_t old = mode;
+  uint8_t old_pwm = pwm;
+  analogWrite(PIN_PWM, 255);
+  for(uint8_t i = 0; i < 10; i++)
+  {
+    serialize(11*i, 11*i, 11*i);
+    delay(6000);
+  }
+  pwm = old_pwm;
+  analogWrite(PIN_PWM, pwm);
+  mode = old;
+}
+
 /* 
  * Serialization function 
  * takes time variables and creates the serial data stream 

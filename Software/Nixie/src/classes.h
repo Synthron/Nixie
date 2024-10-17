@@ -15,6 +15,8 @@
 #include "defines.h"
 #include "ds1302.h"
 
+extern uint8_t pwm;
+
 class Wifi
 {
   public:
@@ -40,7 +42,6 @@ class Clock
   
   private:
     uint64_t SDAT;
-    uint8_t pwm;
     void serialize(uint8_t, uint8_t, uint8_t);
     uint16_t segmenting(uint8_t);
     void send();

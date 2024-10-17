@@ -24,3 +24,9 @@ Compile and upload to ESP32
 - [ ] get Temperature Readouts
 - [x] get different display modes with dots
 - [ ] get button interface done
+
+## necessary HW changes
+
+- IO34 + IO35 are **only** INPUT
+    - bridge TP5 to SCL
+    - bridge TP6 to SDA
