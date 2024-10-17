@@ -1,0 +1,2 @@
+#define _ssid "Foo"
+#define _pass "Bar"
