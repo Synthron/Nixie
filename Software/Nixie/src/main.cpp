@@ -81,7 +81,8 @@ void setup()
   {
     DS_RTC.init(PIN_RTCIO, PIN_RTCCLK, PIN_RTCCE1);
     DS_RTC.enableCharging();
-    if(!ntp) nix_time = DS_RTC.getTime();
+    if(ntp) DS_RTC.setTime(nix_time);
+    else nix_time = DS_RTC.getTime();
   }
 
   rtc_setup();
@@ -113,21 +114,6 @@ void loop()
 
   if(dis_mode == 0)
   {
-    /*
-    if(ms500_cycle == 1 && nixie.mode == nixie.d_on)
-    {
-      nixie.mode = nixie.d_off;
-      //nixie.show_time(nix_time);
-    }
-
-    if(ms500_cycle >= 2)
-    {
-      nixie.mode = nixie.d_on;
-      //nix_time = nixie.tick(nix_time);
-      //nixie.show_time(nix_time);
-      ms500_cycle = 0;
-    }
-    */
     if(int_rtc.getMillis()>500)
       nixie.mode = nixie.d_off;
     else
@@ -356,8 +342,6 @@ void ntp_setup()
     nix_time.month = timeinfo.tm_mon;
     nix_time.year = timeinfo.tm_year % 100;
     nix_time.wday = timeinfo.tm_wday;
-
-    if(rtc) DS_RTC.setTime(nix_time);
   }
 }
 

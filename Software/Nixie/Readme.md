@@ -49,3 +49,4 @@ Feature Overview:
 - IO34 + IO35 are **only** INPUT
     - bridge TP5 to SCL
     - bridge TP6 to SDA
+- Timing Oszillator MC34063 -> 100pF

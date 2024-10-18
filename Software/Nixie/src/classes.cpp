@@ -147,31 +147,6 @@ void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec)
   send();
 }
 
-
-mytimeinfo Clock::tick(mytimeinfo time)
-{
-
-  time.seconds++;
-  if(time.seconds > 59)
-  {
-    time.seconds = 0;
-    time.minutes++;
-  
-    if (time.minutes > 59)
-    {
-      time.minutes = 0;
-      time.hours++;
-    
-      if (time.hours > 23)
-        time.hours = 0;
-    }
-  }
-
-  return time;
-}
-
-
-
 uint16_t Clock::segmenting(uint8_t num)
 {
   uint16_t temp = 0b0000000000000001;

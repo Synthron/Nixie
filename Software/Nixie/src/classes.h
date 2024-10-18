@@ -37,7 +37,6 @@ class Clock
     
     void show_time(mytimeinfo);
     void show_date(mytimeinfo);
-    mytimeinfo tick(mytimeinfo);
     void cycle();
   
   private:
