@@ -141,6 +141,20 @@ void loop()
     nixie.show_date(nix_time);
   }
 
+  //if enabled, fetch the network time daily at 00:00:00
+  if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
+  {
+    if(ntp)
+    {
+      ntp_setup();
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+    }
+    else if (rtc)
+    {
+      nix_time = DS_RTC.getTime();
+    }
+  }
+
   //cycle segments every four hours at the hours
   if(nix_time.hours % 4 == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
     nixie.cycle();
@@ -256,7 +270,6 @@ void update_time()
   nix_time.seconds  = int_rtc.getSecond();
   nix_time.date     = int_rtc.getDay();
   nix_time.month    = int_rtc.getMonth()+1;
-  nix_time.month++;
   nix_time.year     = int_rtc.getYear() % 100;
   nix_time.wday     = int_rtc.getDayofWeek();
 }
@@ -329,7 +342,7 @@ void ntp_setup()
   else
   {
     if(usb) Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
-    timeinfo.tm_year += 1900;
+    if(usb) Serial.println(timeinfo.tm_mon, DEC);
 
     //update time info of nixie class
     nix_time.hours = timeinfo.tm_hour-1;
@@ -365,7 +378,7 @@ void rtc_setup()
 
   rtc_clk_slow_freq_set(RTC_SLOW_FREQ_32K_XTAL);
 
-  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
+  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
 }
 
 void wifi_setup()

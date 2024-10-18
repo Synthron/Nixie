@@ -85,8 +85,8 @@ void DS1302::setTime(mytimeinfo timestruct)
     s10 = (timestruct.seconds - s1) / 10;
     d1 = timestruct.date % 10;
     d10 = (timestruct.date - d1) / 10;
-    mo1 = timestruct.month % 10;
-    mo10 = (timestruct.month - mo1) / 10;
+    mo1 = (timestruct.month+1) % 10;
+    mo10 = ((timestruct.month+1) - mo1) / 10;
     y1 = timestruct.year % 10;
     y10 = (timestruct.year - y1) / 10;
 

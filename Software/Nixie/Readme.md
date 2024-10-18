@@ -8,17 +8,36 @@ Compile and upload to ESP32
 
 ## Features
 
+Configuration:
+
 - Config via DIP switch:
   - Enable USB debug messages
   - Enable external RTC DS1302
-  - ~~t1/t2/LDR~~
+  - ~~T1~~  (tbd)
+  - ~~T2~~  (tbd)
+  - ~~LDR~~ (tbd)
   - Enable Anode Dimming
-  - ~~enable DCF77~~
+  - ~~enable DCF77~~ (tbd)
   - Enable Wifi & NTP services
+
+Feature Overview:
+- internal RTC as timekeeping
+- prioritized synchronization
+  - NTP sync if enabled
+  - external RTC sync if enabled and NTP not available
+- adjustable brightness via button interface
+- different display modes via button interface
+  - Time
+  - Date
+  - Temperature Sensor 1
+  - Temperature Sensor 2
+- USB debug messages if enabled
+
 
 ## To-Do
 
-- [ ] display date on tubes every xx minutes
+- [x] ~~display date on tubes every xx minutes~~
+    - display date as different mode
 - [x] refactor nixie class to use full data struct
 - [ ] get ADC working
 - [ ] get Temperature Readouts
