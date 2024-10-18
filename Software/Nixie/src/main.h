@@ -5,6 +5,7 @@
 #include "classes.h"
 #include "server.h"
 #include "ds1302.h"
+#include "myrtc.h"
 
 #include "FS.h"
 #include "SPIFFS.h"

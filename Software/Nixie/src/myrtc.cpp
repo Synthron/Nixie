@@ -1,7 +1,6 @@
 #include "myrtc.h"
 
-void debug_xtal_out_dac1() 
-{
+void debug_xtal_out_dac1() {
     SET_PERI_REG_MASK(RTC_IO_XTAL_32K_PAD_REG, RTC_IO_X32N_MUX_SEL | RTC_IO_X32P_MUX_SEL);
     CLEAR_PERI_REG_MASK(RTC_IO_XTAL_32K_PAD_REG, RTC_IO_X32P_RDE | RTC_IO_X32P_RUE | RTC_IO_X32N_RUE | RTC_IO_X32N_RDE);
     CLEAR_PERI_REG_MASK(RTC_IO_XTAL_32K_PAD_REG, RTC_IO_X32N_MUX_SEL | RTC_IO_X32P_MUX_SEL);
@@ -22,18 +21,34 @@ static uint32_t calibrate_one(rtc_cal_sel_t cal_clk, const char *name)
 
     const uint32_t cal_count = 1000;
     uint32_t cali_val;
-    printf("%s:\n", name);
+    if(usb) Serial.printf("%s:\n", name);
     for (int i = 0; i < 5; ++i)
     {
-        printf("calibrate (%d): ", i);
+        if(usb) Serial.printf("calibrate (%d): ", i);
         cali_val = rtc_clk_cal(cal_clk, cal_count);
-        printf("%.3f kHz\n", factor / (float)cali_val);
+        if(usb) Serial.printf("%.3f kHz\n", factor / (float)cali_val);
     }
     return cali_val;
 }
 
-float crystal_frequency() 
-{
+void print_slow_clock_source() {
+  rtc_slow_freq_t slow_clk = rtc_clk_slow_freq_get();
+  Serial.print("Slow clk source: ");
+  switch(slow_clk) {
+    case RTC_SLOW_FREQ_RTC: Serial.println("Internal 150kHz"); break;
+    case RTC_SLOW_FREQ_32K_XTAL: Serial.println("External 32kHz"); break;
+    case RTC_SLOW_FREQ_8MD256: Serial.println("Internal 8MHz");
+  }
+}
+
+void print_fast_clk_math() {
+  const uint32_t cal_count = 1000;
+  uint32_t cali_val;
+  uint64_t freq = (uint64_t)rtc_clk_xtal_freq_get();
+  if(usb) Serial.printf("Fast Clk: %lluMHz\n", freq);
+}
+
+float crystal_frequency() {
   const uint32_t cal_count = 100;
   uint32_t cali_val;
   cali_val = rtc_clk_cal(RTC_CAL_32K_XTAL, cal_count);
@@ -41,10 +56,12 @@ float crystal_frequency()
   return freq_32k;
 }
 
-void setExternalCrystalAsRTCSource()
-{
-    //rtc_clk_32k_bootstrap(100);
+void setExternalCrystalAsRTCSource(){
+    Serial.println("First boot, bootstrap and enable 32k XTAL");
+    print_fast_clk_math();
+    // rtc_clk_32k_bootstrap(10);
     rtc_clk_32k_enable(true);
+    delay(1000);
 
     uint32_t cal_32k = CALIBRATE_ONE(RTC_CAL_32K_XTAL);
     debug_xtal_out_dac1();
@@ -53,42 +70,43 @@ void setExternalCrystalAsRTCSource()
     if (delta < 0) delta = -delta;
     uint32_t startCal=millis();
     while (delta > 0.002 && millis()-startCal<15000) {
-      printf("Waiting for 32kHz clock to be stable: %.3f kHz\n", freq_32k);
+      if(usb) Serial.printf("Waiting for 32kHz clock to be stable: %.3f kHz\n", freq_32k);
       cal_32k = CALIBRATE_ONE(RTC_CAL_32K_XTAL);
       freq_32k = factor / (float)cal_32k;
       delta = freq_32k - 32.768;
       if (delta < 0) delta = -delta;
     }
-    if(delta < 0.002)
-    {
+    if(delta < 0.002){
       rtc_clk_slow_freq_set(RTC_SLOW_FREQ_32K_XTAL);
       uint32_t rtc_clk_calibration = REG_READ(RTC_SLOW_CLK_CAL_REG);
-      printf("Slow clock calibration: %u\n", rtc_clk_calibration);
-      printf("32k calibration: %u\n", cal_32k);
+      if(usb) Serial.printf("Slow clock calibration: %u\n", rtc_clk_calibration);
+      if(usb) Serial.printf("32k calibration: %u\n", cal_32k);
       if ((rtc_clk_calibration > (cal_32k + 5)) || (rtc_clk_calibration < (cal_32k - 5))) {
-        printf("Miscalibrated, setting calibration register to 32k calibration.\n");
+        if(usb) Serial.printf("Miscalibrated, setting calibration register to 32k calibration.\n");
         REG_WRITE(RTC_SLOW_CLK_CAL_REG, cal_32k);
         rtc_clk_calibration = REG_READ(RTC_SLOW_CLK_CAL_REG);
         if (rtc_clk_calibration != cal_32k) {
-          printf("ERROR Calibration write failure.\n");
+          if(usb) Serial.printf("ERROR Calibration write failure.\n");
         }
       }
   
       if (cal_32k == 0)
       {
-          printf("32K XTAL OSC has not started up");
+          if(usb) Serial.printf("32K XTAL OSC has not started up");
       }
       else
       {
-          printf("done\n");
+          if(usb) Serial.printf("done\n");
       }
   
       if (rtc_clk_32k_enabled())
       {
-          printf("OSC Enabled\n");
+          Serial.println("OSC Enabled");
       }
     }
     else{
-      printf("OSC Not Enabled, using Internal 150KHz RC\n");
+      Serial.println("OSC Not Enabled, using Internal 150KHz RC");
     }
+
+    print_slow_clock_source();
 }

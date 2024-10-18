@@ -141,17 +141,21 @@ void loop()
     nixie.show_date(nix_time);
   }
 
-  //if enabled, fetch the network time daily at 00:00:00
-  if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
+  //if enabled, fetch the network time daily at 00:00:00 and sync every hour with external RTC
+  if(ntp)
   {
-    if(ntp)
+    if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       ntp_setup();
       int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
     }
-    else if (rtc)
+  }
+  if (rtc)
+  {
+    if(nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       nix_time = DS_RTC.getTime();
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
     }
   }
 
@@ -359,6 +363,10 @@ void ntp_setup()
 
 void rtc_setup()
 {
+  setExternalCrystalAsRTCSource();
+
+  /*
+  // manual RTC setup
   if(usb) Serial.println("Internal RTC Setup");
   rtc_clk_32k_enable(true);
   delay(1000);
@@ -377,7 +385,7 @@ void rtc_setup()
   }
 
   rtc_clk_slow_freq_set(RTC_SLOW_FREQ_32K_XTAL);
-
+  */
   int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
 }
 
