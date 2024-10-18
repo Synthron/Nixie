@@ -134,6 +134,7 @@ void loop()
     {
       ntp_setup();
       int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      if(rtc) DS_RTC.setTime(nix_time);
     }
   }
   if (rtc)
@@ -146,7 +147,7 @@ void loop()
   }
 
   //cycle segments every four hours at the hours
-  if(nix_time.hours % 4 == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
+  if(nix_time.hours % 4 == 0 && nix_time.minutes == 0)
     nixie.cycle();
 }
 
