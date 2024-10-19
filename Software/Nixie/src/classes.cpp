@@ -87,12 +87,12 @@ void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec)
   uint8_t h10, h1, m10, m1, s10, s1, d0, d1, d2, d3;
   uint16_t seg_h10, seg_h1, seg_m10, seg_m1, seg_s10, seg_s1;
 
-  h1 = hr % 10;
-  h10 = (hr - h1) / 10;
-  m1 = min % 10;
-  m10 = (min - m1) / 10;
-  s1 = sec % 10;
-  s10 = (sec - s1) / 10;
+  h1  = hr % 10;
+  h10 = hr / 10;
+  m1  = min % 10;
+  m10 = min / 10;
+  s1  = sec % 10;
+  s10 = sec / 10;
 
   seg_h10 = segmenting(h10);
   seg_h1  = segmenting(h1);

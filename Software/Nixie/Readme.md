@@ -43,6 +43,7 @@ Feature Overview:
 - [ ] get Temperature Readouts
 - [x] get different display modes with dots
 - [ ] get button interface done
+- [ ] fix error when reading external RTC
 
 ## necessary HW changes
 

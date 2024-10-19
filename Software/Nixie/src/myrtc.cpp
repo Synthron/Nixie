@@ -64,7 +64,7 @@ void setExternalCrystalAsRTCSource(){
     delay(1000);
 
     uint32_t cal_32k = CALIBRATE_ONE(RTC_CAL_32K_XTAL);
-    debug_xtal_out_dac1();
+    //debug_xtal_out_dac1();
     float freq_32k = factor / (float)cal_32k;
     float delta = freq_32k - 32.768;
     if (delta < 0) delta = -delta;

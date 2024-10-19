@@ -142,7 +142,8 @@ void loop()
     if(nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       nix_time = DS_RTC.getTime();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
+      if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
     }
   }
 
@@ -256,7 +257,7 @@ void handle_menu()
 
 void update_time()
 {
-  nix_time.hours    = int_rtc.getHour(true);
+  nix_time.hours    = int_rtc.getHour(true)-1;
   nix_time.minutes  = int_rtc.getMinute();
   nix_time.seconds  = int_rtc.getSecond();
   nix_time.date     = int_rtc.getDay();
@@ -336,7 +337,7 @@ void ntp_setup()
     if(usb) Serial.println(timeinfo.tm_mon, DEC);
 
     //update time info of nixie class
-    nix_time.hours = timeinfo.tm_hour-1;
+    nix_time.hours = timeinfo.tm_hour;
     nix_time.minutes = timeinfo.tm_min;
     nix_time.seconds = timeinfo.tm_sec;
     nix_time.date = timeinfo.tm_mday;
@@ -350,27 +351,6 @@ void rtc_setup()
 {
   setExternalCrystalAsRTCSource();
 
-  /*
-  // manual RTC setup
-  if(usb) Serial.println("Internal RTC Setup");
-  rtc_clk_32k_enable(true);
-  delay(1000);
-  //rtc_clk_32k_bootstrap(10);
-
-  uint32_t cal_val = rtc_clk_cal(RTC_CAL_32K_XTAL, 1000);
-
-  if (cal_val == 0)
-  {
-    if(usb) Serial.println("Kalibrierung ist fehlgeschlagen.");
-  }
-  else
-  {
-    if(usb) Serial.print("Kalibrierungswert: ");
-    if(usb) Serial.println(cal_val);
-  }
-
-  rtc_clk_slow_freq_set(RTC_SLOW_FREQ_32K_XTAL);
-  */
   int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
 }
 

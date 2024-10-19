@@ -12,6 +12,8 @@
 #define REG_WP   7
 #define REG_CHRG 8
 
+extern bool usb;
+
 struct mytimeinfo
 {
     uint8_t hours;
@@ -35,8 +37,8 @@ class DS1302
     mytimeinfo getTime();
 
   private:
-    uint8_t io, clk, ce;
-    void send(uint8_t dat);
+    uint8_t io, clk, ce, del;
+    void send(uint8_t dat, bool read_after);
     uint8_t read();
 };
 

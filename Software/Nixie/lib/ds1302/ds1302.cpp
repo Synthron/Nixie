@@ -8,6 +8,7 @@ void DS1302::init(uint8_t p_IO, uint8_t p_CLK, uint8_t p_CE)
     this->ce = p_CE;
     this->clk = p_CLK;
     this->io = p_IO;
+    this->del = 1;
 
     //Clear 'CLOCK HALT' flag
     uint8_t temp = readByte(REG_SECS);
@@ -23,18 +24,18 @@ void DS1302::writeByte(uint8_t addr, uint8_t dat)
     //IO line setup
     pinMode(this->io, OUTPUT);
     digitalWrite(this->io, LOW);
-    delayMicroseconds(1);
+    delayMicroseconds(del);
 
     //Start of Data Transfer
     digitalWrite(this->ce, HIGH);
-    delayMicroseconds(1);
+    delayMicroseconds(del);
 
-    uint8_t command_byte = 0b10000000 | (addr & 0x3F)<<1;
-    send(command_byte);
-    send(dat);
+    uint8_t command_byte = 0b10000000 | ((addr & 0x3F)<<1);
+    send(command_byte, false);
+    send(dat, false);
 
     //end of Data Transfer
-    delayMicroseconds(1);
+    delayMicroseconds(del);
     digitalWrite(this->ce, LOW);
 }
 
@@ -45,22 +46,21 @@ uint8_t DS1302::readByte(uint8_t addr)
     //IO line setup
     pinMode(this->io, OUTPUT);
     digitalWrite(this->io, LOW);
-    delayMicroseconds(1);
+    delayMicroseconds(del);
 
     //Start of Data Transfer
     digitalWrite(this->ce, HIGH);
-    delayMicroseconds(1);
+    delayMicroseconds(del);
 
-    uint8_t command_byte = 0b10000001 | (addr & 0x3F)<<1;
-    send(command_byte);
+    uint8_t command_byte = 0b10000001 | ((addr & 0x3F)<<1);
+    send(command_byte, true);
 
-    pinMode(this->io, INPUT);
-    delayMicroseconds(1);
+    delayMicroseconds(del);
 
     temp = read();
 
     //end of Data Transfer
-    delayMicroseconds(1);
+    delayMicroseconds(del);
     digitalWrite(this->ce, LOW);
 
     return temp;
@@ -131,17 +131,24 @@ mytimeinfo DS1302::getTime()
 
 // Private Functions
 
-void DS1302::send(uint8_t dat)
+void DS1302::send(uint8_t dat, bool read_after)
 {
     //Send Byte Data on positive Edges
-    for(uint8_t i = 0; i < 8; i++)
+    for(uint8_t i = 0; i < 7; i++)
     {
         digitalWrite(this->io, (dat >> i)&0x01);
-        delayMicroseconds(1);
+        delayMicroseconds(del);
         digitalWrite(this->clk, HIGH);
-        delayMicroseconds(1);
+        delayMicroseconds(del);
         digitalWrite(this->clk, LOW);
     }
+
+    digitalWrite(this->io, (dat >> 7)&0x01);
+    delayMicroseconds(del);
+    digitalWrite(this->clk, HIGH);
+    if (read_after)
+        pinMode(this->io, INPUT);
+    digitalWrite(this->clk, LOW);
 }
 
 uint8_t DS1302::read()
@@ -155,10 +162,11 @@ uint8_t DS1302::read()
         if(i < 7)
         {
             digitalWrite(this->clk, HIGH);
-            delayMicroseconds(1);
+            delayMicroseconds(del);
             digitalWrite(this->clk, LOW);
-            delayMicroseconds(1);
+            delayMicroseconds(del);
         }
     }
+    if (usb) Serial.printf("RTC Received: %2x\r\n", temp);
     return temp;
 }
