@@ -43,7 +43,7 @@ Feature Overview:
 - [ ] get Temperature Readouts
 - [x] get different display modes with dots
 - [ ] get button interface done
-- [ ] fix error when reading external RTC
+- [x] fix error when reading external RTC
 
 ## necessary HW changes
 
@@ -52,3 +52,6 @@ Feature Overview:
   - bridge TP6 to SDA
 - Timing Oszillator MC34063 -> 100pF
 - R115 changed to 1k
+
+If Channel 2 of the ADC should be used as LDR input:
+- change R113 to 1k

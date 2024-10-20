@@ -59,7 +59,7 @@ float crystal_frequency() {
 void setExternalCrystalAsRTCSource(){
     Serial.println("First boot, bootstrap and enable 32k XTAL");
     print_fast_clk_math();
-    // rtc_clk_32k_bootstrap(10);
+    //rtc_clk_32k_bootstrap(10);
     rtc_clk_32k_enable(true);
     delay(1000);
 

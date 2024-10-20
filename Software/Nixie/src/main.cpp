@@ -20,14 +20,14 @@ const long gmtOffset_sec = 3600;
 const int daylightOffset_sec = 3600;
 
 //bootstrap flags
-bool ntp;
-bool dcf;
-bool ldr;
-bool t1;
-bool t2;
-bool dimm;
-bool rtc;
-bool usb;
+bool ntp=1;
+bool dcf=0;
+bool ldr=0;
+bool t1=0;
+bool t2=0;
+bool dimm=1;
+bool rtc=0;
+bool usb=1;
 
 //isr flags
 uint8_t ms500_cycle = 0;
@@ -81,7 +81,12 @@ void setup()
   {
     DS_RTC.init(PIN_RTCIO, PIN_RTCCLK, PIN_RTCCE1);
     DS_RTC.enableCharging();
-    if(ntp) DS_RTC.setTime(nix_time);
+    if(ntp) 
+    {
+      nix_time.hours++;
+      DS_RTC.setTime(nix_time);
+      nix_time.hours--;
+    }
     else nix_time = DS_RTC.getTime();
   }
 
@@ -100,7 +105,11 @@ void setup()
   pinMode(PIN_INT, INPUT_PULLUP);
   attachInterrupt(PIN_INT, &input_isr, GPIO_INTR_NEGEDGE);
 
-  if(usb) Serial.println("Booting complete");
+  if (usb) Serial.println("Booting complete");
+  if (usb) Serial.printf("displaying Info\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+  update_time();
+  if (usb) Serial.printf("displaying Info\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+  
 }
 
 void loop()
@@ -133,8 +142,13 @@ void loop()
     if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       ntp_setup();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
-      if(rtc) DS_RTC.setTime(nix_time);
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      if(rtc) 
+      {
+        nix_time.hours++;
+        DS_RTC.setTime(nix_time);
+        nix_time.hours--;
+      }
     }
   }
   if (rtc)
@@ -142,7 +156,7 @@ void loop()
     if(nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       nix_time = DS_RTC.getTime();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month, nix_time.year + 2000);
       if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
     }
   }
@@ -257,7 +271,7 @@ void handle_menu()
 
 void update_time()
 {
-  nix_time.hours    = int_rtc.getHour(true)-1;
+  nix_time.hours    = int_rtc.getHour(true);
   nix_time.minutes  = int_rtc.getMinute();
   nix_time.seconds  = int_rtc.getSecond();
   nix_time.date     = int_rtc.getDay();
@@ -339,7 +353,7 @@ void ntp_setup()
     //update time info of nixie class
     nix_time.hours = timeinfo.tm_hour;
     nix_time.minutes = timeinfo.tm_min;
-    nix_time.seconds = timeinfo.tm_sec;
+    nix_time.seconds = timeinfo.tm_sec+1;
     nix_time.date = timeinfo.tm_mday;
     nix_time.month = timeinfo.tm_mon;
     nix_time.year = timeinfo.tm_year % 100;
@@ -351,7 +365,9 @@ void rtc_setup()
 {
   setExternalCrystalAsRTCSource();
 
-  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+  if (usb) Serial.printf("storing internally\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+
+  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
 }
 
 void wifi_setup()
