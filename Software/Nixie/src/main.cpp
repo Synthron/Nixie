@@ -17,7 +17,7 @@ ESP32Time int_rtc;
 
 const char *ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 3600;
-const int daylightOffset_sec = 3600;
+int daylightOffset_sec = 3600;
 
 //bootstrap flags
 bool ntp=1;
@@ -96,20 +96,19 @@ void setup()
 
   //setup Timers
   //Channel 1: 500ms timer
+/*
   Timer_Channel1 = timerBegin(0, 80, true);
-  timerAlarmWrite(Timer_Channel1, 500200, true);
+  timerAlarmWrite(Timer_Channel1, 500000, true);
   timerAttachInterrupt(Timer_Channel1, &timer1, true);
   timerAlarmEnable(Timer_Channel1);
+*/
 
   //setup Button Input Interrupts
   pinMode(PIN_INT, INPUT_PULLUP);
   attachInterrupt(PIN_INT, &input_isr, GPIO_INTR_NEGEDGE);
 
   if (usb) Serial.println("Booting complete");
-  if (usb) Serial.printf("displaying Info\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
-  update_time();
-  if (usb) Serial.printf("displaying Info\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
-  
+  calc_DST();
 }
 
 void loop()
@@ -159,6 +158,12 @@ void loop()
       int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month, nix_time.year + 2000);
       if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
     }
+  }
+
+  //every hour check for daylight savings time
+  if(nix_time.minutes == 0 && nix_time.seconds == 0)
+  {
+    calc_DST();
   }
 
   //cycle segments every four hours at the hours
@@ -395,6 +400,91 @@ void wifi_setup()
       0);        /* pin task to core 0 */
   delay(500);
 
+}
+
+void calc_DST()
+{
+  bool was_dst;
+  bool is_DST;
+
+  //detect previous Daylight Savings Time Status
+  if(daylightOffset_sec = 3600)
+  {
+    was_dst = 1;
+  }
+  else 
+  {
+    was_dst = 0;
+  }
+
+  // in winter months no savings time
+  if(nix_time.month < 3 || nix_time.month > 10)
+  {
+    is_DST = 0;
+  }
+  // in summer months savings time
+  else if (nix_time.month > 3 && nix_time.month < 10)
+  {
+    is_DST = 1;
+  }
+
+  /**
+   * March and october have 31 days
+   * change occurs on last sunday of the month
+   * weekdays are saved as 0..6 starting with 0 = sunday
+   * therefore: 
+   * if (<current week day> == <sunday> && <31 days> - <current date> < <7>)
+   *    last sunday of the month
+   */
+  else if ((nix_time.wday == 0) && ((31 - nix_time.date) < 7))
+  {
+    //if march and 02:00 or later = DST
+    if(nix_time.month == 3)
+    {
+      if (nix_time.hours >= 2)
+      {
+        is_DST = 1;
+      }
+      else
+      {
+        is_DST = 0;
+      }
+    }
+    //if october and 03:00 or later = no DST
+    else if (nix_time.month == 10)
+    {
+      if(nix_time.hours >= 3 || !was_dst)
+      {
+        is_DST = 0;
+      }
+      else if(was_dst)
+      {
+        is_DST = 1;
+      }
+    }
+  }
+
+  //change time if Daylight Savings Time has changed
+  if(is_DST)
+  {
+    daylightOffset_sec = 3600;
+    if(!was_dst)
+    {
+      nix_time.hours++;
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      DS_RTC.setTime(nix_time);
+    }
+  }
+  else
+  {
+    daylightOffset_sec = 0;
+    if(was_dst)
+    {
+      nix_time.hours--;
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      DS_RTC.setTime(nix_time);
+    }
+  }
 }
 
 

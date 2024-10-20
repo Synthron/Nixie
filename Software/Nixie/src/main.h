@@ -39,6 +39,7 @@ void ntp_setup();
 void rtc_setup();
 void wifi_setup();
 void read_Straps();
+void calc_DST();
 void input_isr();
 void IRAM_ATTR timer1();
 
