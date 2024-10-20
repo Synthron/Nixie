@@ -29,7 +29,7 @@ extern struct tm timeinfo;
 
 extern const char* ntpServer;
 extern const long  gmtOffset_sec;
-extern const int   daylightOffset_sec;
+extern int   daylightOffset_sec;
 
 void write_Registers(uint64_t data);
 void handle_menu();
@@ -39,7 +39,8 @@ void ntp_setup();
 void rtc_setup();
 void wifi_setup();
 void read_Straps();
-void calc_DST();
+bool check_DST();
+void set_DST(bool start_DST);
 void input_isr();
 void IRAM_ATTR timer1();
 

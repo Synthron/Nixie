@@ -17,7 +17,8 @@ ESP32Time int_rtc;
 
 const char *ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 3600;
-int daylightOffset_sec = 3600;
+int daylightOffset_sec = 0;
+bool dst_last;
 
 //bootstrap flags
 bool ntp=1;
@@ -28,6 +29,8 @@ bool t2=0;
 bool dimm=1;
 bool rtc=0;
 bool usb=1;
+
+bool boot;
 
 //isr flags
 uint8_t ms500_cycle = 0;
@@ -43,6 +46,7 @@ hw_timer_t *Timer_Channel1 = NULL;
 
 void setup()
 {
+  boot = 1;
   read_Straps();
 
   if(usb) Serial.begin(115200);
@@ -83,9 +87,8 @@ void setup()
     DS_RTC.enableCharging();
     if(ntp) 
     {
-      nix_time.hours++;
       DS_RTC.setTime(nix_time);
-      nix_time.hours--;
+      if (usb) Serial.printf("Saving internallay\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
     }
     else nix_time = DS_RTC.getTime();
   }
@@ -108,7 +111,11 @@ void setup()
   attachInterrupt(PIN_INT, &input_isr, GPIO_INTR_NEGEDGE);
 
   if (usb) Serial.println("Booting complete");
-  calc_DST();
+
+  dst_last = check_DST();
+  set_DST(dst_last);
+
+  boot = 0;
 }
 
 void loop()
@@ -141,12 +148,10 @@ void loop()
     if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       ntp_setup();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
       if(rtc) 
       {
-        nix_time.hours++;
         DS_RTC.setTime(nix_time);
-        nix_time.hours--;
       }
     }
   }
@@ -155,16 +160,21 @@ void loop()
     if(nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       nix_time = DS_RTC.getTime();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month, nix_time.year + 2000);
-      if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
     }
   }
 
   //every hour check for daylight savings time
   if(nix_time.minutes == 0 && nix_time.seconds == 0)
   {
-    calc_DST();
+    if (check_DST() != dst_last)
+    {
+      dst_last = check_DST();
+      set_DST(dst_last);
+    }
   }
+
 
   //cycle segments every four hours at the hours
   if(nix_time.hours % 4 == 0 && nix_time.minutes == 0)
@@ -280,7 +290,7 @@ void update_time()
   nix_time.minutes  = int_rtc.getMinute();
   nix_time.seconds  = int_rtc.getSecond();
   nix_time.date     = int_rtc.getDay();
-  nix_time.month    = int_rtc.getMonth()+1;
+  nix_time.month    = int_rtc.getMonth();
   nix_time.year     = int_rtc.getYear() % 100;
   nix_time.wday     = int_rtc.getDayofWeek();
 }
@@ -360,7 +370,7 @@ void ntp_setup()
     nix_time.minutes = timeinfo.tm_min;
     nix_time.seconds = timeinfo.tm_sec+1;
     nix_time.date = timeinfo.tm_mday;
-    nix_time.month = timeinfo.tm_mon;
+    nix_time.month = timeinfo.tm_mon+1;
     nix_time.year = timeinfo.tm_year % 100;
     nix_time.wday = timeinfo.tm_wday;
   }
@@ -372,7 +382,7 @@ void rtc_setup()
 
   if (usb) Serial.printf("storing internally\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
 
-  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
 }
 
 void wifi_setup()
@@ -402,13 +412,13 @@ void wifi_setup()
 
 }
 
-void calc_DST()
+bool check_DST()
 {
   bool was_dst;
   bool is_DST;
 
   //detect previous Daylight Savings Time Status
-  if(daylightOffset_sec = 3600)
+  if(daylightOffset_sec == 3600)
   {
     was_dst = 1;
   }
@@ -417,13 +427,15 @@ void calc_DST()
     was_dst = 0;
   }
 
+  if(usb) Serial.printf("[debug] was_DST: %x\r\n", was_dst);
+
   // in winter months no savings time
-  if(nix_time.month < 3 || nix_time.month > 10)
+  if(nix_time.month < 3 || nix_time.month > 10 || (nix_time.month == 3 && ((31 - nix_time.date) > 7)) || (nix_time.month == 10 && nix_time.wday != 0 && ((31 - nix_time.date) < 7)))
   {
     is_DST = 0;
   }
   // in summer months savings time
-  else if (nix_time.month > 3 && nix_time.month < 10)
+  else if (nix_time.month > 3 && nix_time.month < 10 || (nix_time.month == 10 && ((31 - nix_time.date) > 7)) || (nix_time.month == 3 && nix_time.wday != 0 && ((31 - nix_time.date) < 7)))
   {
     is_DST = 1;
   }
@@ -453,7 +465,7 @@ void calc_DST()
     //if october and 03:00 or later = no DST
     else if (nix_time.month == 10)
     {
-      if(nix_time.hours >= 3 || !was_dst)
+      if(nix_time.hours >= 3 && !was_dst)
       {
         is_DST = 0;
       }
@@ -464,26 +476,33 @@ void calc_DST()
     }
   }
 
+  if(usb) Serial.printf("[debug] is_DST: %x\r\n", is_DST);
+  return is_DST;
+
+}
+
+void set_DST(bool start_DST)
+{
+  uint8_t rtc_dst = DS_RTC.readByte(REG_RAM1);
+  if(usb) Serial.printf("[debug] Read from RTC Register: %x\r\n", rtc_dst);
   //change time if Daylight Savings Time has changed
-  if(is_DST)
+  if(start_DST && (!rtc_dst || (boot && ntp)))
   {
+    if(usb) Serial.println("[debug] Set Summer Time");
     daylightOffset_sec = 3600;
-    if(!was_dst)
-    {
-      nix_time.hours++;
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
-      DS_RTC.setTime(nix_time);
-    }
+    DS_RTC.writeByte(REG_RAM1, 1);
+    nix_time.hours++;
+    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+    DS_RTC.setTime(nix_time);
   }
-  else
+  else if (!start_DST && (rtc_dst || (boot && ntp)))
   {
+    if(usb) Serial.println("[debug] Set Winter Time");
     daylightOffset_sec = 0;
-    if(was_dst)
-    {
-      nix_time.hours--;
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours-1, nix_time.date, nix_time.month+1, nix_time.year + 2000);
-      DS_RTC.setTime(nix_time);
-    }
+    DS_RTC.writeByte(REG_RAM1, 0);
+    nix_time.hours--;
+    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+    DS_RTC.setTime(nix_time);
   }
 }
 

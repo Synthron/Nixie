@@ -11,6 +11,7 @@
 #define REG_YEAR 6
 #define REG_WP   7
 #define REG_CHRG 8
+#define REG_RAM1 0x20
 
 extern bool usb;
 

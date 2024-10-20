@@ -30,7 +30,7 @@ void DS1302::writeByte(uint8_t addr, uint8_t dat)
     digitalWrite(this->ce, HIGH);
     delayMicroseconds(del);
 
-    uint8_t command_byte = 0b10000000 | ((addr & 0x3F)<<1);
+    uint8_t command_byte = 0b10000000 | ((addr & 0x7F)<<1);
     send(command_byte, false);
     send(dat, false);
 
@@ -52,7 +52,7 @@ uint8_t DS1302::readByte(uint8_t addr)
     digitalWrite(this->ce, HIGH);
     delayMicroseconds(del);
 
-    uint8_t command_byte = 0b10000001 | ((addr & 0x3F)<<1);
+    uint8_t command_byte = 0b10000001 | ((addr & 0x7F)<<1);
     send(command_byte, true);
 
     delayMicroseconds(del);
@@ -77,18 +77,18 @@ void DS1302::setTime(mytimeinfo timestruct)
 {
     uint8_t h10, h1, m10, m1, s10, s1;
     uint8_t d1, d10, mo1, mo10, y1, y10;
-    h1 = timestruct.hours % 10;
-    h10 = (timestruct.hours - h1) / 10;
-    m1 = timestruct.minutes % 10;
-    m10 = (timestruct.minutes - m1) / 10;
-    s1 = timestruct.seconds % 10;
-    s10 = (timestruct.seconds - s1) / 10;
-    d1 = timestruct.date % 10;
-    d10 = (timestruct.date - d1) / 10;
-    mo1 = (timestruct.month+1) % 10;
-    mo10 = ((timestruct.month+1) - mo1) / 10;
-    y1 = timestruct.year % 10;
-    y10 = (timestruct.year - y1) / 10;
+    h1  = timestruct.hours % 10;
+    h10 = timestruct.hours / 10;
+    m1  = timestruct.minutes % 10;
+    m10 = timestruct.minutes / 10;
+    s1  = timestruct.seconds % 10;
+    s10 = timestruct.seconds  / 10;
+    d1  = timestruct.date % 10;
+    d10 = timestruct.date / 10;
+    mo1 = timestruct.month % 10;
+    mo10 = timestruct.month / 10;
+    y1  = timestruct.year % 10;
+    y10 = timestruct.year / 10;
 
     uint8_t seconds =  s10 << 4 | s1;
     uint8_t minutes =  m10 << 4 | m1;
@@ -167,6 +167,5 @@ uint8_t DS1302::read()
             delayMicroseconds(del);
         }
     }
-    if (usb) Serial.printf("RTC Received: %2x\r\n", temp);
     return temp;
 }
