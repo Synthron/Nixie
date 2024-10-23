@@ -3,7 +3,7 @@
 ## How to use this software
 
 In `src` folder:  
-copy file `network.h.template`, rename it to `network.h` and input your wifi settings.   
+copy file `network.h.template`, rename it to `network.h` and input your wifi settings.  
 Compile and upload to ESP32
 
 ## Features
@@ -21,6 +21,7 @@ Configuration:
   - Enable Wifi & NTP services
 
 Feature Overview:
+
 - internal RTC as timekeeping
 - prioritized synchronization
   - NTP sync if enabled
@@ -32,7 +33,6 @@ Feature Overview:
   - Temperature Sensor 1
   - Temperature Sensor 2
 - USB debug messages if enabled
-
 
 ## To-Do
 
@@ -54,4 +54,11 @@ Feature Overview:
 - R115 changed to 1k
 
 If Channel 2 of the ADC should be used as LDR input:
+
 - change R113 to 1k
+
+for ADC to work:
+
+- bridge R111 & R113 with 0 Ohm respectively
+- 100 Ohm Parallel C112
+- 100 Ohm (PT100) / 1kOhm (LDR) parallel C113

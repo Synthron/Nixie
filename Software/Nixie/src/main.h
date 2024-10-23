@@ -41,7 +41,13 @@ void wifi_setup();
 void read_Straps();
 bool check_DST();
 void set_DST(bool start_DST);
-void input_isr();
+
+void start_adc(bool channel, bool continuous);
+uint16_t read_adc();
+uint8_t get_temp(uint16_t adc, bool channel);
+void dimming();
+
+void IRAM_ATTR input_isr();
 void IRAM_ATTR timer1();
 
 uint64_t run = 1;

@@ -26,4 +26,7 @@
 #define ADDR_CONFIG 0x20
 #define ADDR_INPUT  0x21
 #define ADDR_OUTPUT 0x22
-#define ADDR_ADC    0x68
+#define ADDR_ADC    0x68 // 0x01101000
+
+#define T1_Offset 5
+#define T2_Offset 5

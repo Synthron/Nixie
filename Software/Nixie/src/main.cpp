@@ -30,6 +30,9 @@ bool dimm=1;
 bool rtc=0;
 bool usb=1;
 
+bool dim_once;
+bool half = false;
+
 bool boot;
 
 //isr flags
@@ -41,6 +44,8 @@ uint8_t dis_mode, menu_mode = 0;
 
 //misc
 uint8_t k = 0, pwm = 64;
+uint8_t T1_Temp, T2_Temp;
+float ldr_log;
 
 hw_timer_t *Timer_Channel1 = NULL;
 
@@ -67,6 +72,11 @@ void setup()
 
   //Dimming Enable
   if(dimm)
+  {
+    analogWriteFrequency(100);
+    analogWrite(PIN_PWM, 0);
+  }
+  else
   {
     analogWriteFrequency(100);
     analogWrite(PIN_PWM, pwm);
@@ -116,6 +126,8 @@ void setup()
   set_DST(dst_last);
 
   boot = 0;
+
+  if(t1) start_adc(0, 0);
 }
 
 void loop()
@@ -127,19 +139,56 @@ void loop()
     handle_menu();
   }
 
+
+// Half Second Cycle
+  if ((int_rtc.getMillis()<500) && !half)
+  {
+    nixie.mode = nixie.d_on;
+    if (t1)T1_Temp = get_temp(read_adc(), 0);
+    if (ldr || t2) start_adc(1, 0);
+    dim_once = 0;
+    half = 1;
+  }
+  if((int_rtc.getMillis()>500) && half)
+  {
+    nixie.mode = nixie.d_off;
+    if (ldr) ldr_log = log10(read_adc());
+    else if(t2) T2_Temp = get_temp(read_adc(), 1);
+    if (t1) start_adc(0, 0);
+    half = 0;
+  }
+// Display Mode
   if(dis_mode == 0)
   {
-    if(int_rtc.getMillis()>500)
+    if((int_rtc.getMillis()>500) && (nixie.mode == nixie.d_on))
+    {
       nixie.mode = nixie.d_off;
-    else
+    }
+    else if ((int_rtc.getMillis()<500) && (nixie.mode == nixie.d_off))
+    {
       nixie.mode = nixie.d_on;
-
+    }
     nixie.show_time(nix_time);
   }
   else if(dis_mode == 1)
   {
     nixie.mode = nixie.d_date;
     nixie.show_date(nix_time);
+
+  }
+  else if (dis_mode == 2)
+  {
+    start_adc(0, 0);
+    if(int_rtc.getMillis() > 900)
+      T1_Temp = get_temp(read_adc(), 0);
+    nixie.show_temp(T1_Temp, 0);
+  }
+  else if (dis_mode == 3)
+  {
+    start_adc(1, 0);
+    if(int_rtc.getMillis() > 900)
+      T2_Temp = get_temp(read_adc(), 0);
+    nixie.show_temp(T2_Temp, 1);
   }
 
   //if enabled, fetch the network time daily at 00:00:00 and sync every hour with external RTC
@@ -179,6 +228,12 @@ void loop()
   //cycle segments every four hours at the hours
   if(nix_time.hours % 4 == 0 && nix_time.minutes == 0)
     nixie.cycle();
+
+  if(dimm && (int_rtc.getMillis() > 900) && !dim_once) 
+  {
+    dimming();
+    dim_once = true;
+  }
 }
 
 void write_Registers(uint64_t data)
@@ -207,7 +262,6 @@ void Web_Tasks(void *pvParameters)
     vTaskDelay(1);
   }
 }
-
 
 void handle_menu()
 {
@@ -260,13 +314,13 @@ void handle_menu()
       
     }
     //increase brightness via PWM
-    else if (input_no == 2 && pwm < 248)
+    else if (input_no == 2 && pwm < 248 && !dimm)
     {
       pwm += 8;
       analogWrite(PIN_PWM, pwm);
     }
     //decrease brightness via PWM
-    else if (input_no == 3 && pwm > 0)
+    else if (input_no == 3 && pwm > 0 && !dimm)
     {
       pwm -= 8;
       analogWrite(PIN_PWM, pwm);
@@ -317,6 +371,7 @@ void read_Straps()
   rtc  = (temp_strap >> 6) & 0x01;
   usb  = (temp_strap >> 7) & 0x01;
 }
+
 void pinConfig()
 {
   if(usb) Serial.println("IO Config");
@@ -506,6 +561,73 @@ void set_DST(bool start_DST)
   }
 }
 
+// ADC Functions
+void start_adc(bool channel, bool continuous)
+{
+  //0b S C1 C0 O/C S1 S0 G1 G0
+  //start conversion in OneShot Mode
+  uint8_t config_reg = 0x80;
+  //select channel
+  config_reg |= (uint8_t)channel << 5;
+
+  //set sample mode
+  if(continuous)
+    config_reg |= 0x10;
+  
+  //set sample rate and resolution 15SPS 16bit
+  config_reg |= 0x08;
+
+  Wire.beginTransmission(ADDR_ADC);
+  Wire.write(config_reg);
+  Wire.endTransmission();
+}
+
+uint16_t read_adc()
+{
+  uint8_t d_high, d_low, conf;
+  Wire.requestFrom(ADDR_ADC, 3);
+  d_high = Wire.read();
+  d_low = Wire.read();
+  conf = Wire.read();
+  Wire.endTransmission();
+
+  return ((uint16_t)d_high << 8) + d_low;
+}
+
+uint8_t get_temp(uint16_t adc, bool channel)
+{
+  uint8_t t_out;
+  float a = 0.0039083;
+  float rt;
+  float ref = 2.048;
+  float fac = ref / 32768;
+  float volt = adc * fac;
+
+  rt = (3.3 - volt) / (volt / 100);
+
+  float temp = ((rt / 100)-1)/a;
+  t_out = (uint8_t)(temp + 0.5);
+  if(channel == 0)
+    return t_out - T1_Offset;
+  else
+    return t_out - T2_Offset;
+}
+
+void dimming()
+{
+  uint8_t pwm_fac;
+
+  if(ldr_log > 4.0)
+    ldr_log = 4.0;
+
+  pwm_fac = (uint8_t)(20.0 * ldr_log);
+
+  if(pwm_fac < 16)
+    pwm_fac = 16;
+
+  analogWrite(PIN_PWM, pwm_fac);
+
+}
 
 // ISR FUnctions
 

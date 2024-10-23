@@ -11038,6 +11038,16 @@
 		)
 		(uuid "21cb4c2b-7e78-4210-90e9-818db9a36e94")
 	)
+	(text "100 Ohm for PT100\n1k for LDR"
+		(exclude_from_sim no)
+		(at 291.592 252.984 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "26e53472-d5b6-4fe9-99f6-a3d4c3ecc8e8")
+	)
 	(text "USB and Programming Interface"
 		(exclude_from_sim no)
 		(at 105.156 19.05 0)
@@ -16973,7 +16983,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100 0.1%"
+		(property "Value" "1k 0.1%"
 			(at 274.32 255.2699 0)
 			(effects
 				(font

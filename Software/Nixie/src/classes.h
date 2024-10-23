@@ -37,6 +37,7 @@ class Clock
     
     void show_time(mytimeinfo);
     void show_date(mytimeinfo);
+    void show_temp(uint8_t temp, bool ch);
     void cycle();
   
   private:

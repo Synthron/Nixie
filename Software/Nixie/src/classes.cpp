@@ -49,6 +49,8 @@ void Wifi::save_config()
 void Clock::show_time(mytimeinfo time)
 {
   serialize(time.hours, time.minutes, time.seconds);
+
+  send();
 }
 
 // Wrapper Function Display Date
@@ -56,6 +58,22 @@ void Clock::show_date(mytimeinfo time)
 {
   mode = d_date;
   serialize(time.date, time.month, time.year);
+
+  send();
+}
+
+void Clock::show_temp(uint8_t temp, bool ch)
+{
+  mode = d_off;
+  serialize((uint8_t)ch+1, temp/100, temp % 100);
+  // temp < 100  0b    1111111111 1111111111 11 0000000000 0000000000 11 1111111111 0000000000
+  // temp > 99   0b    1111111111 1111111111 11 1111111111 0000000000 11 1111111111 0000000000
+  if(temp > 99)
+    SDAT &= 0b1111111111111111111111111111111100000000001111111111110000000000;
+  else
+    SDAT &= 0b1111111111111111111111000000000000000000001111111111110000000000;
+
+  send();
 }
 
 void Clock::cycle()
@@ -66,6 +84,7 @@ void Clock::cycle()
   for(uint8_t i = 0; i < 10; i++)
   {
     serialize(11*i, 11*i, 11*i);
+    send();
     delay(6000);
   }
   pwm = old_pwm;
@@ -144,7 +163,6 @@ void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec)
   SDAT |= (uint64_t)seg_s10 << 44;
   SDAT |= (uint64_t)seg_s1 << 54;
 
-  send();
 }
 
 uint16_t Clock::segmenting(uint8_t num)
