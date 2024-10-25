@@ -122,11 +122,11 @@ void setup()
 
   if (usb) Serial.println("Booting complete");
 
-  Serial.printf("Current Time\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
+  //Serial.printf("Current Time\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
 
   dst_last = check_DST();
   set_DST(dst_last);
-  Serial.printf("After DST Check\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
+  //Serial.printf("After DST Check\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
 
 
   boot = 0;
@@ -491,13 +491,11 @@ bool check_DST()
   if(nix_time.month < 3 || nix_time.month > 10 || (nix_time.month == 3 && ((31 - nix_time.date) >= (7 - nix_time.wday))) || (nix_time.month == 10 && ((31 - nix_time.date) <= (7 - nix_time.wday))))
   {
     is_DST = 0;
-    if(usb) Serial.printf("[debug] is_DST set: %x\r\n", is_DST);
   }
   // in summer months savings time
   else if (nix_time.month > 3 && nix_time.month < 10 || (nix_time.month == 10 && ((31 - nix_time.date) >= (7 - nix_time.wday))) || (nix_time.month == 3 && ((31 - nix_time.date) <= (7 - nix_time.wday))))
   {
     is_DST = 1;
-    if(usb) Serial.printf("[debug] is_DST set: %x\r\n", is_DST);
   }
 
   /**
@@ -508,7 +506,7 @@ bool check_DST()
    * if (<current week day> == <sunday> && <31 days> - <current date> < <7>)
    *    last sunday of the month
    */
-  else if ((nix_time.wday == 0) && ((31 - nix_time.date) < 7))
+  if ((nix_time.wday == 0) && ((31 - nix_time.date) < 7))
   {
     //if march and 02:00 or later = DST
     if(nix_time.month == 3)
@@ -525,7 +523,7 @@ bool check_DST()
     //if october and 03:00 or later = no DST
     else if (nix_time.month == 10)
     {
-      if(nix_time.hours >= 3 && !was_dst)
+      if(nix_time.hours >= 2 && !was_dst)
       {
         is_DST = 0;
       }
