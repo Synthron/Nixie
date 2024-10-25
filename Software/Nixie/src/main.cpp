@@ -122,8 +122,12 @@ void setup()
 
   if (usb) Serial.println("Booting complete");
 
+  Serial.printf("Current Time\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
+
   dst_last = check_DST();
   set_DST(dst_last);
+  Serial.printf("After DST Check\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
+
 
   boot = 0;
 
@@ -138,7 +142,6 @@ void loop()
   {
     handle_menu();
   }
-
 
 // Half Second Cycle
   if ((int_rtc.getMillis()<500) && !half)
@@ -485,14 +488,16 @@ bool check_DST()
   if(usb) Serial.printf("[debug] was_DST: %x\r\n", was_dst);
 
   // in winter months no savings time
-  if(nix_time.month < 3 || nix_time.month > 10 || (nix_time.month == 3 && ((31 - nix_time.date) > 7)) || (nix_time.month == 10 && nix_time.wday != 0 && ((31 - nix_time.date) < 7)))
+  if(nix_time.month < 3 || nix_time.month > 10 || (nix_time.month == 3 && ((31 - nix_time.date) >= (7 - nix_time.wday))) || (nix_time.month == 10 && ((31 - nix_time.date) <= (7 - nix_time.wday))))
   {
     is_DST = 0;
+    if(usb) Serial.printf("[debug] is_DST set: %x\r\n", is_DST);
   }
   // in summer months savings time
-  else if (nix_time.month > 3 && nix_time.month < 10 || (nix_time.month == 10 && ((31 - nix_time.date) > 7)) || (nix_time.month == 3 && nix_time.wday != 0 && ((31 - nix_time.date) < 7)))
+  else if (nix_time.month > 3 && nix_time.month < 10 || (nix_time.month == 10 && ((31 - nix_time.date) >= (7 - nix_time.wday))) || (nix_time.month == 3 && ((31 - nix_time.date) <= (7 - nix_time.wday))))
   {
     is_DST = 1;
+    if(usb) Serial.printf("[debug] is_DST set: %x\r\n", is_DST);
   }
 
   /**
@@ -555,7 +560,7 @@ void set_DST(bool start_DST)
     if(usb) Serial.println("[debug] Set Winter Time");
     daylightOffset_sec = 0;
     DS_RTC.writeByte(REG_RAM1, 0);
-    nix_time.hours--;
+    if (!(boot && ntp)) nix_time.hours--;
     int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
     DS_RTC.setTime(nix_time);
   }
