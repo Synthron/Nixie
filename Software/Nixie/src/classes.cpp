@@ -85,7 +85,7 @@ void Clock::cycle()
   {
     serialize(11*i, 11*i, 11*i);
     send();
-    delay(6000);
+    delay(12000);
   }
   pwm = old_pwm;
   analogWrite(PIN_PWM, pwm);

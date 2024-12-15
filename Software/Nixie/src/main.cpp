@@ -98,7 +98,7 @@ void setup()
     if(ntp) 
     {
       DS_RTC.setTime(nix_time);
-      if (usb) Serial.printf("Saving internallay\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+      if (usb) Serial.printf("Saving internallay\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
     }
     else nix_time = DS_RTC.getTime();
   }
@@ -124,8 +124,8 @@ void setup()
 
   //Serial.printf("Current Time\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
 
-  dst_last = check_DST();
-  set_DST(dst_last);
+  //dst_last = check_DST();
+  //set_DST(dst_last);
   //Serial.printf("After DST Check\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
 
 
@@ -216,7 +216,7 @@ void loop()
       if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
     }
   }
-
+/*
   //every hour check for daylight savings time
   if(nix_time.minutes == 0 && nix_time.seconds == 0)
   {
@@ -226,10 +226,10 @@ void loop()
       set_DST(dst_last);
     }
   }
+*/
 
-
-  //cycle segments every four hours at the hours
-  if(nix_time.hours % 4 == 0 && nix_time.minutes == 0)
+  //cycle segments every hour to counter cathode poisoning
+  if(nix_time.minutes == 0)
     nixie.cycle();
 
   if(dimm && (int_rtc.getMillis() > 900) && !dim_once) 
