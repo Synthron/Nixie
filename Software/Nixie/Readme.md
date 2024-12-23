@@ -13,9 +13,9 @@ Configuration:
 - Config via DIP switch:
   - Enable USB debug messages
   - Enable external RTC DS1302
-  - ~~T1~~  (tbd)
-  - ~~T2~~  (tbd)
-  - ~~LDR~~ (tbd)
+  - T1
+  - T2
+  - LDR
   - Enable Anode Dimming
   - ~~enable DCF77~~ (tbd)
   - Enable Wifi & NTP services
@@ -39,11 +39,12 @@ Feature Overview:
 - [x] ~~display date on tubes every xx minutes~~
   - display date as different mode
 - [x] refactor nixie class to use full data struct
-- [ ] get ADC working
-- [ ] get Temperature Readouts
+- [x] get ADC working
+- [x] get Temperature Readouts
 - [x] get different display modes with dots
 - [ ] get button interface done
 - [x] fix error when reading external RTC
+- [ ] fix cathode cycling to correct duration
 
 ## necessary HW changes
 
