@@ -155,7 +155,7 @@ void loop()
   if((int_rtc.getMillis()>500) && half)
   {
     nixie.mode = nixie.d_off;
-    if (ldr) ldr_log = log10(read_adc());
+    if (ldr) ldr_log = log10(read_adc()) - 1;
     else if(t2) T2_Temp = get_temp(read_adc(), 1);
     if (t1) start_adc(0, 0);
     half = 0;
@@ -194,28 +194,30 @@ void loop()
     nixie.show_temp(T2_Temp, 1);
   }
 
+
+  if (rtc)
+  {
+    if(nix_time.minutes == 0 && nix_time.seconds == 0)
+    {
+      nix_time = DS_RTC.getTime();
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
+      if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+    }
+  }
   //if enabled, fetch the network time daily at 00:00:00 and sync every hour with external RTC
   if(ntp)
   {
     if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
     {
       ntp_setup();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
       if(rtc) 
       {
         DS_RTC.setTime(nix_time);
       }
     }
   }
-  if (rtc)
-  {
-    if(nix_time.minutes == 0 && nix_time.seconds == 0)
-    {
-      nix_time = DS_RTC.getTime();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
-      if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
-    }
-  }
+ 
 /*
   //every hour check for daylight savings time
   if(nix_time.minutes == 0 && nix_time.seconds == 0)
@@ -229,8 +231,10 @@ void loop()
 */
 
   //cycle segments every hour to counter cathode poisoning
-  if(nix_time.minutes == 0)
-    nixie.cycle();
+  if(nix_time.minutes == 0 && nix_time.hours == 3)
+    nixie.cycle(60);
+  else if(nix_time.minutes == 0)
+    nixie.cycle(12);
 
   if(dimm && (int_rtc.getMillis() > 900) && !dim_once) 
   {
@@ -347,9 +351,9 @@ void update_time()
   nix_time.minutes  = int_rtc.getMinute();
   nix_time.seconds  = int_rtc.getSecond();
   nix_time.date     = int_rtc.getDay();
-  nix_time.month    = int_rtc.getMonth();
+  nix_time.month    = int_rtc.getMonth()+1;
   nix_time.year     = int_rtc.getYear() % 100;
-  nix_time.wday     = int_rtc.getDayofWeek();
+  nix_time.wday     = int_rtc.getDayofWeek()+1;
 }
 
 // Setup Functions
@@ -430,7 +434,7 @@ void ntp_setup()
     nix_time.date = timeinfo.tm_mday;
     nix_time.month = timeinfo.tm_mon+1;
     nix_time.year = timeinfo.tm_year % 100;
-    nix_time.wday = timeinfo.tm_wday;
+    nix_time.wday = timeinfo.tm_wday+1;
   }
 }
 
@@ -440,7 +444,7 @@ void rtc_setup()
 
   if (usb) Serial.printf("storing internally\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
 
-  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+  int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
 }
 
 void wifi_setup()
@@ -550,7 +554,7 @@ void set_DST(bool start_DST)
     daylightOffset_sec = 3600;
     DS_RTC.writeByte(REG_RAM1, 1);
     nix_time.hours++;
-    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
     DS_RTC.setTime(nix_time);
   }
   else if (!start_DST && (rtc_dst || (boot && ntp)))
@@ -559,7 +563,7 @@ void set_DST(bool start_DST)
     daylightOffset_sec = 0;
     DS_RTC.writeByte(REG_RAM1, 0);
     if (!(boot && ntp)) nix_time.hours--;
-    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month+1, nix_time.year + 2000);
+    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
     DS_RTC.setTime(nix_time);
   }
 }

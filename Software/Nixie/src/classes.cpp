@@ -76,7 +76,7 @@ void Clock::show_temp(uint8_t temp, bool ch)
   send();
 }
 
-void Clock::cycle()
+void Clock::cycle(uint16_t seconds)
 {
   uint8_t old = mode;
   uint8_t old_pwm = pwm;
@@ -85,7 +85,7 @@ void Clock::cycle()
   {
     serialize(11*i, 11*i, 11*i);
     send();
-    delay(12000);
+    delay(seconds * 1000);
   }
   pwm = old_pwm;
   analogWrite(PIN_PWM, pwm);

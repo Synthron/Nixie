@@ -69,7 +69,7 @@ void setExternalCrystalAsRTCSource(){
     float delta = freq_32k - 32.768;
     if (delta < 0) delta = -delta;
     uint32_t startCal=millis();
-    while (delta > 0.002 && millis()-startCal<15000) {
+    while (delta > 0.002 && millis()-startCal<5000) {
       if(usb) Serial.printf("Waiting for 32kHz clock to be stable: %.3f kHz\n", freq_32k);
       cal_32k = CALIBRATE_ONE(RTC_CAL_32K_XTAL);
       freq_32k = factor / (float)cal_32k;
