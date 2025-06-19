@@ -40,7 +40,7 @@ void rtc_setup();
 void wifi_setup();
 void read_Straps();
 bool check_DST();
-void set_DST(bool start_DST);
+void set_DST();
 
 void start_adc(bool channel, bool continuous);
 uint16_t read_adc();

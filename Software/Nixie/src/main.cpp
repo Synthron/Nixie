@@ -30,6 +30,8 @@ bool dimm=1;
 bool rtc=0;
 bool usb=1;
 
+bool dst = 0;
+
 bool dim_once;
 bool half = false;
 
@@ -101,6 +103,7 @@ void setup()
       if (usb) Serial.printf("Saving internallay\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
     }
     else nix_time = DS_RTC.getTime();
+    set_DST();
   }
 
   rtc_setup();
@@ -335,7 +338,8 @@ void handle_menu()
     //
     else if (input_no == 4)
     {
-      
+      dst = !dst;
+      set_DST();
     }
     
   }
@@ -347,7 +351,14 @@ void handle_menu()
 
 void update_time()
 {
-  nix_time.hours    = int_rtc.getHour(true);
+  if(dst)
+  {
+    nix_time.hours    = int_rtc.getHour(true) + 1;
+    if(nix_time.hours == 24)
+      nix_time.hours = 0;
+  }
+  else 
+    nix_time.hours    = int_rtc.getHour(true);
   nix_time.minutes  = int_rtc.getMinute();
   nix_time.seconds  = int_rtc.getSecond();
   nix_time.date     = int_rtc.getDay();
@@ -543,11 +554,12 @@ bool check_DST()
 
 }
 
-void set_DST(bool start_DST)
+void set_DST()
 {
   uint8_t rtc_dst = DS_RTC.readByte(REG_RAM1);
   if(usb) Serial.printf("[debug] Read from RTC Register: %x\r\n", rtc_dst);
   //change time if Daylight Savings Time has changed
+  /*
   if(start_DST && (!rtc_dst || (boot && ntp)))
   {
     if(usb) Serial.println("[debug] Set Summer Time");
@@ -565,6 +577,18 @@ void set_DST(bool start_DST)
     if (!(boot && ntp)) nix_time.hours--;
     int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
     DS_RTC.setTime(nix_time);
+  }*/
+  if(boot)
+  {
+    dst = rtc_dst;
+  }
+  else
+  {
+    if(dst != rtc_dst)
+    {
+      DS_RTC.writeByte(REG_RAM1, dst);
+      if(usb) Serial.printf("[debug] Write to RTC Register: %x\r\n", dst);
+    }
   }
 }
 
