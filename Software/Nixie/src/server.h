@@ -14,7 +14,8 @@
 
 #include "classes.h"
 #include "defines.h"
-#include "network.h"
 
 void ota_start();
 void wifi_start(Wifi& wifi);
+// Service the WiFi-manager web server (called from Web_Tasks on core 0).
+void web_server_handle();

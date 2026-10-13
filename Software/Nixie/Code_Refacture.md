@@ -7,7 +7,7 @@
 
 ## Critical Bugs
 
-1. **[x] network.h missing** — RESOLVED. A `src/network.h` file already exists, so the build is not blocked. No action.
+1. **[x] network.h missing** — OBSOLETE. `network.h` is no longer used: WiFi credentials are configured at runtime via the AP-mode web manager and stored in `/config.json`. The `#include "network.h"` was removed from `src/server.h`.
 
 2. **[x] wifi_start passes the Wifi object by value** — RESOLVED. Signature changed to `void wifi_start(Wifi& wifi)` in both `src/server.cpp` and `src/server.h`, so `load_config()`/`save_config()` now mutate the global `wifi` object.
 
@@ -27,8 +27,7 @@
 
 3. **[~] cycle() blocks the loop for up to 60 s** — INTENTIONAL. The blocking loop is for nixie filament health (cathode poisoning prevention). No action.
 
-4. **[ ] wifi_start uses hardcoded `_ssid`/`_pass` macros** — OPEN (ToDo).
-   - **Answer to your question:** Yes, this is related to Critical Bug #2 — both stem from the wifi config handling. The credentials come from the `network.h` template, and the AP fallback branch is commented out, so a failed STA connect leaves the device with no network. **Action:** decide on credential source + re-enable/implement AP fallback.
+4. **[x] wifi_start uses hardcoded `_ssid`/`_pass` macros** — RESOLVED. `wifi_start()` no longer uses `network.h`; on a failed STA connect it starts an AP (`Nixie-<mac>`, password `Nixie1234`) with a web-based WiFi manager to enter new credentials, which are saved to `/config.json` and the device reboots.
 
 5. **[x] ntp_setup() sets `nix_time.seconds = timeinfo.tm_sec+1`** — RESOLVED. The magic `+1` was removed in `src/main.cpp`; the offset is now applied once via `time_offset` (grouped with Critical Bug #5).
 
@@ -52,7 +51,7 @@
 
 5. **[ ] Global mutable state is pervasive** — OPEN (ToDo). `nix_time`, `pwm`, `dis_mode`, flags. **Action:** consider encapsulating in the existing classes.
 
-6. **[ ] Web_Tasks / web server** — OPEN (ToDo). `Web_Tasks` only calls `ArduinoOTA.handle()`; the web server is commented out (previously malfunctioning). **Action:** decide whether to re-enable the AsyncWebServer or rename the task/comment.
+6. **[x] Web_Tasks / web server** — RESOLVED. `Web_Tasks` now also services the WiFi-manager web server (`web_server_handle()`). The web server uses the built-in ESP32 `WebServer` (not AsyncWebServer) and runs only in AP mode.
 
 ---
 

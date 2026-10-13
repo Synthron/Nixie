@@ -54,7 +54,7 @@ Nixie/
             ├── menu.h/.cpp       # Button-driven menu state machine (MODE/UP/DOWN/ENTER)
             ├── server.h/.cpp     # WiFi startup + OTA
             ├── myrtc.h/.cpp      # External 32kHz crystal RTC source setup
-            └── network.h.template # WiFi credentials template (copy to network.h)
+            └── config.h/.cpp     # Single SPIFFS config file (/config.json) for wifi + settings
 ```
 
 ---
@@ -101,7 +101,7 @@ Nixie/
 - `dimming()` maps the LDR reading to a PWM brightness value.
 
 ### 4.6 Networking & OTA
-- `wifi_start()` connects to a saved network or falls back to the credentials in `network.h`.
+- `wifi_start()` connects to the saved network (from `/config.json`); if that fails it starts an access point (`Nixie-<mac>`, password `Nixie1234`) with a web-based WiFi manager to enter new credentials, which are saved to config and the device reboots.
 - `ota_start()` enables ArduinoOTA; OTA runs on a separate core via `Web_Tasks`.
 
 ---
@@ -154,6 +154,7 @@ The agent's role is to help the user **write, refactor, debug, and extend** the 
 ### 6.6 Ask When Needed
 - If a request is ambiguous or could break existing behavior, ask the user for clarification rather than guessing.
 - If a change affects hardware (pins, wiring, PCB), flag the implications and reference the relevant `defines.h` / `Readme.md` notes.
+- **When you need a decision from the user, do not use a default timer** (e.g., a countdown that auto-selects an option). Reading the explanation and available options under time pressure is stressful for the user and can lead to bad decisions. Give the user as much time as they need to respond.
 
 ### 6.7 Avoid Looping
 - **Do not repeat the same tool call with the same parameters** when the result is unchanged. If a read/search/edit does not make progress, stop and change approach (e.g., read a larger range at once, or ask the user) instead of retrying the identical call.
@@ -166,22 +167,19 @@ The agent's role is to help the user **write, refactor, debug, and extend** the 
 
 ```bash
 # From Software/Nixie/
-# 1. Create network.h from the template and fill in WiFi credentials
-cp src/network.h.template src/network.h
-
-# 2. Build
+# 1. Build
 # IMPORTANT: use the PlatformIO virtualenv binary. The system `pio` (/usr/bin/pio)
 # is an old, broken version and fails with an AttributeError on this machine.
 ~/.platformio/penv/bin/pio run 2>&1 | tail -60
 
-# 3. Upload to the ESP32
+# 2. Upload to the ESP32
 ~/.platformio/penv/bin/pio run -t upload
 
-# 4. Monitor serial output
+# 3. Monitor serial output
 ~/.platformio/penv/bin/pio device monitor
 ```
 
-> **Note**: `network.h` is git-ignored and must be created locally from `network.h.template`.
+> **Note**: `network.h` is no longer required. WiFi credentials are configured at runtime via the AP-mode web manager (SSID `Nixie-<mac>`, password `Nixie1234`) and stored in `/config.json`.
 > **Note**: Always invoke PlatformIO via `~/.platformio/penv/bin/pio` (never the system `pio`), and pipe build output through `2>&1 | tail -60` to keep the terminal output manageable.
 
 ---

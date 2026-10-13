@@ -284,6 +284,7 @@ void Web_Tasks(void *pvParameters)
   for (;;)
   {
     ArduinoOTA.handle();
+    web_server_handle();
     vTaskDelay(1);
   }
 }
