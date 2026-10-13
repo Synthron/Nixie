@@ -155,6 +155,11 @@ The agent's role is to help the user **write, refactor, debug, and extend** the 
 - If a request is ambiguous or could break existing behavior, ask the user for clarification rather than guessing.
 - If a change affects hardware (pins, wiring, PCB), flag the implications and reference the relevant `defines.h` / `Readme.md` notes.
 
+### 6.7 Avoid Looping
+- **Do not repeat the same tool call with the same parameters** when the result is unchanged. If a read/search/edit does not make progress, stop and change approach (e.g., read a larger range at once, or ask the user) instead of retrying the identical call.
+- When you need to inspect a file, **read the whole file (or a large slice) in a single call** rather than many small overlapping reads.
+- If you find yourself reasoning in circles about the same detail, step back, state the decision, and move on. Never loop on locating a line or re-reading the same range.
+
 ---
 
 ## 7. Build & Run
@@ -165,16 +170,19 @@ The agent's role is to help the user **write, refactor, debug, and extend** the 
 cp src/network.h.template src/network.h
 
 # 2. Build
-pio run
+# IMPORTANT: use the PlatformIO virtualenv binary. The system `pio` (/usr/bin/pio)
+# is an old, broken version and fails with an AttributeError on this machine.
+~/.platformio/penv/bin/pio run 2>&1 | tail -60
 
 # 3. Upload to the ESP32
-pio run -t upload
+~/.platformio/penv/bin/pio run -t upload
 
 # 4. Monitor serial output
-pio device monitor
+~/.platformio/penv/bin/pio device monitor
 ```
 
 > **Note**: `network.h` is git-ignored and must be created locally from `network.h.template`.
+> **Note**: Always invoke PlatformIO via `~/.platformio/penv/bin/pio` (never the system `pio`), and pipe build output through `2>&1 | tail -60` to keep the terminal output manageable.
 
 ---
 
