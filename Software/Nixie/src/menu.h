@@ -21,11 +21,11 @@ enum DateField { DATE_DAY = 0, DATE_MONTH, DATE_YEAR };
 enum MenuButton { BTN_NONE = 0, BTN_MODE = 1, BTN_UP = 2, BTN_DOWN = 3, BTN_ENTER = 4 };
 
 // Brightness and timezone offset settings (persisted in /config.json)
-#define BRIGHTNESS_MAX          255
+constexpr uint8_t BRIGHTNESS_MAX = 255;
 
 // Timezone offset range in hours (covers all timezones and dateline crossing)
-#define OFFSET_MIN              -12
-#define OFFSET_MAX              14
+constexpr int8_t OFFSET_MIN = -12;
+constexpr int8_t OFFSET_MAX = 14;
 
 // Public API
 void menu_handle_button(uint8_t input_no);

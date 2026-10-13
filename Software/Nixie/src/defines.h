@@ -1,35 +1,38 @@
 #pragma once
 
-#define FORMAT_SPIFFS_IF_FAILED true
+// Compile-time constants (constexpr instead of #define so they are typed and
+// scoped; each translation unit gets its own copy, which is fine for these).
+constexpr bool FORMAT_SPIFFS_IF_FAILED = true;
 
 // Pin Definitions
-#define PIN_INT 4
-#define PIN_A2 5
-#define PIN_DAT 12
-#define PIN_RCLK 13
-#define PIN_SCLK 14
-#define PIN_SCLR 15
-#define PIN_PWM 16
-#define PIN_TP0 17
-#define PIN_TP1 18
-#define PIN_TP2 19
-#define PIN_TP3 21
-#define PIN_DCFSIG 22
-#define PIN_DCFEN 23
-#define PIN_RTCCLK 25
-#define PIN_RTCCE1 26
-#define PIN_RTCIO 27
-#define PIN_SDA 34
-#define PIN_SCL 35
+constexpr uint8_t PIN_INT   = 4;
+constexpr uint8_t PIN_A2    = 5;
+constexpr uint8_t PIN_DAT   = 12;
+constexpr uint8_t PIN_RCLK  = 13;
+constexpr uint8_t PIN_SCLK  = 14;
+constexpr uint8_t PIN_SCLR  = 15;
+constexpr uint8_t PIN_PWM   = 16;
+constexpr uint8_t PIN_TP0   = 17;
+constexpr uint8_t PIN_TP1   = 18;
+constexpr uint8_t PIN_TP2   = 19;
+constexpr uint8_t PIN_TP3   = 21;
+constexpr uint8_t PIN_DCFSIG = 22;
+constexpr uint8_t PIN_DCFEN = 23;
+constexpr uint8_t PIN_RTCCLK = 25;
+constexpr uint8_t PIN_RTCCE1 = 26;
+constexpr uint8_t PIN_RTCIO = 27;
+constexpr uint8_t PIN_SDA   = 34;
+constexpr uint8_t PIN_SCL   = 35;
 
-//I2C Addresses
-#define ADDR_CONFIG 0x20
-#define ADDR_INPUT  0x21
-#define ADDR_OUTPUT 0x22
-#define ADDR_ADC    0x68 // 0x01101000
+// I2C Addresses (int to match the Wire API's requestFrom/beginTransmission
+// signatures and avoid overload ambiguity with int size arguments)
+constexpr int ADDR_CONFIG = 0x20;
+constexpr int ADDR_INPUT  = 0x21;
+constexpr int ADDR_OUTPUT = 0x22;
+constexpr int ADDR_ADC    = 0x68; // 0x01101000
 
-#define T1_Offset 5
-#define T2_Offset 5
+constexpr int8_t T1_Offset = 5;
+constexpr int8_t T2_Offset = 5;
 
 // Debug output guard: only print to the USB serial when the USB strap is
 // enabled (usb == true). Replaces the scattered `if(usb)` guards.

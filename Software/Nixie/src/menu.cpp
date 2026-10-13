@@ -210,7 +210,7 @@ static void enter_selected_mode()
       break;
     case 3:
       menu_state = MENU_BRIGHTNESS;
-      edit_brightness = (pwm * 100) / BRIGHTNESS_MAX;
+      edit_brightness = (nixie.pwm * 100) / BRIGHTNESS_MAX;
       break;
     case 4:
       menu_state = MENU_OFFSET;
@@ -237,15 +237,15 @@ static void save_time_date()
 
 static void apply_brightness_now()
 {
-  pwm = (edit_brightness * BRIGHTNESS_MAX) / 100;
-  analogWrite(PIN_PWM, pwm);
+  nixie.pwm = (edit_brightness * BRIGHTNESS_MAX) / 100;
+  analogWrite(PIN_PWM, nixie.pwm);
 }
 
 static void save_brightness()
 {
   apply_brightness_now();
   config_save();
-  USB("Brightness saved: %d%% (pwm %d)\r\n", edit_brightness, pwm);
+  USB("Brightness saved: %d%% (pwm %d)\r\n", edit_brightness, nixie.pwm);
 }
 
 static void save_offset()
@@ -269,11 +269,11 @@ static bool display_mode_enabled(uint8_t mode)
 
 static void cycle_display_mode()
 {
-  uint8_t start = dis_mode;
+  uint8_t start = nixie.dis_mode;
   do
   {
-    dis_mode = (dis_mode + 1) % 4;
-  } while (!display_mode_enabled(dis_mode) && dis_mode != start);
+    nixie.dis_mode = (nixie.dis_mode + 1) % 4;
+  } while (!display_mode_enabled(nixie.dis_mode) && nixie.dis_mode != start);
 }
 
 static void increment_time_field(int8_t delta)

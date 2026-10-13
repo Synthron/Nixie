@@ -12,7 +12,7 @@ void config_load()
   strlcpy(wifi.hostname, "Nixie", sizeof(wifi.hostname));
   wifi.ssid[0] = '\0';
   wifi.passwd[0] = '\0';
-  pwm = (50 * BRIGHTNESS_MAX) / 100; // default 50% brightness
+  nixie.pwm = (50 * BRIGHTNESS_MAX) / 100; // default 50% brightness
   time_offset = 0;
 
   if (!SPIFFS.exists(CONFIG_PATH)) return;
@@ -37,7 +37,7 @@ void config_load()
   int b = doc["brightness"] | (50 * BRIGHTNESS_MAX) / 100;
   if (b < 0) b = 0;
   if (b > BRIGHTNESS_MAX) b = BRIGHTNESS_MAX;
-  pwm = (uint8_t)b;
+  nixie.pwm = (uint8_t)b;
 
   int off = doc["offset"] | 0;
   if (off < OFFSET_MIN || off > OFFSET_MAX) off = 0;
@@ -51,7 +51,7 @@ void config_save()
   doc["wifi"]["ssid"] = wifi.ssid;
   doc["wifi"]["passwd"] = wifi.passwd;
   doc["wifi"]["mode"] = wifi.mode;
-  doc["brightness"] = pwm;
+  doc["brightness"] = nixie.pwm;
   doc["offset"] = time_offset;
 
   File file = SPIFFS.open(CONFIG_PATH, "w");

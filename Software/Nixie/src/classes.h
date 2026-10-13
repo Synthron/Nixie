@@ -15,8 +15,6 @@
 #include "defines.h"
 #include "ds1302.h"
 
-extern uint8_t pwm;
-
 class Wifi
 {
   public:
@@ -32,6 +30,8 @@ class Clock
 {
   public:
     uint8_t mode;
+    uint8_t pwm;        // display brightness (0-255), encapsulated from the global
+    uint8_t dis_mode;   // display mode (0=Time, 1=Date, 2=Temp1, 3=Temp2)
     enum d_mode {d_on, d_off, d_date, d_temp};
     
     void show_time(mytimeinfo, uint8_t blink_field = 0);

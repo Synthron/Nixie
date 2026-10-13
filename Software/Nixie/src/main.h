@@ -55,7 +55,6 @@ extern ESP32Time int_rtc;
 extern DS1302 DS_RTC;
 extern bool rtc;
 extern int8_t time_offset;
-extern uint8_t dis_mode;
 extern bool t1;
 extern bool t2;
 

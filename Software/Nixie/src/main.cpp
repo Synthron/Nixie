@@ -44,11 +44,8 @@ bool boot;
 uint8_t ms500_cycle = 0;
 volatile bool btn_irq;
 
-//menu variables
-uint8_t dis_mode = 0;
-
 //misc
-uint8_t k = 0, pwm = 64;
+uint8_t k = 0;
 uint8_t T1_Temp, T2_Temp;
 float ldr_log;
 
@@ -87,7 +84,7 @@ void setup()
   else
   {
     analogWriteFrequency(100);
-    analogWrite(PIN_PWM, pwm);
+    analogWrite(PIN_PWM, nixie.pwm);
   }
 
   if(ntp)
@@ -171,7 +168,7 @@ void loop()
       half = 0;
     }
   // Display Mode
-    if(dis_mode == 0)
+    if(nixie.dis_mode == 0)
     {
       if((int_rtc.getMillis()>500) && (nixie.mode == nixie.d_on))
       {
@@ -183,20 +180,20 @@ void loop()
       }
       nixie.show_time(nix_time);
     }
-    else if(dis_mode == 1)
+    else if(nixie.dis_mode == 1)
     {
       nixie.mode = nixie.d_date;
       nixie.show_date(nix_time);
 
     }
-    else if (dis_mode == 2)
+    else if (nixie.dis_mode == 2)
     {
       start_adc(0, 0);
       if(int_rtc.getMillis() > 900)
         T1_Temp = get_temp(read_adc(), 0);
       nixie.show_temp(T1_Temp, 0);
     }
-    else if (dis_mode == 3)
+    else if (nixie.dis_mode == 3)
     {
       start_adc(1, 0);
       if(int_rtc.getMillis() > 900)

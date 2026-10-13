@@ -43,13 +43,13 @@
 
 1. **[~] Magic numbers in serialize()/show_offset()** — INTENTIONAL. Only used for bit-shifting the segments, with an explanatory comment above; `show_offset()` follows the same pattern. No action.
 
-2. **[ ] `#define` for constants instead of `constexpr`/`enum`** — OPEN (ToDo). Separate from #1 (that's about bit positions; this is about constant declarations in `defines.h`/`menu.h`). **Action:** migrate to `constexpr`/`enum` where appropriate.
+2. **[x] `#define` for constants instead of `constexpr`/`enum`** — RESOLVED. All numeric constants in `src/defines.h` (pins, I2C addresses, `T1_Offset`/`T2_Offset`, `FORMAT_SPIFFS_IF_FAILED`) and `src/menu.h` (`BRIGHTNESS_MAX`, `OFFSET_MIN`, `OFFSET_MAX`) are now `constexpr`. I2C addresses are `constexpr int` to match the Wire API and avoid overload ambiguity. The function-like `USB`/`USBLN`/`USBPR` debug macros are intentionally kept as macros. Verified: all 4 PlatformIO environments build clean.
 
 3. **[x] `if(usb)` guards** — RESOLVED. Added `USB(...)`/`USBLN(...)`/`USBPR(...)` debug macros in `src/defines.h` (guarded by the `usb` strap flag) and replaced every scattered `if(usb) Serial...` in `src/main.cpp`, `src/menu.cpp` and `src/myrtc.cpp`. `if(usb) Serial.begin(115200);` is intentionally kept as-is (it is the Serial init, not a print).
 
 4. **[x] Serial used without the usb guard** — RESOLVED. `src/myrtc.cpp` unconditional `Serial.print/println` calls now use the same `USB`/`USBLN`/`USBPR` guard. `src/classes.cpp` had no Serial output (only a comment), so nothing to change there. For consistency, the OTA callbacks in `src/server.cpp` (which also printed unconditionally) were guarded too, with `extern bool usb;` added. `src/myrtc.h` now includes `defines.h` so the macros are visible there.
 
-5. **[ ] Global mutable state is pervasive** — OPEN (ToDo). `nix_time`, `pwm`, `dis_mode`, flags. **Action:** consider encapsulating in the existing classes.
+5. **[~] Global mutable state is pervasive** — PARTIALLY RESOLVED. `pwm` and `dis_mode` are now encapsulated as public members of the `Clock` class (`nixie.pwm`, `nixie.dis_mode`); the `extern uint8_t pwm/dis_mode` declarations and their global definitions were removed, and all references in `main.cpp`, `menu.cpp`, `config.cpp` and `classes.cpp` were updated. `nix_time` and the bootstrap flags (`ntp`, `dcf`, `ldr`, `t1`, `t2`, `dimm`, `rtc`, `usb`) remain global by design (shared config/state across modules). Verified: all 4 PlatformIO environments build clean.
 
 6. **[x] Web_Tasks / web server** — RESOLVED. `Web_Tasks` now also services the WiFi-manager web server (`web_server_handle()`). The web server uses the built-in ESP32 `WebServer` (not AsyncWebServer) and runs only in AP mode.
 
