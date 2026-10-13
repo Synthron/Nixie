@@ -35,7 +35,7 @@
 
 7. **[x] increment_date_field() date clamping** — RESOLVED. Added a `days_in_month()` helper in `src/menu.cpp` (with leap-year handling for years 2000–2099); the day field is now clamped to the actual number of days in the selected month/year.
 
-8. **[ ] show_temp() bitmasks are fragile** — OPEN (ToDo). Correct but magic literals; a bit shift in `serialize()` silently breaks them. **Action:** consider named constants or a comment tying them to `serialize()` bit layout.
+8. **[x] show_temp() bitmasks are fragile** — RESOLVED. Added named `constexpr` bit-position constants (`H10_SHIFT`..`S1_SHIFT`, `SEG_BITS`) at the top of `src/classes.cpp` documenting the 64-bit bitstream layout. `Clock::serialize()` now builds `SDAT` from these constants, and `Clock::show_temp()` constructs its keep-mask from the same constants (channel on hours-ones, two-digit temp on seconds, hundreds digit on minutes-ones for temps >= 100). A shift change in `serialize()` is now reflected automatically. Verified: all 4 PlatformIO environments build clean.
 
 ---
 

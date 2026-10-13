@@ -1,5 +1,24 @@
 #include "classes.h"
 
+// 64-bit serial bitstream layout (MSB -> LSB), used by serialize() and
+// show_temp(). Each digit segment field is SEG_BITS wide; the two dot bits
+// (d0..d3) sit between the digit fields. Keeping these as named constants
+// means a shift change in serialize() is reflected everywhere automatically.
+//   seg_h10 (0-9) | seg_h1 (10-19) | d0(20) d1(21) |
+//   seg_m10 (22-31) | seg_m1 (32-41) | d2(42) d3(43) |
+//   seg_s10 (44-53) | seg_s1 (54-63)
+constexpr uint8_t H10_SHIFT = 0;
+constexpr uint8_t H1_SHIFT  = 10;
+constexpr uint8_t D0_SHIFT  = 20;
+constexpr uint8_t D1_SHIFT  = 21;
+constexpr uint8_t M10_SHIFT = 22;
+constexpr uint8_t M1_SHIFT  = 32;
+constexpr uint8_t D2_SHIFT  = 42;
+constexpr uint8_t D3_SHIFT  = 43;
+constexpr uint8_t S10_SHIFT = 44;
+constexpr uint8_t S1_SHIFT  = 54;
+constexpr uint8_t SEG_BITS  = 10;
+
 /*************************************************************************************/
 /*                  Nixie Clock Class Functions                                      */
 /*************************************************************************************/
@@ -66,12 +85,22 @@ void Clock::show_temp(uint8_t temp, bool ch)
 {
   mode = d_off;
   serialize((uint8_t)ch+1, temp/100, temp % 100);
-  // temp < 100  0b    1111111111 1111111111 11 0000000000 0000000000 11 1111111111 0000000000
-  // temp > 99   0b    1111111111 1111111111 11 1111111111 0000000000 11 1111111111 0000000000
-  if(temp > 99)
-    SDAT &= 0b1111111111111111111111111111111100000000001111111111110000000000;
-  else
-    SDAT &= 0b1111111111111111111111000000000000000000001111111111110000000000;
+
+  // Build the keep-mask from the named bit positions so it stays in sync with
+  // serialize(). The channel number (hours ones) and the two-digit temp
+  // (seconds) are always shown; the hundreds digit (minutes ones) is only
+  // shown for temps >= 100. All other fields are blanked.
+  uint64_t keep = 0;
+  keep |= ((uint64_t)0x3FF) << S1_SHIFT;   // temp ones digit
+  keep |= ((uint64_t)0x3FF) << S10_SHIFT;  // temp tens digit
+  keep |= ((uint64_t)1) << D3_SHIFT;
+  keep |= ((uint64_t)1) << D2_SHIFT;
+  keep |= ((uint64_t)1) << D1_SHIFT;
+  keep |= ((uint64_t)1) << D0_SHIFT;
+  keep |= ((uint64_t)0x3FF) << H1_SHIFT;   // channel ones digit
+  if (temp > 99)
+    keep |= ((uint64_t)0x3FF) << M1_SHIFT; // hundreds digit
+  SDAT &= keep;
 
   send();
 }
@@ -179,19 +208,18 @@ void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec, uint8_t blink_field)
       break;
   
   }
-  // bitstream: MSB -> LSB
-  // secs 1s    secs 10s   32 mins 1s    mins 10s   10 hours 1s   hours 10s
-  // 0987654321 0987654321 dd 0987654321 0987654321 dd 0987654321 0987654321
-  SDAT  = (uint64_t)seg_h10;
-  SDAT |= (uint64_t)seg_h1 << 10;
-  SDAT |= (uint64_t)d0 << 20;
-  SDAT |= (uint64_t)d1 << 21;
-  SDAT |= (uint64_t)seg_m10 << 22;
-  SDAT |= (uint64_t)seg_m1 << 32;
-  SDAT |= (uint64_t)d2 << 42;
-  SDAT |= (uint64_t)d3 << 43;
-  SDAT |= (uint64_t)seg_s10 << 44;
-  SDAT |= (uint64_t)seg_s1 << 54;
+  // bitstream: MSB -> LSB, see the H*_SHIFT/M*_SHIFT/S*_SHIFT constants above.
+  // Each digit field is SEG_BITS wide; the dot bits (d0..d3) sit between them.
+  SDAT  = (uint64_t)seg_h10 << H10_SHIFT;
+  SDAT |= (uint64_t)seg_h1 << H1_SHIFT;
+  SDAT |= (uint64_t)d0 << D0_SHIFT;
+  SDAT |= (uint64_t)d1 << D1_SHIFT;
+  SDAT |= (uint64_t)seg_m10 << M10_SHIFT;
+  SDAT |= (uint64_t)seg_m1 << M1_SHIFT;
+  SDAT |= (uint64_t)d2 << D2_SHIFT;
+  SDAT |= (uint64_t)d3 << D3_SHIFT;
+  SDAT |= (uint64_t)seg_s10 << S10_SHIFT;
+  SDAT |= (uint64_t)seg_s1 << S1_SHIFT;
 
 }
 
