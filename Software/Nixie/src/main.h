@@ -17,7 +17,6 @@
 #include <soc/rtc.h>
 #include <driver/rtc_io.h>
 #include <ESP32Time.h>
-#include <EEPROM.h>
 
 // OTA
 #include <ESPmDNS.h>

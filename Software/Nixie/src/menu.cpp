@@ -1,5 +1,6 @@
 #include "main.h"
 #include "menu.h"
+#include "config.h"
 
 // Menu state machine state
 static MenuState menu_state = MENU_IDLE;
@@ -193,14 +194,6 @@ void menu_update_display()
   }
 }
 
-void menu_load_brightness()
-{
-  EEPROM.begin(EEPROM_SIZE);
-  uint8_t pct = EEPROM.read(EEPROM_ADDR_BRIGHTNESS);
-  if (pct > 100) pct = 50; // handle erased/uninitialized EEPROM
-  pwm = (pct * BRIGHTNESS_MAX) / 100;
-}
-
 static void enter_selected_mode()
 {
   switch (mode_no)
@@ -251,25 +244,15 @@ static void apply_brightness_now()
 static void save_brightness()
 {
   apply_brightness_now();
-  EEPROM.write(EEPROM_ADDR_BRIGHTNESS, edit_brightness);
-  EEPROM.commit();
+  config_save();
   if (usb) Serial.printf("Brightness saved: %d%% (pwm %d)\r\n", edit_brightness, pwm);
 }
 
 static void save_offset()
 {
   time_offset = edit_offset;
-  EEPROM.write(EEPROM_ADDR_OFFSET, (uint8_t)time_offset);
-  EEPROM.commit();
+  config_save();
   if (usb) Serial.printf("Offset saved: %d h\r\n", time_offset);
-}
-
-void menu_load_offset()
-{
-  EEPROM.begin(EEPROM_SIZE);
-  int8_t off = (int8_t)EEPROM.read(EEPROM_ADDR_OFFSET);
-  if (off < OFFSET_MIN || off > OFFSET_MAX) off = 0; // handle erased/uninitialized EEPROM
-  time_offset = off;
 }
 
 static bool display_mode_enabled(uint8_t mode)
@@ -309,12 +292,22 @@ static void increment_time_field(int8_t delta)
   }
 }
 
+// number of days in a month, accounting for leap years (year stored as 0-99 = 2000-2099)
+static uint8_t days_in_month(uint8_t month, uint8_t year)
+{
+  static const uint8_t days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  if (month < 1 || month > 12) return 31;
+  uint8_t d = days[month - 1];
+  if (month == 2 && (year % 4) == 0) d = 29; // 2000-2099: every 4th year is a leap year
+  return d;
+}
+
 static void increment_date_field(int8_t delta)
 {
   switch (date_field)
   {
     case DATE_DAY:
-      edit_time.date = constrain((int)edit_time.date + delta, 1, 31);
+      edit_time.date = constrain((int)edit_time.date + delta, 1, days_in_month(edit_time.month, edit_time.year));
       break;
     case DATE_MONTH:
       edit_time.month = constrain((int)edit_time.month + delta, 1, 12);

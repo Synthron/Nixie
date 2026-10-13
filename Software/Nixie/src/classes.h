@@ -24,9 +24,8 @@ class Wifi
     char ssid[64];
     char passwd[64];
     uint8_t mode;
-    void load_config();
-    void save_config();
-
+    // File I/O is handled centrally by the config module (src/config.cpp),
+    // which persists wifi + brightness + offset in a single /config.json.
 };
 
 class Clock

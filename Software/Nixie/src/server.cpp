@@ -1,19 +1,11 @@
 #include "server.h"
+#include "config.h"
 
 
 // start wifi
 void wifi_start(Wifi& wifi)
 {
-  
-
-  if (SPIFFS.exists("/wifi.json"))
-  {
-    wifi.load_config();
-  }
-  else
-  {
-    wifi.mode = 0;
-  }
+  // wifi settings are loaded once during boot via config_load()
 
   if (wifi.mode == 1)
   {
@@ -42,7 +34,7 @@ void wifi_start(Wifi& wifi)
       wifi.mode = 2;
     }
     else
-      wifi.save_config();
+      config_save();
   }
 /*
   if (wifi.mode == 2)

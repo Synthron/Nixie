@@ -1,4 +1,5 @@
 #include "main.h"
+#include "config.h"
 
 Clock nixie;
 
@@ -74,9 +75,8 @@ void setup()
   //Setup IO pins
   pinConfig();
 
-  //Load brightness and timezone offset from EEPROM
-  menu_load_brightness();
-  menu_load_offset();
+  //Load all settings (wifi, brightness, timezone offset) from the SPIFFS config file
+  config_load();
 
   //Dimming Enable
   if(dimm)
@@ -504,21 +504,22 @@ uint16_t read_adc()
 
 uint8_t get_temp(uint16_t adc, bool channel)
 {
-  uint8_t t_out;
   float a = 0.0039083;
-  float rt;
   float ref = 2.048;
   float fac = ref / 32768;
   float volt = adc * fac;
 
-  rt = (3.3 - volt) / (volt / 100);
+  float rt = (3.3 - volt) / (volt / 100);
+  float temp = ((rt / 100) - 1) / a;
 
-  float temp = ((rt / 100)-1)/a;
-  t_out = (uint8_t)(temp + 0.5);
-  if(channel == 0)
-    return t_out - T1_Offset;
-  else
-    return t_out - T2_Offset;
+  // apply the channel-specific offset
+  temp -= (channel == 0) ? T1_Offset : T2_Offset;
+
+  // clamp to the displayable range (0..99) to avoid negative wrap-around
+  if (temp < 0) temp = 0;
+  if (temp > 99) temp = 99;
+
+  return (uint8_t)(temp + 0.5);
 }
 
 void dimming()

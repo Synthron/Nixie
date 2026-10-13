@@ -1,46 +1,5 @@
 #include "classes.h"
 
-
-/*
-*
-*   Wifi-Class Function Definitions
-*
-*/
-
-void Wifi::load_config()
-{
-  if (SPIFFS.exists("/wifi.json"))
-  {
-    File file = SPIFFS.open("/wifi.json");
-    JsonDocument doc;
-    DeserializationError error = deserializeJson(doc, file);
-    if (error)
-      Serial.println("Failed to read file");
-    else{
-      strlcpy(hostname, doc["hostname"], sizeof(hostname));
-      strlcpy(ssid, doc["ssid"], sizeof(ssid));
-      strlcpy(passwd, doc["password"], sizeof(passwd));
-      mode = doc["mode"];
-    }
-  }
-}
-
-void Wifi::save_config()
-{
-  if (SPIFFS.exists("/wifi.json"))
-    SPIFFS.remove("/wifi.json");
-
-  File file = SPIFFS.open("/wifi.json", FILE_WRITE);
-  JsonDocument doc;
-  doc["hostname"] = hostname;
-  doc["ssid"] = ssid;
-  doc["password"] = passwd;
-  doc["mode"] = mode;
-
-  serializeJson(doc, file);
-  file.close();
-}
-
 /*************************************************************************************/
 /*                  Nixie Clock Class Functions                                      */
 /*************************************************************************************/

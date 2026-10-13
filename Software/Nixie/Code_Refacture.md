@@ -21,10 +21,9 @@
 
 ## Potential Bugs / Fragile Code
 
-1. **[ ] Wifi::load_config() doesn't verify SPIFFS.open() succeeded** — OPEN (ToDo).
-   - **Answer to your question:** `SPIFFS.exists()` returning true does *not* guarantee `SPIFFS.open()` succeeds (e.g. corrupt file, or open-for-write failing due to space). Also the `File` object is not checked before `deserializeJson`. It's defensive programming — cheap to add a `if (!file)` guard.
+1. **[x] Wifi::load_config() doesn't verify SPIFFS.open() succeeded** — RESOLVED. `Wifi::load_config()`/`save_config()` were removed; all file I/O now lives in the config module (`src/config.cpp`), where `config_load()`/`config_save()` guard the `File` object with `if (!file) return;` before (de)serializing.
 
-2. **[ ] EEPROM.begin() called twice** — OPEN (ToDo). `menu_load_brightness()` and `menu_load_offset()` each call `EEPROM.begin(EEPROM_SIZE)`, and `EEPROM.end()` is never called. **Action:** call `EEPROM.begin()` once during the boot sequence (in `setup()`), then just `read()`/`write()`/`commit()`.
+2. **[x] EEPROM.begin() called twice** — RESOLVED (superseded by SPIFFS config migration). Brightness and timezone offset are now persisted in a single extensible `/config.json` alongside wifi, managed by the new config module (`src/config.h`/`src/config.cpp`). `config_load()` runs once in `setup()`; `config_save()` is called from the menu savers and the wifi fallback. All EEPROM code and the `EEPROM_ADDR_*`/`EEPROM_SIZE` defines were removed.
 
 3. **[~] cycle() blocks the loop for up to 60 s** — INTENTIONAL. The blocking loop is for nixie filament health (cathode poisoning prevention). No action.
 
@@ -33,9 +32,9 @@
 
 5. **[x] ntp_setup() sets `nix_time.seconds = timeinfo.tm_sec+1`** — RESOLVED. The magic `+1` was removed in `src/main.cpp`; the offset is now applied once via `time_offset` (grouped with Critical Bug #5).
 
-6. **[ ] get_temp() negative wrap** — OPEN (ToDo). `(uint8_t)(temp + 0.5)` wraps a negative temperature to a large value. **Action:** clamp/handle negative temps.
+6. **[x] get_temp() negative wrap** — RESOLVED. `get_temp()` in `src/main.cpp` now applies the channel offset in `float`, clamps the result to the displayable range `0..99`, then casts to `uint8_t` — no more negative wrap-around.
 
-7. **[ ] increment_date_field() date clamping** — OPEN (ToDo). Day is clamped to 1–31 without validating against the month (Feb 31 allowed). **Action:** validate day against month/year.
+7. **[x] increment_date_field() date clamping** — RESOLVED. Added a `days_in_month()` helper in `src/menu.cpp` (with leap-year handling for years 2000–2099); the day field is now clamped to the actual number of days in the selected month/year.
 
 8. **[ ] show_temp() bitmasks are fragile** — OPEN (ToDo). Correct but magic literals; a bit shift in `serialize()` silently breaks them. **Action:** consider named constants or a comment tying them to `serialize()` bit layout.
 
@@ -71,9 +70,9 @@
 ## Recommended Priority Order
 
 1. ~~Create `src/network.h` from the template~~ — DONE (file already exists).
-2. Fix `wifi_start` to take `Wifi&` by reference (Critical #2).
-3. ~~Mark `btn_irq` as volatile~~ — DONE (verify).
-4. ~~Fix the T2 channel argument in `dis_mode == 3`~~ — DONE (verify).
-5. Resolve the double timezone-offset design (Critical #5 + Potential #5).
-6. Begin EEPROM once during boot (Potential #2).
+2. ~~Fix `wifi_start` to take `Wifi&` by reference (Critical #2).~~ - DONE.
+3. ~~Mark `btn_irq` as volatile~~ — DONE.
+4. ~~Fix the T2 channel argument in `dis_mode == 3`~~ — DONE.
+5. ~~Resolve the double timezone-offset design (Critical #5 + Potential #5).~~
+6. ~~Begin EEPROM once during boot (Potential #2).~~ — DONE (migrated to a single SPIFFS `/config.json`).
 7. Remove dead code and replace `#define` constants with `constexpr`/`enum`.
