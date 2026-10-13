@@ -35,14 +35,17 @@ class Clock
     uint8_t mode;
     enum d_mode {d_on, d_off, d_date, d_temp};
     
-    void show_time(mytimeinfo);
-    void show_date(mytimeinfo);
+    void show_time(mytimeinfo, uint8_t blink_field = 0);
+    void show_date(mytimeinfo, uint8_t blink_field = 0);
     void show_temp(uint8_t temp, bool ch);
+    void show_brightness(uint8_t percent);
+    void show_offset(int8_t offset);
+    void show_mode(mytimeinfo time, uint8_t mode_no);
     void cycle(uint16_t seconds);
   
   private:
     uint64_t SDAT;
-    void serialize(uint8_t, uint8_t, uint8_t);
+    void serialize(uint8_t, uint8_t, uint8_t, uint8_t blink_field = 0);
     uint16_t segmenting(uint8_t);
     void send();
 };

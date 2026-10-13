@@ -59,24 +59,39 @@ float crystal_frequency() {
 void setExternalCrystalAsRTCSource(){
     Serial.println("First boot, bootstrap and enable 32k XTAL");
     print_fast_clk_math();
-    //rtc_clk_32k_bootstrap(10);
-    rtc_clk_32k_enable(true);
-    delay(1000);
 
-    uint32_t cal_32k = CALIBRATE_ONE(RTC_CAL_32K_XTAL);
-    //debug_xtal_out_dac1();
+    // Enable and kick-start the external 32k crystal oscillator. Give it a
+    // short, fixed time to start so a working crystal is picked up but a dead
+    // one does not stall the boot for seconds.
+    rtc_clk_32k_enable(true);
+    rtc_clk_32k_bootstrap(10);
+    delay(200);
+
+    // If the crystal is not oscillating after the short wait, fall back
+    // immediately to the internal RC instead of spinning the calibration loop.
+    uint32_t cal_32k = rtc_clk_cal(RTC_CAL_32K_XTAL, 1000);
+    if (cal_32k == 0) {
+        if(usb) Serial.println("32k XTAL did not start; using Internal 150kHz RC");
+        rtc_clk_slow_freq_set(RTC_SLOW_FREQ_RTC);
+        print_slow_clock_source();
+        return;
+    }
+
     float freq_32k = factor / (float)cal_32k;
     float delta = freq_32k - 32.768;
     if (delta < 0) delta = -delta;
-    uint32_t startCal=millis();
-    while (delta > 0.002 && millis()-startCal<5000) {
+
+    // Crystal is running; allow a short time for the frequency to stabilize.
+    uint32_t startCal = millis();
+    while (delta > 0.002 && millis() - startCal < 1000) {
       if(usb) Serial.printf("Waiting for 32kHz clock to be stable: %.3f kHz\n", freq_32k);
-      cal_32k = CALIBRATE_ONE(RTC_CAL_32K_XTAL);
+      cal_32k = rtc_clk_cal(RTC_CAL_32K_XTAL, 1000);
       freq_32k = factor / (float)cal_32k;
       delta = freq_32k - 32.768;
       if (delta < 0) delta = -delta;
     }
-    if(delta < 0.002){
+
+    if (delta < 0.002) {
       rtc_clk_slow_freq_set(RTC_SLOW_FREQ_32K_XTAL);
       uint32_t rtc_clk_calibration = REG_READ(RTC_SLOW_CLK_CAL_REG);
       if(usb) Serial.printf("Slow clock calibration: %u\n", rtc_clk_calibration);
@@ -89,22 +104,13 @@ void setExternalCrystalAsRTCSource(){
           if(usb) Serial.printf("ERROR Calibration write failure.\n");
         }
       }
-  
-      if (cal_32k == 0)
-      {
-          if(usb) Serial.printf("32K XTAL OSC has not started up");
-      }
-      else
-      {
-          if(usb) Serial.printf("done\n");
-      }
-  
+
       if (rtc_clk_32k_enabled())
       {
           Serial.println("OSC Enabled");
       }
     }
-    else{
+    else {
       Serial.println("OSC Not Enabled, using Internal 150KHz RC");
     }
 

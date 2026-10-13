@@ -46,18 +46,59 @@ void Wifi::save_config()
 /*************************************************************************************/
 
 // Wrapper Function Display Time
-void Clock::show_time(mytimeinfo time)
+void Clock::show_time(mytimeinfo time, uint8_t blink_field)
 {
-  serialize(time.hours, time.minutes, time.seconds);
+  serialize(time.hours, time.minutes, time.seconds, blink_field);
 
   send();
 }
 
 // Wrapper Function Display Date
-void Clock::show_date(mytimeinfo time)
+void Clock::show_date(mytimeinfo time, uint8_t blink_field)
 {
   mode = d_date;
-  serialize(time.date, time.month, time.year);
+  serialize(time.date, time.month, time.year, blink_field);
+
+  send();
+}
+
+// Display the brightness value on all three sets (hours, minutes, seconds),
+// each showing the same 00-99 value.
+void Clock::show_brightness(uint8_t percent)
+{
+  mode = d_off;
+  uint8_t v = (percent > 99) ? 99 : percent;
+  serialize(v, v, v, 0);
+
+  send();
+}
+
+// Display the timezone offset value on all three sets (hours, minutes, seconds).
+// Negative offsets light the dots to indicate the minus sign.
+void Clock::show_offset(int8_t offset)
+{
+  mode = d_off;
+  uint8_t v = (offset < 0) ? (uint8_t)(-offset) : (uint8_t)offset;
+  if (v > 99) v = 99;
+  serialize(v, v, v, 0);
+  if (offset < 0)
+  {
+    SDAT |= (uint64_t)1 << 20;
+    SDAT |= (uint64_t)1 << 21;
+    SDAT |= (uint64_t)1 << 42;
+    SDAT |= (uint64_t)1 << 43;
+  }
+  send();
+}
+
+// Display the menu mode number on the single-seconds digit (1, 2, 3, ...)
+// while hours/minutes are blanked.
+void Clock::show_mode(mytimeinfo time, uint8_t mode_no)
+{
+  mode = d_on;
+  // blink_field 5 blanks hours and minutes so only the mode number
+  // appears on the single-seconds display.
+  serialize(time.hours, time.minutes, mode_no, 5);
 
   send();
 }
@@ -101,7 +142,7 @@ void Clock::cycle(uint16_t seconds)
  * 0 = default (all on)
  * 4 = Temperature Mode
  */
-void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec)
+void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec, uint8_t blink_field)
 {
   uint8_t h10, h1, m10, m1, s10, s1, d0, d1, d2, d3;
   uint16_t seg_h10, seg_h1, seg_m10, seg_m1, seg_s10, seg_s1;
@@ -119,6 +160,36 @@ void Clock::serialize(uint8_t hr, uint8_t min, uint8_t sec)
   seg_m1  = segmenting(m1);
   seg_s10 = segmenting(s10);
   seg_s1  = segmenting(s1);
+
+  // blank the blinking field (1 = hours, 2 = minutes, 3 = seconds)
+  if (blink_field == 1)
+  {
+    seg_h10 = 0;
+    seg_h1  = 0;
+  }
+  else if (blink_field == 2)
+  {
+    seg_m10 = 0;
+    seg_m1  = 0;
+  }
+  else if (blink_field == 3)
+  {
+    seg_s10 = 0;
+    seg_s1  = 0;
+  }
+  // blank only the seconds tens digit (single-digit mode indicator)
+  else if (blink_field == 4)
+  {
+    seg_s10 = 0;
+  }
+  // blank hours and minutes (mode selection: only show the mode number)
+  else if (blink_field == 5)
+  {
+    seg_h10 = 0;
+    seg_h1  = 0;
+    seg_m10 = 0;
+    seg_m1  = 0;
+  }
 
   switch (mode)
   {

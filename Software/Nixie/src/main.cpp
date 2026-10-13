@@ -18,7 +18,6 @@ ESP32Time int_rtc;
 const char *ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 3600;
 int daylightOffset_sec = 0;
-bool dst_last;
 
 //bootstrap flags
 bool ntp=1;
@@ -30,7 +29,7 @@ bool dimm=1;
 bool rtc=0;
 bool usb=1;
 
-bool dst = 0;
+int8_t time_offset = 0;   // user timezone offset in hours applied to the base (UTC) time
 
 bool dim_once;
 bool half = false;
@@ -42,7 +41,7 @@ uint8_t ms500_cycle = 0;
 bool btn_irq = 0;
 
 //menu variables
-uint8_t dis_mode, menu_mode = 0; 
+uint8_t dis_mode = 0;
 
 //misc
 uint8_t k = 0, pwm = 64;
@@ -71,6 +70,10 @@ void setup()
 
   //Setup IO pins
   pinConfig();
+
+  //Load brightness and timezone offset from EEPROM
+  menu_load_brightness();
+  menu_load_offset();
 
   //Dimming Enable
   if(dimm)
@@ -103,7 +106,6 @@ void setup()
       if (usb) Serial.printf("Saving internallay\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
     }
     else nix_time = DS_RTC.getTime();
-    set_DST();
   }
 
   rtc_setup();
@@ -147,102 +149,112 @@ void loop()
   }
 
 // Half Second Cycle
-  if ((int_rtc.getMillis()<500) && !half)
+  if(!menu_is_active())
   {
-    nixie.mode = nixie.d_on;
-    if (t1)T1_Temp = get_temp(read_adc(), 0);
-    if (ldr || t2) start_adc(1, 0);
-    dim_once = 0;
-    half = 1;
-  }
-  if((int_rtc.getMillis()>500) && half)
-  {
-    nixie.mode = nixie.d_off;
-    if (ldr) ldr_log = log10(read_adc()) - 1;
-    else if(t2) T2_Temp = get_temp(read_adc(), 1);
-    if (t1) start_adc(0, 0);
-    half = 0;
-  }
-// Display Mode
-  if(dis_mode == 0)
-  {
-    if((int_rtc.getMillis()>500) && (nixie.mode == nixie.d_on))
-    {
-      nixie.mode = nixie.d_off;
-    }
-    else if ((int_rtc.getMillis()<500) && (nixie.mode == nixie.d_off))
+    if ((int_rtc.getMillis()<500) && !half)
     {
       nixie.mode = nixie.d_on;
+      if (t1)T1_Temp = get_temp(read_adc(), 0);
+      if (ldr || t2) start_adc(1, 0);
+      dim_once = 0;
+      half = 1;
     }
-    nixie.show_time(nix_time);
-  }
-  else if(dis_mode == 1)
-  {
-    nixie.mode = nixie.d_date;
-    nixie.show_date(nix_time);
-
-  }
-  else if (dis_mode == 2)
-  {
-    start_adc(0, 0);
-    if(int_rtc.getMillis() > 900)
-      T1_Temp = get_temp(read_adc(), 0);
-    nixie.show_temp(T1_Temp, 0);
-  }
-  else if (dis_mode == 3)
-  {
-    start_adc(1, 0);
-    if(int_rtc.getMillis() > 900)
-      T2_Temp = get_temp(read_adc(), 0);
-    nixie.show_temp(T2_Temp, 1);
-  }
-
-
-  if (rtc)
-  {
-    if(nix_time.minutes == 0 && nix_time.seconds == 0)
+    if((int_rtc.getMillis()>500) && half)
     {
-      nix_time = DS_RTC.getTime();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
-      if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+      nixie.mode = nixie.d_off;
+      if (ldr) ldr_log = log10(read_adc()) - 1;
+      else if(t2) T2_Temp = get_temp(read_adc(), 1);
+      if (t1) start_adc(0, 0);
+      half = 0;
     }
-  }
-  //if enabled, fetch the network time daily at 00:00:00 and sync every hour with external RTC
-  if(ntp)
-  {
-    if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
+  // Display Mode
+    if(dis_mode == 0)
     {
-      ntp_setup();
-      int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
-      if(rtc) 
+      if((int_rtc.getMillis()>500) && (nixie.mode == nixie.d_on))
       {
-        DS_RTC.setTime(nix_time);
+        nixie.mode = nixie.d_off;
+      }
+      else if ((int_rtc.getMillis()<500) && (nixie.mode == nixie.d_off))
+      {
+        nixie.mode = nixie.d_on;
+      }
+      nixie.show_time(nix_time);
+    }
+    else if(dis_mode == 1)
+    {
+      nixie.mode = nixie.d_date;
+      nixie.show_date(nix_time);
+
+    }
+    else if (dis_mode == 2)
+    {
+      start_adc(0, 0);
+      if(int_rtc.getMillis() > 900)
+        T1_Temp = get_temp(read_adc(), 0);
+      nixie.show_temp(T1_Temp, 0);
+    }
+    else if (dis_mode == 3)
+    {
+      start_adc(1, 0);
+      if(int_rtc.getMillis() > 900)
+        T2_Temp = get_temp(read_adc(), 0);
+      nixie.show_temp(T2_Temp, 1);
+    }
+  }
+  else
+  {
+    menu_update_display();
+  }
+
+
+  if(!menu_is_active())
+  {
+    if (rtc)
+    {
+      if(nix_time.minutes == 0 && nix_time.seconds == 0)
+      {
+        nix_time = DS_RTC.getTime();
+        int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
+        if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
       }
     }
-  }
- 
-/*
-  //every hour check for daylight savings time
-  if(nix_time.minutes == 0 && nix_time.seconds == 0)
-  {
-    if (check_DST() != dst_last)
+    //if enabled, fetch the network time daily at 00:00:00 and sync every hour with external RTC
+    if(ntp)
     {
-      dst_last = check_DST();
-      set_DST(dst_last);
+      if(nix_time.hours == 0 && nix_time.minutes == 0 && nix_time.seconds == 0)
+      {
+        ntp_setup();
+        int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
+        if(rtc)
+        {
+          DS_RTC.setTime(nix_time);
+        }
+      }
     }
-  }
-*/
+   
+  /*
+    //every hour check for daylight savings time
+    if(nix_time.minutes == 0 && nix_time.seconds == 0)
+    {
+      if (check_DST() != dst_last)
+      {
+        dst_last = check_DST();
+        set_DST(dst_last);
+      }
+    }
+  */
 
-  //cycle segments every hour to counter cathode poisoning
-  if(nix_time.minutes == 0 && nix_time.hours == 3)
-    nixie.cycle(60);
-  else if(nix_time.minutes == 0)
-    nixie.cycle(12);
+    //cycle segments every hour to counter cathode poisoning
+    if(nix_time.minutes == 0 && nix_time.hours == 3)
+      nixie.cycle(60);
+    else if(nix_time.minutes == 0)
+      nixie.cycle(12);
 
-  if(dimm && (int_rtc.getMillis() > 900) && !dim_once) 
-  {
-    dimming();
-    dim_once = true;
+    if(dimm && (int_rtc.getMillis() > 900) && !dim_once)
+    {
+      dimming();
+      dim_once = true;
+    }
   }
 }
 
@@ -308,42 +320,8 @@ void handle_menu()
     }
   }
 
-  if(menu_mode == 0)
-  {
-    //cycle between time, date, T1*, T2*
-    //* if enabled
-    if (input_no == 1)
-    {
-      dis_mode++;
-      if(!t1 && dis_mode == 2)
-        dis_mode++;
-      if(!t2 && dis_mode == 3)
-        dis_mode = 0;
-
-      input_no = 0;
-      
-    }
-    //increase brightness via PWM
-    else if (input_no == 2 && pwm < 248 && !dimm)
-    {
-      pwm += 8;
-      analogWrite(PIN_PWM, pwm);
-    }
-    //decrease brightness via PWM
-    else if (input_no == 3 && pwm > 0 && !dimm)
-    {
-      pwm -= 8;
-      analogWrite(PIN_PWM, pwm);
-    }
-    //
-    else if (input_no == 4)
-    {
-      dst = !dst;
-      set_DST();
-    }
-    
-  }
-
+  //route the button press to the menu state machine
+  menu_handle_button(input_no);
 
   //reset flag
   btn_irq = 0;
@@ -351,20 +329,23 @@ void handle_menu()
 
 void update_time()
 {
-  if(dst)
-  {
-    nix_time.hours    = int_rtc.getHour(true) + 1;
-    if(nix_time.hours == 24)
-      nix_time.hours = 0;
-  }
-  else 
-    nix_time.hours    = int_rtc.getHour(true);
-  nix_time.minutes  = int_rtc.getMinute();
-  nix_time.seconds  = int_rtc.getSecond();
-  nix_time.date     = int_rtc.getDay();
-  nix_time.month    = int_rtc.getMonth()+1;
-  nix_time.year     = int_rtc.getYear() % 100;
-  nix_time.wday     = int_rtc.getDayofWeek()+1;
+  // base UTC time from the internal RTC
+  time_t base = int_rtc.getEpoch();
+  // apply the user timezone offset (may cross the dateline)
+  time_t shifted = base + (time_t)time_offset * 3600;
+
+  // extract the shifted fields deterministically (UTC interpretation,
+  // independent of the system timezone set by configTime)
+  struct tm t;
+  gmtime_r(&shifted, &t);
+
+  nix_time.hours    = t.tm_hour;
+  nix_time.minutes  = t.tm_min;
+  nix_time.seconds  = t.tm_sec;
+  nix_time.date     = t.tm_mday;
+  nix_time.month    = t.tm_mon + 1;
+  nix_time.year     = t.tm_year % 100;
+  nix_time.wday     = t.tm_wday + 1;
 }
 
 // Setup Functions
@@ -483,113 +464,6 @@ void wifi_setup()
       0);        /* pin task to core 0 */
   delay(500);
 
-}
-
-bool check_DST()
-{
-  bool was_dst;
-  bool is_DST;
-
-  //detect previous Daylight Savings Time Status
-  if(daylightOffset_sec == 3600)
-  {
-    was_dst = 1;
-  }
-  else 
-  {
-    was_dst = 0;
-  }
-
-  if(usb) Serial.printf("[debug] was_DST: %x\r\n", was_dst);
-
-  // in winter months no savings time
-  if(nix_time.month < 3 || nix_time.month > 10 || (nix_time.month == 3 && ((31 - nix_time.date) >= (7 - nix_time.wday))) || (nix_time.month == 10 && ((31 - nix_time.date) <= (7 - nix_time.wday))))
-  {
-    is_DST = 0;
-  }
-  // in summer months savings time
-  else if (nix_time.month > 3 && nix_time.month < 10 || (nix_time.month == 10 && ((31 - nix_time.date) >= (7 - nix_time.wday))) || (nix_time.month == 3 && ((31 - nix_time.date) <= (7 - nix_time.wday))))
-  {
-    is_DST = 1;
-  }
-
-  /**
-   * March and october have 31 days
-   * change occurs on last sunday of the month
-   * weekdays are saved as 0..6 starting with 0 = sunday
-   * therefore: 
-   * if (<current week day> == <sunday> && <31 days> - <current date> < <7>)
-   *    last sunday of the month
-   */
-  if ((nix_time.wday == 0) && ((31 - nix_time.date) < 7))
-  {
-    //if march and 02:00 or later = DST
-    if(nix_time.month == 3)
-    {
-      if (nix_time.hours >= 2)
-      {
-        is_DST = 1;
-      }
-      else
-      {
-        is_DST = 0;
-      }
-    }
-    //if october and 03:00 or later = no DST
-    else if (nix_time.month == 10)
-    {
-      if(nix_time.hours >= 2 && !was_dst)
-      {
-        is_DST = 0;
-      }
-      else if(was_dst)
-      {
-        is_DST = 1;
-      }
-    }
-  }
-
-  if(usb) Serial.printf("[debug] is_DST: %x\r\n", is_DST);
-  return is_DST;
-
-}
-
-void set_DST()
-{
-  uint8_t rtc_dst = DS_RTC.readByte(REG_RAM1);
-  if(usb) Serial.printf("[debug] Read from RTC Register: %x\r\n", rtc_dst);
-  //change time if Daylight Savings Time has changed
-  /*
-  if(start_DST && (!rtc_dst || (boot && ntp)))
-  {
-    if(usb) Serial.println("[debug] Set Summer Time");
-    daylightOffset_sec = 3600;
-    DS_RTC.writeByte(REG_RAM1, 1);
-    nix_time.hours++;
-    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
-    DS_RTC.setTime(nix_time);
-  }
-  else if (!start_DST && (rtc_dst || (boot && ntp)))
-  {
-    if(usb) Serial.println("[debug] Set Winter Time");
-    daylightOffset_sec = 0;
-    DS_RTC.writeByte(REG_RAM1, 0);
-    if (!(boot && ntp)) nix_time.hours--;
-    int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
-    DS_RTC.setTime(nix_time);
-  }*/
-  if(boot)
-  {
-    dst = rtc_dst;
-  }
-  else
-  {
-    if(dst != rtc_dst)
-    {
-      DS_RTC.writeByte(REG_RAM1, dst);
-      if(usb) Serial.printf("[debug] Write to RTC Register: %x\r\n", dst);
-    }
-  }
 }
 
 // ADC Functions

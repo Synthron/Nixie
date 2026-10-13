@@ -6,6 +6,7 @@
 #include "server.h"
 #include "ds1302.h"
 #include "myrtc.h"
+#include "menu.h"
 
 #include "FS.h"
 #include "SPIFFS.h"
@@ -16,6 +17,7 @@
 #include <soc/rtc.h>
 #include <driver/rtc_io.h>
 #include <ESP32Time.h>
+#include <EEPROM.h>
 
 // OTA
 #include <ESPmDNS.h>
@@ -39,8 +41,6 @@ void ntp_setup();
 void rtc_setup();
 void wifi_setup();
 void read_Straps();
-bool check_DST();
-void set_DST();
 
 void start_adc(bool channel, bool continuous);
 uint16_t read_adc();
@@ -50,11 +50,15 @@ void dimming();
 void IRAM_ATTR input_isr();
 void IRAM_ATTR timer1();
 
-uint64_t run = 1;
-
 extern Clock nixie;
 extern mytimeinfo nix_time;
 extern ESP32Time int_rtc;
+extern DS1302 DS_RTC;
+extern bool rtc;
+extern int8_t time_offset;
+extern uint8_t dis_mode;
+extern bool t1;
+extern bool t2;
 
 /*
 extern bool ntp;

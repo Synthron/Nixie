@@ -26,12 +26,19 @@ Feature Overview:
 - prioritized synchronization
   - NTP sync if enabled
   - external RTC sync if enabled and NTP not available
-- adjustable brightness via button interface
-- different display modes via button interface
+- adjustable brightness via button interface with **live preview** (the brightness is shown on all three tube sets as a 00-99 value and applied immediately while adjusting)
+- different display modes, cycled with **ENTER** while outside the menu
   - Time
   - Date
-  - Temperature Sensor 1
-  - Temperature Sensor 2
+  - Temperature Sensor 1 (if T1 enabled)
+  - Temperature Sensor 2 (if T2 enabled)
+- button-driven menu (MODE / UP / DOWN / ENTER)
+  - modes 1-4 are selected with **UP/DOWN** (MODE exits the menu)
+  - Set Time (hours / minutes / seconds)
+  - Set Date (day / month / year)
+  - Set Brightness (percentage, applied live)
+  - Set Offset (user timezone offset in hours, range -12 .. +14; may cross the dateline)
+- user-configurable timezone offset applied to the displayed time (replaces the old DST switch)
 - USB debug messages if enabled
 
 ## To-Do
@@ -42,7 +49,7 @@ Feature Overview:
 - [x] get ADC working
 - [x] get Temperature Readouts
 - [x] get different display modes with dots
-- [ ] get button interface done
+- [x] get button interface done
 - [x] fix error when reading external RTC
 - [ ] fix cathode cycling to correct duration
 
