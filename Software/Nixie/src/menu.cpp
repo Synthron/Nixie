@@ -230,9 +230,9 @@ static void save_time_date()
   {
     DS_RTC.setTime(nix_time);
   }
-  if (usb) Serial.printf("Time/Date saved: %2d:%2d:%2d %2d.%2d.%2d\r\n",
-                         nix_time.hours, nix_time.minutes, nix_time.seconds,
-                         nix_time.date, nix_time.month, nix_time.year);
+  USB("Time/Date saved: %2d:%2d:%2d %2d.%2d.%2d\r\n",
+      nix_time.hours, nix_time.minutes, nix_time.seconds,
+      nix_time.date, nix_time.month, nix_time.year);
 }
 
 static void apply_brightness_now()
@@ -245,14 +245,14 @@ static void save_brightness()
 {
   apply_brightness_now();
   config_save();
-  if (usb) Serial.printf("Brightness saved: %d%% (pwm %d)\r\n", edit_brightness, pwm);
+  USB("Brightness saved: %d%% (pwm %d)\r\n", edit_brightness, pwm);
 }
 
 static void save_offset()
 {
   time_offset = edit_offset;
   config_save();
-  if (usb) Serial.printf("Offset saved: %d h\r\n", time_offset);
+  USB("Offset saved: %d h\r\n", time_offset);
 }
 
 static bool display_mode_enabled(uint8_t mode)

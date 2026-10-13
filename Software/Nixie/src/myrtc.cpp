@@ -21,23 +21,23 @@ static uint32_t calibrate_one(rtc_cal_sel_t cal_clk, const char *name)
 
     const uint32_t cal_count = 1000;
     uint32_t cali_val;
-    if(usb) Serial.printf("%s:\n", name);
+    USB("%s:\n", name);
     for (int i = 0; i < 5; ++i)
     {
-        if(usb) Serial.printf("calibrate (%d): ", i);
+        USB("calibrate (%d): ", i);
         cali_val = rtc_clk_cal(cal_clk, cal_count);
-        if(usb) Serial.printf("%.3f kHz\n", factor / (float)cali_val);
+        USB("%.3f kHz\n", factor / (float)cali_val);
     }
     return cali_val;
 }
 
 void print_slow_clock_source() {
   rtc_slow_freq_t slow_clk = rtc_clk_slow_freq_get();
-  Serial.print("Slow clk source: ");
+  USBPR("Slow clk source: ");
   switch(slow_clk) {
-    case RTC_SLOW_FREQ_RTC: Serial.println("Internal 150kHz"); break;
-    case RTC_SLOW_FREQ_32K_XTAL: Serial.println("External 32kHz"); break;
-    case RTC_SLOW_FREQ_8MD256: Serial.println("Internal 8MHz");
+    case RTC_SLOW_FREQ_RTC: USBLN("Internal 150kHz"); break;
+    case RTC_SLOW_FREQ_32K_XTAL: USBLN("External 32kHz"); break;
+    case RTC_SLOW_FREQ_8MD256: USBLN("Internal 8MHz");
   }
 }
 
@@ -45,7 +45,7 @@ void print_fast_clk_math() {
   const uint32_t cal_count = 1000;
   uint32_t cali_val;
   uint64_t freq = (uint64_t)rtc_clk_xtal_freq_get();
-  if(usb) Serial.printf("Fast Clk: %lluMHz\n", freq);
+  USB("Fast Clk: %lluMHz\n", freq);
 }
 
 float crystal_frequency() {
@@ -57,7 +57,7 @@ float crystal_frequency() {
 }
 
 void setExternalCrystalAsRTCSource(){
-    Serial.println("First boot, bootstrap and enable 32k XTAL");
+    USBLN("First boot, bootstrap and enable 32k XTAL");
     print_fast_clk_math();
 
     // Enable and kick-start the external 32k crystal oscillator. Give it a
@@ -71,7 +71,7 @@ void setExternalCrystalAsRTCSource(){
     // immediately to the internal RC instead of spinning the calibration loop.
     uint32_t cal_32k = rtc_clk_cal(RTC_CAL_32K_XTAL, 1000);
     if (cal_32k == 0) {
-        if(usb) Serial.println("32k XTAL did not start; using Internal 150kHz RC");
+        USBLN("32k XTAL did not start; using Internal 150kHz RC");
         rtc_clk_slow_freq_set(RTC_SLOW_FREQ_RTC);
         print_slow_clock_source();
         return;
@@ -84,7 +84,7 @@ void setExternalCrystalAsRTCSource(){
     // Crystal is running; allow a short time for the frequency to stabilize.
     uint32_t startCal = millis();
     while (delta > 0.002 && millis() - startCal < 1000) {
-      if(usb) Serial.printf("Waiting for 32kHz clock to be stable: %.3f kHz\n", freq_32k);
+      USB("Waiting for 32kHz clock to be stable: %.3f kHz\n", freq_32k);
       cal_32k = rtc_clk_cal(RTC_CAL_32K_XTAL, 1000);
       freq_32k = factor / (float)cal_32k;
       delta = freq_32k - 32.768;
@@ -94,24 +94,24 @@ void setExternalCrystalAsRTCSource(){
     if (delta < 0.002) {
       rtc_clk_slow_freq_set(RTC_SLOW_FREQ_32K_XTAL);
       uint32_t rtc_clk_calibration = REG_READ(RTC_SLOW_CLK_CAL_REG);
-      if(usb) Serial.printf("Slow clock calibration: %u\n", rtc_clk_calibration);
-      if(usb) Serial.printf("32k calibration: %u\n", cal_32k);
+      USB("Slow clock calibration: %u\n", rtc_clk_calibration);
+      USB("32k calibration: %u\n", cal_32k);
       if ((rtc_clk_calibration > (cal_32k + 5)) || (rtc_clk_calibration < (cal_32k - 5))) {
-        if(usb) Serial.printf("Miscalibrated, setting calibration register to 32k calibration.\n");
+        USB("Miscalibrated, setting calibration register to 32k calibration.\n");
         REG_WRITE(RTC_SLOW_CLK_CAL_REG, cal_32k);
         rtc_clk_calibration = REG_READ(RTC_SLOW_CLK_CAL_REG);
         if (rtc_clk_calibration != cal_32k) {
-          if(usb) Serial.printf("ERROR Calibration write failure.\n");
+          USB("ERROR Calibration write failure.\n");
         }
       }
 
       if (rtc_clk_32k_enabled())
       {
-          Serial.println("OSC Enabled");
+          USBLN("OSC Enabled");
       }
     }
     else {
-      Serial.println("OSC Not Enabled, using Internal 150KHz RC");
+      USBLN("OSC Not Enabled, using Internal 150KHz RC");
     }
 
     print_slow_clock_source();

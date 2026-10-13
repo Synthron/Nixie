@@ -60,17 +60,17 @@ void setup()
   read_Straps();
 
   if(usb) Serial.begin(115200);
-  if(usb) Serial.println("Booting...");
+  USBLN("Booting...");
   
   //File System Init
-  if(usb) Serial.println("Setup File Systems");
+  USBLN("Setup File Systems");
 
   if (!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED))
   {
-    if(usb) Serial.println("SPIFFS Mount Failed");
+    USBLN("SPIFFS Mount Failed");
     ESP.restart();
   }
-  if(usb) Serial.println("SPIFFS mounted");
+  USBLN("SPIFFS mounted");
 
   //Setup IO pins
   pinConfig();
@@ -106,7 +106,7 @@ void setup()
     if(ntp) 
     {
       DS_RTC.setTime(nix_time);
-      if (usb) Serial.printf("Saving internallay\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
+      USB("Saving internallay\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
     }
     else nix_time = DS_RTC.getTime();
   }
@@ -128,7 +128,7 @@ void setup()
   pinMode(PIN_INT, INPUT_PULLUP);
   attachInterrupt(PIN_INT, &input_isr, GPIO_INTR_NEGEDGE);
 
-  if (usb) Serial.println("Booting complete");
+  USBLN("Booting complete");
 
   //Serial.printf("Current Time\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
 
@@ -218,7 +218,7 @@ void loop()
       {
         nix_time = DS_RTC.getTime();
         int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
-        if (usb) Serial.printf("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+        USB("syncing time from external rtc\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
       }
     }
     //if enabled, fetch the network time daily at 00:00:00 and sync every hour with external RTC
@@ -377,7 +377,7 @@ void read_Straps()
 
 void pinConfig()
 {
-  if(usb) Serial.println("IO Config");
+  USBLN("IO Config");
   //74HC595 pins 
   pinMode(PIN_SCLR, OUTPUT);
   pinMode(PIN_SCLK, OUTPUT);
@@ -411,17 +411,17 @@ void pinConfig()
 
 void ntp_setup()
 {
-  if(usb) Serial.println("Update Time Data");
+  USBLN("Update Time Data");
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
   if (!getLocalTime(&timeinfo))
   {
-    if(usb) Serial.println("Failed to obtain time, setting 01-01-2000 00:00:00");
+    USBLN("Failed to obtain time, setting 01-01-2000 00:00:00");
     ntp = 0;
   }
   else
   {
-    if(usb) Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
-    if(usb) Serial.println(timeinfo.tm_mon, DEC);
+    USBLN(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+    USBLN(timeinfo.tm_mon, DEC);
 
     //update time info of nixie class
     nix_time.hours = timeinfo.tm_hour;
@@ -438,22 +438,22 @@ void rtc_setup()
 {
   setExternalCrystalAsRTCSource();
 
-  if (usb) Serial.printf("storing internally\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
+  USB("storing internally\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year);
 
   int_rtc.setTime(nix_time.seconds, nix_time.minutes, nix_time.hours, nix_time.date, nix_time.month, nix_time.year + 2000);
 }
 
 void wifi_setup()
 {
-  if(usb) Serial.println("Setup WiFi");
+  USBLN("Setup WiFi");
 
   wifi_start(wifi);
 
-  if(usb) Serial.print("IP address: ");
-  if(usb) Serial.println(WiFi.localIP());
+  USBPR("IP address: ");
+  USBLN(WiFi.localIP());
 
   ota_start();
-  if(usb) Serial.println("OTA Start");
+  USBLN("OTA Start");
 
   delay(500);
 

@@ -30,3 +30,12 @@
 
 #define T1_Offset 5
 #define T2_Offset 5
+
+// Debug output guard: only print to the USB serial when the USB strap is
+// enabled (usb == true). Replaces the scattered `if(usb)` guards.
+//   USB(...)   -> Serial.printf(...)
+//   USBLN(...) -> Serial.println(...)
+//   USBPR(...) -> Serial.print(...)
+#define USB(...)   do { if (usb) Serial.printf(__VA_ARGS__); } while(0)
+#define USBLN(...) do { if (usb) Serial.println(__VA_ARGS__); } while(0)
+#define USBPR(...) do { if (usb) Serial.print(__VA_ARGS__); } while(0)

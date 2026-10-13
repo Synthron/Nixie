@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Arduino.h"
+#include "defines.h"
 #include "soc/rtc.h"
 
 

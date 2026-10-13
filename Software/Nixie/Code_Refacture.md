@@ -45,9 +45,9 @@
 
 2. **[ ] `#define` for constants instead of `constexpr`/`enum`** — OPEN (ToDo). Separate from #1 (that's about bit positions; this is about constant declarations in `defines.h`/`menu.h`). **Action:** migrate to `constexpr`/`enum` where appropriate.
 
-3. **[ ] `if(usb)` guards** — OPEN (ToDo). **Answer to your question — yes, there is a better way:** wrap debug output in a single macro or a small `Debug` helper, e.g. `#define DBG(...) do { if (usb) Serial.printf(__VA_ARGS__); } while(0)`, or a `Serial` wrapper class. This removes the scattered `if(usb)` noise.
+3. **[x] `if(usb)` guards** — RESOLVED. Added `USB(...)`/`USBLN(...)`/`USBPR(...)` debug macros in `src/defines.h` (guarded by the `usb` strap flag) and replaced every scattered `if(usb) Serial...` in `src/main.cpp`, `src/menu.cpp` and `src/myrtc.cpp`. `if(usb) Serial.begin(115200);` is intentionally kept as-is (it is the Serial init, not a print).
 
-4. **[ ] Serial used without the usb guard** — OPEN (ToDo). `src/myrtc.cpp` and `src/classes.cpp` print unconditionally. **Action:** apply the same debug guard as #3.
+4. **[x] Serial used without the usb guard** — RESOLVED. `src/myrtc.cpp` unconditional `Serial.print/println` calls now use the same `USB`/`USBLN`/`USBPR` guard. `src/classes.cpp` had no Serial output (only a comment), so nothing to change there. For consistency, the OTA callbacks in `src/server.cpp` (which also printed unconditionally) were guarded too, with `extern bool usb;` added. `src/myrtc.h` now includes `defines.h` so the macros are visible there.
 
 5. **[ ] Global mutable state is pervasive** — OPEN (ToDo). `nix_time`, `pwm`, `dis_mode`, flags. **Action:** consider encapsulating in the existing classes.
 

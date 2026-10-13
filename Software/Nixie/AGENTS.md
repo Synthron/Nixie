@@ -161,6 +161,11 @@ The agent's role is to help the user **write, refactor, debug, and extend** the 
 - When you need to inspect a file, **read the whole file (or a large slice) in a single call** rather than many small overlapping reads.
 - If you find yourself reasoning in circles about the same detail, step back, state the decision, and move on. Never loop on locating a line or re-reading the same range.
 
+### 6.8 Provide a Commit Message
+- When you finish a set of changes (or the user asks for one), **provide a commit message that summarizes all the changes** made in that batch.
+- Use a conventional-commit style: a short subject line (e.g. `feat(networking): ...`, `fix(...): ...`, `refactor(...): ...`) followed by a body listing the key changes and any build/verification notes.
+- Cover every file touched and every behavior change in the batch, not just the most recent edit. If the user asks to "adjust" a commit message, update it to reflect any changes made since the previous message.
+
 ---
 
 ## 7. Build & Run
