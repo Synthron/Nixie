@@ -2,7 +2,7 @@
 
 
 // start wifi
-void wifi_start(Wifi wifi)
+void wifi_start(Wifi& wifi)
 {
   
 

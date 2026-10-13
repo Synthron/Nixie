@@ -16,7 +16,10 @@ ESP32Time int_rtc;
 // variables
 
 const char *ntpServer = "pool.ntp.org";
-const long gmtOffset_sec = 3600;
+// NTP fetches true UTC; the user timezone offset is applied once in update_time()
+// via time_offset (single source of truth). gmtOffset_sec must stay 0 to avoid a
+// double shift when time_offset is non-zero.
+const long gmtOffset_sec = 0;
 int daylightOffset_sec = 0;
 
 //bootstrap flags
@@ -38,7 +41,7 @@ bool boot;
 
 //isr flags
 uint8_t ms500_cycle = 0;
-bool btn_irq = 0;
+volatile bool btn_irq;
 
 //menu variables
 uint8_t dis_mode = 0;
@@ -197,7 +200,7 @@ void loop()
     {
       start_adc(1, 0);
       if(int_rtc.getMillis() > 900)
-        T2_Temp = get_temp(read_adc(), 0);
+        T2_Temp = get_temp(read_adc(), 1);
       nixie.show_temp(T2_Temp, 1);
     }
   }
@@ -422,7 +425,7 @@ void ntp_setup()
     //update time info of nixie class
     nix_time.hours = timeinfo.tm_hour;
     nix_time.minutes = timeinfo.tm_min;
-    nix_time.seconds = timeinfo.tm_sec+1;
+    nix_time.seconds = timeinfo.tm_sec;
     nix_time.date = timeinfo.tm_mday;
     nix_time.month = timeinfo.tm_mon+1;
     nix_time.year = timeinfo.tm_year % 100;

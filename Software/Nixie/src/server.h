@@ -17,4 +17,4 @@
 #include "network.h"
 
 void ota_start();
-void wifi_start(Wifi wifi);
+void wifi_start(Wifi& wifi);
