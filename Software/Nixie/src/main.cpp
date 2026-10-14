@@ -127,13 +127,6 @@ void setup()
 
   USBLN("Booting complete");
 
-  //Serial.printf("Current Time\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
-
-  //dst_last = check_DST();
-  //set_DST(dst_last);
-  //Serial.printf("After DST Check\r\nTime: %2d:%2d:%2d\r\nDate: %2d.%2d.%2d\r\nDay: %d\r\n",nix_time.hours, nix_time.minutes, nix_time.seconds, nix_time.date, nix_time.month, nix_time.year, nix_time.wday);
-
-
   boot = 0;
 
   if(t1) start_adc(0, 0);
@@ -231,24 +224,11 @@ void loop()
         }
       }
     }
-   
-  /*
-    //every hour check for daylight savings time
-    if(nix_time.minutes == 0 && nix_time.seconds == 0)
-    {
-      if (check_DST() != dst_last)
-      {
-        dst_last = check_DST();
-        set_DST(dst_last);
-      }
-    }
-  */
 
-    //cycle segments every hour to counter cathode poisoning
-    if(nix_time.minutes == 0 && nix_time.hours == 3)
-      nixie.cycle(60);
-    else if(nix_time.minutes == 0)
-      nixie.cycle(12);
+    //cycle filaments every ten minutes to counter cathode poisoning
+    //cycle(5) holds each of the 10 filaments for 5 seconds
+    if(nix_time.minutes % 10 == 0)
+      nixie.cycle(5);
 
     if(dimm && (int_rtc.getMillis() > 900) && !dim_once)
     {

@@ -107,7 +107,7 @@ void Clock::show_temp(uint8_t temp, bool ch)
 
 void Clock::cycle(uint16_t seconds)
 {
-  uint8_t old = mode;
+  //uint8_t old = mode;
   uint8_t old_pwm = pwm;
   analogWrite(PIN_PWM, 150);
   for(uint8_t i = 0; i < 10; i++)
@@ -118,7 +118,7 @@ void Clock::cycle(uint16_t seconds)
   }
   pwm = old_pwm;
   analogWrite(PIN_PWM, pwm);
-  mode = old;
+  //mode = old;
 }
 
 /* 
