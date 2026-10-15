@@ -227,7 +227,7 @@ void loop()
 
     //cycle filaments every ten minutes to counter cathode poisoning
     //cycle(5) holds each of the 10 filaments for 5 seconds
-    if(nix_time.minutes % 10 == 0)
+    if(nix_time.minutes % 10 == 0 && nix_time.seconds <= 30)
       nixie.cycle(5);
 
     if(dimm && (int_rtc.getMillis() > 900) && !dim_once)
